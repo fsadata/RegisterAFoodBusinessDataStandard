@@ -1,9 +1,9 @@
 # Register A Food Business Data Standard
 ### What Is This Document?
-This document describes the data standard for Register A Food Business data collated by the Food Standards Agency from Food Business wishing to become approved. It describes the fields, their data types and order as well as providing specific guidance on acceptable values and which fields use specific reference data values.
+This document describes the data standard for Register A Food Business data collated by the Food Standards Agency from Food Business wishing to become approved with Local Authorities. It describes the fields, their data types and order as well as providing specific guidance on acceptable values and which fields use specific reference data values.
 This document does not describe the mechanism by which data can be submitted to the Food Standards Agency (the FSA).
 ### Who Is This Document For?
-This document is written for the FSA.
+This document is written for the FSA for the collation of data from Food Businesses.
 ### How This Document Is Structured
 - [Register A Food Business Data Overview](#register-a-food-business-data-overview) Contains a brief overview of all the fields in the standard.  
 - [Field Definitions](#field-definitions) Complete definitions for each field in the standard, includes constraints and specific data type formatting requirements.  
