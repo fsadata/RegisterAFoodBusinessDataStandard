@@ -1,4 +1,4 @@
-# Red Tractor Data Standard
+# Register a Food Business Data Standard
 
 This repository contains the documentation describing the data standard which should be used for membership data being sent from Red Tractor to the Food Standards Agency to allow the appropriate visit frequencies to be applied to milk production establishments.
 
