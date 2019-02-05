@@ -7,7 +7,7 @@ This document is written for the FSA for the collation of data from Food Busines
 ### How This Document Is Structured
 - [Establishment Data overview](#establishment-Data-Overview) Contains a brief overview of all the fields in the standard.  
 - [Field Definitions](#field-definitions) Complete definitions for each field in the standard, includes constraints and specific data type formatting requirements.  
- 1. [establishment trading name](#1-fsa-producer-id)
+ 1. [establishment trading name](#1-establishment-trading-name)
  2. [establishment primary number](#2-site-name)
  3. [establishment secondary number](#3-address)
  4. [establishment email](#4-cph-number)
@@ -79,53 +79,40 @@ Index | Field Name | Description | Data Type | Validation rule | Validation impl
 
 ## Field Definitions
 
-### 1. establishment trading name
-**Field Name:** ` establishment trading name`  
-**Data Type:** String  
+### 1. Establishment Trading Name
+**Field Name:** `establishment trading name`  
+**Data Type:** String
+**Optional:** No  
 **Source:** Food Standards Agency  
 **Comments:** NA  
 
-### 2. Site Name
-**Field Name:** `site name`  
-**Data Type:** Text (50 character limit)  
+### 2. Establishment Primary Number
+**Field Name:** `establishment primary number`  
+**Data Type:** List of Strings ("+" and any numeric character allowed)
 **Optional:** No  
 **Source:** Food Standards Agency  
-**Comments:** The trading name of the registered milk producer.  
+**Comments:** NA  
 
-### 3. Address
-**Field Name:** `address`  
-**Data Type:** Text (255 character limit)  
+### 3. Establishment Secondary Number
+**Field Name:** `establishment secondary number`  
+**Data Type:** List of Strings ("+" and any numeric character allowed)   
 **Optional:** No  
 **Source:** Food Standards Agency  
-**Comments:** The address of the registered milk producer. Each line of the address should be spererated by a comma with the final entry being the establishment's post code.   
+**Comments:** NA   
 
-### 4. CPH Number
-**Field Name:** `cph number`  
-**Data Type:** Text (14 character limit)  
+### 4. Establishment Email
+**Field Name:** `establishment email`  
+**Data Type:** must be email format  
 **Optional:** No  
 **Source:** Food Standards Agency  
 **Comments:** This is the County Parish Holding number, allocated to any establishment which holds livestock by the Rural Payments Agency. This should follow the format `nn/nnn/nnnn/nn`.  
 
-### 5. Certificate End Date
-**Field Name:** `certificate end date`  
+### 5. Establishment Opening Date
+**Field Name:** `establishment opening date`  
 **Data Type:** Date (format: `YYYY-MM-DD`)  
 **Optional:** No  
 **Source:** Red Tractor  
-**Comments:** The end date of the producer’s certificate of Red Tractor membership. This should follow the YYYY-MM-DD format as laid out in the International Standard ISO 8601.  
-
-### 6. Red Tractor Dairy Number
-**Field Name:** `red tractor dairy number`  
-**Data Type:** Text (20 character limit)  
-**Optional:** No  
-**Source:** Red Tractor  
-**Comments:** This is Red Tractor’s unique reference to identify a milk producer who is a current member. It can be any combination of numeric or alphanumeric characters as long as it is unique.    
-
-### 7. Last Red Tractor Dairy Inspection Date  
-**Field Name:** `last rt dairy inspection date`  
-**Data Type:** Date (format: `YYYY-MM-DD`)  
-**Optional:** No  
-**Source:** Red Tractor  
-**Comments:** The date of Red Tractor’s last inspection of the milk production establishment. This should follow the YYYY-MM-DD format as laid out in the International Standard ISO 8601.  
+**Comments:** NA  
 
 ## Establishment Operator Data Overview
 The following table lists the fields (name and description), their data types, whether they are optional, and whether they use a controlled vocabulary.
