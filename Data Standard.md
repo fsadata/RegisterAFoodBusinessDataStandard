@@ -13,7 +13,7 @@ This document is written for the FSA for the collation of data from Food Busines
  4. [establishment email](#4-cph-number)
  5. [establishment opening date](#5-certificate-end-date)
  6. [operator name](#6-red-tractor-dairy-number)
-- [establishment operator Data Overview](#establishment-operator-Data-Overview)
+- [Establishment Operator Data Overview](#Establishment-Operator-Data-Overview)
 - [Field Definitions](#field-definitions) Complete definitions for each field in the standard, includes constraints and specific data type formatting requirements.  
  7. [operator postcode](#7-last-rt-dairy-inspection-date)
  8. [operator first line]()
@@ -71,20 +71,19 @@ The following table lists the fields (name and description), their data types, w
 
 Index | Field Name | Description | Data Type | Validation rule | Validation implemented | Max character length | Personal Data | Reason for collection | Sent to local council | Stored in tempoary Rof database | Reason for storage
 ------|------------|-------------|-----------|-----------------|------------------------|----------------------|---------------|-----------------------|-----------------------|---------------------------------|-------------------
-1|establishment_trading_name|unknown|String|Any character allowed|ASCII string|50|False|FBO contact and LC enforcement|True|True|Allows comparison of our data with returned FHRS data
-2|establishment_primary_number|unknown|List of Strings|"+" and any numeric character allowed|Numeric string Between 5 and 20 charcaters (5 < x < 20) Allows "blank space" and "+"|15|True|FBO contact and LC enforcement|True|True|
-3|establishment_secondary_number|unknown|List of Strings|"+" and any numeric character allowed|Numeric string Between 5 and 20 charcaters (5 < x < 20) Allows "blank space" and "+"|15|True|FBO contact and LC enforcement|True|True|
-4|establishment_email|unknown|String|must be email format|String npm validator isEmail |254|True|FBO contact and LC enforcement|True|True|
-5|establishment_opening_date|unknown|ISO8061 Date|ISO date allowed characters|String npm validator isISO8601|11|False|FBO contact and LC enforcement|True|True|FBO registration analysis, risk correlation analysis
+1|establishment trading name|unknown|String|Any character allowed|ASCII string|50|False|FBO contact and LC enforcement|True|True|Allows comparison of our data with returned FHRS data
+2|establishment primary number|unknown|List of Strings|"+" and any numeric character allowed|Numeric string Between 5 and 20 charcaters (5 < x < 20) Allows "blank space" and "+"|15|True|FBO contact and LC enforcement|True|True|
+3|establishment secondary number|unknown|List of Strings|"+" and any numeric character allowed|Numeric string Between 5 and 20 charcaters (5 < x < 20) Allows "blank space" and "+"|15|True|FBO contact and LC enforcement|True|True|
+4|establishment email|unknown|String|must be email format|String npm validator isEmail |254|True|FBO contact and LC enforcement|True|True|
+5|establishment opening date|unknown|ISO8061 Date|ISO date allowed characters|String npm validator isISO8601|11|False|FBO contact and LC enforcement|True|True|FBO registration analysis, risk correlation analysis
 
 ## Field Definitions
 
-### 1. FSA Producer ID
-**Field Name:** ` fsa producer id`  
-**Data Type:** Number (controlled vocabulary)  
-**Optional:** No  
+### 1. establishment trading name
+**Field Name:** ` establishment trading name`  
+**Data Type:** String  
 **Source:** Food Standards Agency  
-**Comments:** This is the numeric Food Standards Agency code to identify an establishment registered to produce milk. This must be a unique value.  
+**Comments:** NA  
 
 ### 2. Site Name
 **Field Name:** `site name`  
@@ -128,7 +127,7 @@ Index | Field Name | Description | Data Type | Validation rule | Validation impl
 **Source:** Red Tractor  
 **Comments:** The date of Red Tractor’s last inspection of the milk production establishment. This should follow the YYYY-MM-DD format as laid out in the International Standard ISO 8601.  
 
-## establishment operator Data Overview
+## Establishment Operator Data Overview
 The following table lists the fields (name and description), their data types, whether they are optional, and whether they use a controlled vocabulary.
 
 
