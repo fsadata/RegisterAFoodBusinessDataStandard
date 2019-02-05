@@ -68,7 +68,7 @@ The following table lists the fields (name and description), their data types, w
 
 
 Index | Field Name | Description | Data Type | Validation rule | Validation implemented | Max character length | Personal Data | Reason for collection | Sent to local council | Stored in tempoary Rof database | Reason for storage
-------|------------|-------------|-----------|----------|-----------------------|-------
+------|------------|-------------|-----------|-----------------|------------------------|----------------------|---------------|-----------------------|-----------------------|---------------------------------|-------------------
 1|establishment_trading_name|unknown|String|Any character allowed|ASCII string|50|False|FBO contact and LC enforcement|True|True|Allows comparison of our data with returned FHRS data
 2|establishment_primary_number|unknown|List of Strings|"+" and any numeric character allowed|Numeric string Between 5 and 20 charcaters (5 < x < 20) Allows "blank space" and "+"|15|True|FBO contact and LC enforcement|True|True|
 3|establishment_secondary_number|unknown|List of Strings|"+" and any numeric character allowed|Numeric string Between 5 and 20 charcaters (5 < x < 20) Allows "blank space" and "+"|15|True|FBO contact and LC enforcement|True|True|
