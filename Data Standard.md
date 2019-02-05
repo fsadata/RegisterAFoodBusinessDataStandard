@@ -7,42 +7,85 @@ This document is written for the FSA for the collation of data from Food Busines
 ### How This Document Is Structured
 - [Register a Food Business Data Overview](#register-a-food-business-data-overview) Contains a brief overview of all the fields in the standard.  
 - [Field Definitions](#field-definitions) Complete definitions for each field in the standard, includes constraints and specific data type formatting requirements.  
- 1. [FSA Producer ID](#1-fsa-producer-id)
- 2. [Site Name](#2-site-name)
- 3. [Address](#3-address)
- 4. [CPH Number](#4-cph-number)
- 5. [Certificate End Date](#5-certificate-end-date)
- 6. [Red Tractor Dairy Number](#6-red-tractor-dairy-number)
- 7. [Last RT Dairy Inspection Date](#7-last-rt-dairy-inspection-date)
+ 1. [establishment trading name](#1-fsa-producer-id)
+ 2. [establishment primary number](#2-site-name)
+ 3. [establishment secondary number](#3-address)
+ 4. [establishment email](#4-cph-number)
+ 5. [establishment opening date](#5-certificate-end-date)
+ 6. [operator name](#6-red-tractor-dairy-number)
+ 7. [operator postcode](#7-last-rt-dairy-inspection-date)
+ 8. [operator first line]()
+ 9. [operator street]()
+ 10. [operator town]()
+ 11. [contact representative name]()
+ 12. [contact representative role]()
+ 13. [contact representative number]()
+ 14. [contact representative email]()
+ 15. [operator primary number]()
+ 16. [operator secondary number]()
+ 17. [operator email]()
+ 18. [operator type]()
+ 19. [operator company name]()
+ 20. [operator company house number]()
+ 21. [operator charity name]()
+ 22. [operator charity number]()
+ 23. [establishment postcode]()
+ 24. [establishment first line]()
+ 25. [establishment street]()
+ 26. [estabishment town]()
+ 27. [establishment address type]()
+ 28. [import export activities]()
+ 29. [customer type]()
+ 30. [business type]()
+ 31. [business type search term]()
+ 32. [business other details]()
+ 33. [opening day monday]()
+ 34. [opening day tuesday]()
+ 35. [opening day wednesday]()
+ 36. [opening day thursday]()
+ 37. [opening day friday]()
+ 38. [opening day saturday]()
+ 39. [opening day sunday]()
+ 40. [opening days irregular]()
+ 41. [declaration]()
+ 42. [fsa-rn]()
+ 43. [reg submission date]()
+ 44. [trading start retroactive]()
+ 45. [trading start proactive]()
+ 46. [pipeline config]()
+ 47. [risk scores]()
+ 48. [inspection recommendation]()
+ 49. [sent successfully]()
+ 50. [send failed]()
+ 51. [answer ids]()
+ 52. [local council]()
 - [Supported File Types](#supported-file-types)
 - [Other Requirements](#other-requirements)
 - [File Naming Conventions](#file-naming-conventions)
 
-## Register a Food Business Data Overview
+## establishment Data Overview
 The following table lists the fields (name and description), their data types, whether they are optional, and whether they use a controlled vocabulary.
 
 
-Index | Field Name | Description | Data Type | Optional | Controlled Vocabulary | Source
+Index | Field Name | Description | Data Type | Validation rule | Validation implemented | Max character length | Personal Data | Reason for collection | Sent to local council | Stored in tempoary Rof database | Reason for storage
 ------|------------|-------------|-----------|----------|-----------------------|-------
-1|fsa_producer_id|FSA producer unique identifier|Number|No|Yes|FSA
-2|site_name|Trading name of milk producer|Text|No|No|FSA
-3|address|Address of milk producer|Text|No|No|FSA
-4|cph_number|County parish holding number|Text|No|Yes|FSA
-5|certificate_end_date|End date of Red Tractor certificate of membership|Date|No|Yes|RT
-6|red_tractor_dairy_number|Red Tractor unique identifier|Text|No|Yes|RT
-7|last_rt_dairy_inspection_date|Date of last Red Tractor dairy inspection|Date|No|Yes|RT
+1|establishment_trading_name|unknown|String|Any character allowed|ASCII string|50|False|FBO contact and LC enforcement|True|True|Allows comparison of our data with returned FHRS data
+2|establishment_primary_number|unknown|List of Strings|"+" and any numeric character allowed|Numeric string Between 5 and 20 charcaters (5 < x < 20) Allows "blank space" and "+"|15|True|FBO contact and LC enforcement|True|True|
+3|establishment_secondary_number|unknown|List of Strings|"+" and any numeric character allowed|Numeric string Between 5 and 20 charcaters (5 < x < 20) Allows "blank space" and "+"|15|True|FBO contact and LC enforcement|True|True|
+4|establishment_email|unknown|String|must be email format|String npm validator isEmail |254|True|FBO contact and LC enforcement|True|True|
+5|establishment_opening_date|unknown|ISO8061 Date|ISO date allowed characters|String npm validator isISO8601|11|False|FBO contact and LC enforcement|True|True|FBO registration analysis, risk correlation analysis
 
 ## Field Definitions
 
 ### 1. FSA Producer ID
-**Field Name:** ` fsa_producer_id`  
+**Field Name:** ` fsa producer id`  
 **Data Type:** Number (controlled vocabulary)  
 **Optional:** No  
 **Source:** Food Standards Agency  
 **Comments:** This is the numeric Food Standards Agency code to identify an establishment registered to produce milk. This must be a unique value.  
 
 ### 2. Site Name
-**Field Name:** `site_name`  
+**Field Name:** `site name`  
 **Data Type:** Text (50 character limit)  
 **Optional:** No  
 **Source:** Food Standards Agency  
@@ -55,33 +98,108 @@ Index | Field Name | Description | Data Type | Optional | Controlled Vocabulary 
 **Source:** Food Standards Agency  
 **Comments:** The address of the registered milk producer. Each line of the address should be spererated by a comma with the final entry being the establishment's post code.   
 
-### 4. CPH Number 
-**Field Name:** `cph_number`  
+### 4. CPH Number
+**Field Name:** `cph number`  
 **Data Type:** Text (14 character limit)  
 **Optional:** No  
 **Source:** Food Standards Agency  
 **Comments:** This is the County Parish Holding number, allocated to any establishment which holds livestock by the Rural Payments Agency. This should follow the format `nn/nnn/nnnn/nn`.  
 
 ### 5. Certificate End Date
-**Field Name:** `certificate_end_date`  
+**Field Name:** `certificate end date`  
 **Data Type:** Date (format: `YYYY-MM-DD`)  
 **Optional:** No  
 **Source:** Red Tractor  
 **Comments:** The end date of the producer’s certificate of Red Tractor membership. This should follow the YYYY-MM-DD format as laid out in the International Standard ISO 8601.  
 
 ### 6. Red Tractor Dairy Number
-**Field Name:** `red_tractor_dairy_number`  
+**Field Name:** `red tractor dairy number`  
 **Data Type:** Text (20 character limit)  
 **Optional:** No  
 **Source:** Red Tractor  
 **Comments:** This is Red Tractor’s unique reference to identify a milk producer who is a current member. It can be any combination of numeric or alphanumeric characters as long as it is unique.    
 
 ### 7. Last Red Tractor Dairy Inspection Date  
-**Field Name:** `last_rt_dairy_inspection_date`  
+**Field Name:** `last rt dairy inspection date`  
 **Data Type:** Date (format: `YYYY-MM-DD`)  
 **Optional:** No  
 **Source:** Red Tractor  
 **Comments:** The date of Red Tractor’s last inspection of the milk production establishment. This should follow the YYYY-MM-DD format as laid out in the International Standard ISO 8601.  
+
+## establishment operator Data Overview
+The following table lists the fields (name and description), their data types, whether they are optional, and whether they use a controlled vocabulary.
+
+
+Index | Field Name | Description | Data Type | Optional | Controlled Vocabulary | Source
+------|------------|-------------|-----------|----------|-----------------------|-------
+1|fsa producer id|FSA producer unique identifier|Number|No|Yes|FSA
+
+### 7. Last Red Tractor Dairy Inspection Date  
+**Field Name:** `last rt dairy inspection date`  
+**Data Type:** Date (format: `YYYY-MM-DD`)  
+**Optional:** No  
+**Source:** Red Tractor  
+**Comments:** The date of Red Tractor’s last inspection of the milk production establishment. This should follow the YYYY-MM-DD format as laid out in the International Standard ISO 8601.
+
+## establishment premisis Data Overview
+The following table lists the fields (name and description), their data types, whether they are optional, and whether they use a controlled vocabulary.
+
+
+Index | Field Name | Description | Data Type | Optional | Controlled Vocabulary | Source
+------|------------|-------------|-----------|----------|-----------------------|-------
+1|fsa producer id|FSA producer unique identifier|Number|No|Yes|FSA
+
+### 7. Last Red Tractor Dairy Inspection Date  
+**Field Name:** `last rt dairy inspection date`  
+**Data Type:** Date (format: `YYYY-MM-DD`)  
+**Optional:** No  
+**Source:** Red Tractor  
+**Comments:** The date of Red Tractor’s last inspection of the milk production establishment. This should follow the YYYY-MM-DD format as laid out in the International Standard ISO 8601.
+
+## establishment activities Data Overview
+The following table lists the fields (name and description), their data types, whether they are optional, and whether they use a controlled vocabulary.
+
+
+Index | Field Name | Description | Data Type | Optional | Controlled Vocabulary | Source
+------|------------|-------------|-----------|----------|-----------------------|-------
+1|fsa producer id|FSA producer unique identifier|Number|No|Yes|FSA
+
+### 7. Last Red Tractor Dairy Inspection Date  
+**Field Name:** `last rt dairy inspection date`  
+**Data Type:** Date (format: `YYYY-MM-DD`)  
+**Optional:** No  
+**Source:** Red Tractor  
+**Comments:** The date of Red Tractor’s last inspection of the milk production establishment. This should follow the YYYY-MM-DD format as laid out in the International Standard ISO 8601.
+
+## Declaration and metadata Data Overview
+The following table lists the fields (name and description), their data types, whether they are optional, and whether they use a controlled vocabulary.
+
+
+Index | Field Name | Description | Data Type | Optional | Controlled Vocabulary | Source
+------|------------|-------------|-----------|----------|-----------------------|-------
+1|fsa producer id|FSA producer unique identifier|Number|No|Yes|FSA
+
+### 7. Last Red Tractor Dairy Inspection Date  
+**Field Name:** `last rt dairy inspection date`  
+**Data Type:** Date (format: `YYYY-MM-DD`)  
+**Optional:** No  
+**Source:** Red Tractor  
+**Comments:** The date of Red Tractor’s last inspection of the milk production establishment. This should follow the YYYY-MM-DD format as laid out in the International Standard ISO 8601.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ## Supported File Types
