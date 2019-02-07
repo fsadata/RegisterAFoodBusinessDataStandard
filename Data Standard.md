@@ -8,29 +8,30 @@ This document is written for the FSA for the collation of data from Food Busines
 - [Establishment Data overview](#establishment-Data-Overview) Contains a brief overview of all the fields in the standard.  
 - [Field Definitions](#field-definitions) Complete definitions for each field in the standard, includes constraints and specific data type formatting requirements.  
  1. [establishment trading name](#1-establishment-trading-name)
- 2. [establishment primary number](#2-site-name)
- 3. [establishment secondary number](#3-address)
- 4. [establishment email](#4-cph-number)
- 5. [establishment opening date](#5-certificate-end-date)
- 6. [operator name](#6-red-tractor-dairy-number)
-- [Establishment Operator Data Overview](#Establishment-Operator-Data-Overview)
-- [Field Definitions](#field-definitions) Complete definitions for each field in the standard, includes constraints and specific data type formatting requirements.  
- 7. [operator postcode](#7-last-rt-dairy-inspection-date)
- 8. [operator first line]()
- 9. [operator street]()
- 10. [operator town]()
- 11. [contact representative name]()
- 12. [contact representative role]()
- 13. [contact representative number]()
- 14. [contact representative email]()
- 15. [operator primary number]()
- 16. [operator secondary number]()
- 17. [operator email]()
- 18. [operator type]()
- 19. [operator company name]()
- 20. [operator company house number]()
- 21. [operator charity name]()
- 22. [operator charity number]()
+ 2. [establishment primary number](#2-establishment-primary-number)
+ 3. [establishment secondary number](#3-establishment-secondary-number)
+ 4. [establishment email](#4-establishment-email)
+ 5. [establishment opening date](#5-establishment-opening-date)
+ - [Establishment Operator Data Overview](#Establishment-Operator-Data-Overview)
+ - [Field Definitions](#field-definitions) Complete definitions for each field in the standard, includes constraints and specific data type formatting requirements.  
+ 1. [operator name](#6-red-tractor-dairy-number)
+ 2. [operator postcode](#7-last-rt-dairy-inspection-date)
+ 3. [operator first line]()
+ 4. [operator street]()
+ 5. [operator town]()
+ 6. [contact representative name]()
+ 7. [contact representative role]()
+ 8. [contact representative number]()
+ 9. [contact representative email]()
+ 10. [operator primary number]()
+ 11. [operator secondary number]()
+ 12. [operator email]()
+ 13. [operator type]()
+ 14. [operator company name]()
+ 15. [operator company house number]()
+ 16. [operator charity name]()
+ 17. [operator charity number]()
+- [Establishment Premises](#establishment-premises)
  23. [establishment postcode]()
  24. [establishment first line]()
  25. [establishment street]()
@@ -65,7 +66,7 @@ This document is written for the FSA for the collation of data from Food Busines
 - [Other Requirements](#other-requirements)
 - [File Naming Conventions](#file-naming-conventions)
 
-## establishment Data Overview
+## Establishment Data Overview
 The following table lists the fields (name and description), their data types, whether they are optional, and whether they use a controlled vocabulary.
 
 
@@ -83,66 +84,234 @@ Index | Field Name | Description | Data Type | Validation rule | Validation impl
 **Field Name:** `establishment trading name`  
 **Data Type:** String
 **Optional:** No  
-**Source:** Food Standards Agency  
-**Comments:** NA  
+**Source:** unknown
+**Comments:** unknown
 
 ### 2. Establishment Primary Number
 **Field Name:** `establishment primary number`  
 **Data Type:** List of Strings ("+" and any numeric character allowed)
 **Optional:** No  
-**Source:** Food Standards Agency  
-**Comments:** NA  
+**Source:** unknown
+**Comments:** unknown
 
 ### 3. Establishment Secondary Number
 **Field Name:** `establishment secondary number`  
 **Data Type:** List of Strings ("+" and any numeric character allowed)   
 **Optional:** No  
-**Source:** Food Standards Agency  
-**Comments:** NA   
+**Source:** unknown
+**Comments:** unknown  
 
 ### 4. Establishment Email
 **Field Name:** `establishment email`  
 **Data Type:** must be email format  
 **Optional:** No  
-**Source:** Food Standards Agency  
-**Comments:** This is the County Parish Holding number, allocated to any establishment which holds livestock by the Rural Payments Agency. This should follow the format `nn/nnn/nnnn/nn`.  
+**Source:** unknown
+**Comments:** unknown
 
 ### 5. Establishment Opening Date
 **Field Name:** `establishment opening date`  
 **Data Type:** Date (format: `YYYY-MM-DD`)  
 **Optional:** No  
-**Source:** Red Tractor  
-**Comments:** NA  
+**Source:** unknown
+**Comments:** unknown
 
 ## Establishment Operator Data Overview
 The following table lists the fields (name and description), their data types, whether they are optional, and whether they use a controlled vocabulary.
 
 
-Index | Field Name | Description | Data Type | Optional | Controlled Vocabulary | Source
-------|------------|-------------|-----------|----------|-----------------------|-------
-1|fsa producer id|FSA producer unique identifier|Number|No|Yes|FSA
+Index | Field Name | Description | Data Type | Validation rule | Validation implemented | Max character length | Personal Data | Reason for collection | Sent to local council | Stored in tempoary Rof database | Reason for storage
+------|------------|-------------|-----------|-----------------|------------------------|----------------------|---------------|-----------------------|-----------------------|---------------------------------|-------------------
+1|operator name|unknown|String|Any character allowed|ASCII string|70|True|FBO contact and LC enforcement|True|False|NA
+2|operator postcode|string|only numbers and letters allowed, min 3 max 8 characters|String npm validator isPostalCode (GB)|8|True|FBO contact and LC enforcement|True|False|NA
+3|operator first line |string|Any characters allowed|ASCII string|256|true|FBO contact and LC enforcement|True|False||
+4|operator street||string|Any characters allowed|ASCII string|256|true|FBO contact and LC enforcement|True|False||
+5|operator town|string|Any characters allowed|ASCII string|256|true|FBO contact and LC enforcement|True|False||
+6|contact representative name|string|Any characters allowed|ASCII string|70|true|FBO contact and LC enforcement|True|False||
+7|contact representative role|string|Any characters allowed|ASCII string|256|true|FBO contact and LC enforcement|True|False||
+8|contact representative number|string|Any characters allowed|ASCII string|15|true|FBO contact and LC enforcement|True|False||
+9|contact representative email|string|standard email format|String npm validator isEmail|254|True|FBO contact and LC enforcement|True|False||
+10|operator primary number|string|"+" and any numeric character allowed|Numeric string Between 5 and 20 charcaters (5 < x < 20) Allows "blank space" and "+"|15|True|FBO contact and LC enforcement|True|False||
+11|operator secondary number|string|"+" and any numeric character allowed|Numeric string Between 5 and 20 charcaters (5 < x < 20) Allows "blank space" and "+"|15|True|FBO contact and LC enforcement|True|False||
+12|operator email|string|standard email format|String npm validator isEmail|254|True|FBO contact and LC enforcement|True|False|NA
+13|operator type|string|predetermined values. "I represent a person which operates this business", "I represent a charity which operates this business", "I represent a company which operates this business", "sole trader" or "partnership"|Radio button validation (i.e. whether one has been selected or not)|NA|False|Informs risk and prioritisation|True|True|Informs risk and prioritisation calculations, allows analytics of user group spread
+14|operator_company name|string|Any character allowed|String less than 50 characters|50|True|Local Council use this to validate registration details|True|False|NA
+15|operator company house number|string|Only letters and numbers allowed|String npm validator isAlphanumeric (GB) 8 Characters in length First two characters numeric|8|True|Local Council use this to validate registration details|True|True|NA
+16|operator charity name|string|Any character allowed|String Less than 50 characters|50|True|Local Council use this to validate registration details|True|False|NA
+17|operator charity number|string|Only letters, numbers and dashes allowed|String Allows "-" Between 6 to 8 characters in length (6 < x < 8) npm validator isAlphanumeric (GB)|8|True|Local Council use this to validate registration details|True|True|NA
 
-### 7. Last Red Tractor Dairy Inspection Date  
-**Field Name:** `last rt dairy inspection date`  
-**Data Type:** Date (format: `YYYY-MM-DD`)  
+
+
+### 1. Operator Name  
+**Field Name:** `operator name`  
+**Data Type:** string  
 **Optional:** No  
-**Source:** Red Tractor  
-**Comments:** The date of Red Tractor’s last inspection of the milk production establishment. This should follow the YYYY-MM-DD format as laid out in the International Standard ISO 8601.
+**Source:** unknown
+**Comments:** unknown
 
-## establishment premisis Data Overview
+### 2. Operator Postcode  
+**Field Name:** `operator postcode`  
+**Data Type:** string  
+**Optional:** No  
+**Source:** unknown
+**Comments:** unknown
+
+### 3. Operator Fist Line  
+**Field Name:** `operator first line`  
+**Data Type:** string  
+**Optional:** No  
+**Source:** unknown
+**Comments:** unknown
+
+### 4. Operator Street  
+**Field Name:** `operator street`  
+**Data Type:** string  
+**Optional:** No  
+**Source:** unknown
+**Comments:** unknown
+
+### 5. Operator Town  
+**Field Name:** `operator Town`  
+**Data Type:** string  
+**Optional:** No  
+**Source:** unknown
+**Comments:** unknown
+
+### 6. Contact Representative Name  
+**Field Name:** `Contact Representative Name`  
+**Data Type:** string  
+**Optional:** No  
+**Source:** unknown
+**Comments:** unknown
+
+### 7. Contact Representative Role  
+**Field Name:** `Contact Representative Role`  
+**Data Type:** string  
+**Optional:** No  
+**Source:** unknown
+**Comments:** unknown
+
+### 8. Contact Representative Number  
+**Field Name:** `Contact Representative Number`  
+**Data Type:** string  
+**Optional:** No  
+**Source:** unknown
+**Comments:** unknown
+
+### 9. Contact Representative Email  
+**Field Name:** `Contact Representative Email`  
+**Data Type:** string  
+**Optional:** No  
+**Source:** unknown
+**Comments:** unknown
+
+### 10. Operator Primary Number  
+**Field Name:** `operator primary number`  
+**Data Type:** string  
+**Optional:** No  
+**Source:** unknown
+**Comments:** unknown
+
+### 11. Operator Secondary Number  
+**Field Name:** `operator secondary number`  
+**Data Type:** string  
+**Optional:** No  
+**Source:** unknown
+**Comments:** unknown
+
+### 12. Operator Email  
+**Field Name:** `operator email`  
+**Data Type:** string  
+**Optional:** No  
+**Source:** unknown
+**Comments:** unknown
+
+### 13. Operator Type  
+**Field Name:** `operator type`  
+**Data Type:** string  
+**Optional:** No  
+**Source:** unknown
+**Comments:** unknown
+
+### 14. Operator Secondary Number  
+**Field Name:** operator secondary number  
+**Data Type:** string  
+**Optional:** No  
+**Source:** unknown
+**Comments:** unknown
+
+### 15. Operator Secondary Number  
+**Field Name:** operator secondary number  
+**Data Type:** string  
+**Optional:** No  
+**Source:** unknown
+**Comments:** unknown
+
+### 16. Operator Secondary Number  
+**Field Name:** operator secondary number  
+**Data Type:** string  
+**Optional:** No  
+**Source:** unknown
+**Comments:** unknown
+
+### 17. Operator Secondary Number  
+**Field Name:** operator secondary number  
+**Data Type:** string  
+**Optional:** No  
+**Source:** unknown
+**Comments:** unknown
+
+
+
+## establishment premises Data Overview
 The following table lists the fields (name and description), their data types, whether they are optional, and whether they use a controlled vocabulary.
 
 
-Index | Field Name | Description | Data Type | Optional | Controlled Vocabulary | Source
-------|------------|-------------|-----------|----------|-----------------------|-------
-1|fsa producer id|FSA producer unique identifier|Number|No|Yes|FSA
+Index | Field Name | Description | Data Type | Validation rule | Validation implemented | Max character length | Personal Data | Reason for collection | Sent to local council | Stored in tempoary Rof database | Reason for storage
+------|------------|-------------|-----------|-----------------|------------------------|----------------------|---------------|-----------------------|-----------------------|---------------------------------|-------------------
+1|establishment postcode|unknown|String|Only numbers, letters and spaces allowed|String npm validator isPostalCode (GB)|8|False|FBO contact and LC enforcement|True|True|Allows comparison of our data with returned FHRS data
+2|establishment first line |string|Any characters allowed|ASCII string|256|False|FBO contact and LC enforcement|True|True||
+4|estabishment street||string|Any characters allowed|ASCII string|256|False|FBO contact and LC enforcement|True|True||
+5|estabishment town|string|Any characters allowed|ASCII string|256|False|FBO contact and LC enforcement|True|True||
+6|establishment address type|boolean|Predetermined values|Radio button validation (i.e. whether one has been selected or not)|NA|False|FBO contact and LC enforcement|True|True|Informs risk calculations and improvements
 
-### 7. Last Red Tractor Dairy Inspection Date  
-**Field Name:** `last rt dairy inspection date`  
-**Data Type:** Date (format: `YYYY-MM-DD`)  
+
+### 1. Establishment Postcode  
+**Field Name:** `establishment postcode`  
+**Data Type:** string  
 **Optional:** No  
-**Source:** Red Tractor  
-**Comments:** The date of Red Tractor’s last inspection of the milk production establishment. This should follow the YYYY-MM-DD format as laid out in the International Standard ISO 8601.
+**Source:** unknown
+**Comments:** unknown
+
+### 2. Establishment Fist Line  
+**Field Name:** `establishment first line`  
+**Data Type:** string  
+**Optional:** No  
+**Source:** unknown
+**Comments:** unknown
+
+### 3. Establishment Street  
+**Field Name:** `establishment street`  
+**Data Type:** string  
+**Optional:** No  
+**Source:** unknown
+**Comments:** unknown
+
+### 4. Establishment Town  
+**Field Name:** `estabishment Town`  
+**Data Type:** string  
+**Optional:** No  
+**Source:** unknown
+**Comments:** unknown
+
+### 5. Establishment Address Type  
+**Field Name:** `estabishment address type`  
+**Data Type:** boolean  
+**Optional:** No  
+**Source:** unknown
+**Comments:** unknown
+
+
+
 
 ## establishment activities Data Overview
 The following table lists the fields (name and description), their data types, whether they are optional, and whether they use a controlled vocabulary.
