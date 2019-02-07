@@ -297,14 +297,14 @@ Index | Field Name | Description | Data Type | Validation rule | Validation impl
 **Comments:** unknown
 
 ### 4. Establishment Town  
-**Field Name:** `estabishment Town`  
+**Field Name:** `establishment Town`  
 **Data Type:** string  
 **Optional:** No  
 **Source:** unknown
 **Comments:** unknown
 
 ### 5. Establishment Address Type  
-**Field Name:** `estabishment address type`  
+**Field Name:** `establishment address type`  
 **Data Type:** boolean  
 **Optional:** No  
 **Source:** unknown
@@ -316,10 +316,9 @@ Index | Field Name | Description | Data Type | Validation rule | Validation impl
 ## establishment activities Data Overview
 The following table lists the fields (name and description), their data types, whether they are optional, and whether they use a controlled vocabulary.
 
-
-Index | Field Name | Description | Data Type | Optional | Controlled Vocabulary | Source
-------|------------|-------------|-----------|----------|-----------------------|-------
-1|fsa producer id|FSA producer unique identifier|Number|No|Yes|FSA
+Index | Field Name | Description | Data Type | Validation rule | Validation implemented | Max character length | Personal Data | Reason for collection | Sent to local council | Stored in tempoary Rof database | Reason for storage
+------|------------|-------------|-----------|-----------------|------------------------|----------------------|---------------|-----------------------|-----------------------|---------------------------------|-------------------
+1|establishment postcode|unknown|String|Only numbers, letters and spaces allowed|String npm validator isPostalCode (GB)|8|False|FBO contact and LC enforcement|True|True|Allows comparison of our data with returned FHRS data
 
 ### 7. Last Red Tractor Dairy Inspection Date  
 **Field Name:** `last rt dairy inspection date`  
