@@ -14,7 +14,7 @@ This document is written for the FSA for the collation of data from Food Busines
  5. [establishment opening date](#5-establishment-opening-date)
  - [Establishment Operator Data Overview](#Establishment-Operator-Data-Overview)
  - [Field Definitions](#field-definitions) Complete definitions for each field in the standard, includes constraints and specific data type formatting requirements.  
- 1. [operator name](#6-red-tractor-dairy-number)
+ 1. [operator name](#1-operator-name)
  2. [operator postcode](#7-last-rt-dairy-inspection-date)
  3. [operator first line]()
  4. [operator street]()
@@ -62,9 +62,7 @@ This document is written for the FSA for the collation of data from Food Busines
  50. [send failed]()
  51. [answer ids]()
  52. [local council]()
-- [Supported File Types](#supported-file-types)
-- [Other Requirements](#other-requirements)
-- [File Naming Conventions](#file-naming-conventions)
+
 
 ## Establishment Data Overview
 The following table lists the fields (name and description), their data types, whether they are optional, and whether they use a controlled vocabulary.
@@ -318,66 +316,211 @@ The following table lists the fields (name and description), their data types, w
 
 Index | Field Name | Description | Data Type | Validation rule | Validation implemented | Max character length | Personal Data | Reason for collection | Sent to local council | Stored in tempoary Rof database | Reason for storage
 ------|------------|-------------|-----------|-----------------|------------------------|----------------------|---------------|-----------------------|-----------------------|---------------------------------|-------------------
-1|establishment postcode|unknown|String|Only numbers, letters and spaces allowed|String npm validator isPostalCode (GB)|8|False|FBO contact and LC enforcement|True|True|Allows comparison of our data with returned FHRS data
+1|import export activities|unknown|String|predetermined values, "no import or export activities", "both import and export activities", "export activities" or "import activities"|String One of the allowed values ("Directly import","Directly export", "None", "Directly import and export")|NA|False|Informs risk and prioritisation|True|True|Informs risk calculations and improvements
+2|customer type|unknown|string|predetermined value. "End consumer", "B2B" consumer or "End and B2B consumer"|String One of the allowed values ("Other businesses", "End consumer", "End consumer and other businesses")|NA|False|Informs risk and prioritisation|True|True|Informs risk calculations and improvements
+3|business type|unknown|string|Predetermined values, see separate document for full business type list|String One of the allowed values from the business type list|NA|False|Informs risk and prioritisation|True|True|Informs risk calculations and improvements
+4|business type search term|unknown|string|Predetermined values, see separate document for full business type list with search terms|NA|NA|Informs improvement of business type search feature|False|True|Informs improvement of business type search feature
+5|business other details|unknown|String|All characters allowed. Personal information filtered|String less than 1550 characters|1550|False|Informs risk and prioritisation|True|True|Informs risk calculations and improvements
+6|opening day monday|Unknown|Boolean|Only true or false allowed.|True or False|NA|False|FBO contact and law enforcement|True|True|unknown
+7|opening day tuesday|Unknown|Boolean|Only true or false allowed.|True or False|NA|False|FBO contact and law enforcement|True|True|unknown
+8|opening day wednesday|Unknown|Boolean|Only true or false allowed.|True or False|NA|False|FBO contact and law enforcement|True|True|unknown
+9|opening day thursday|Unknown|Boolean|Only true or false allowed.|True or False|NA|False|FBO contact and law enforcement|True|True|unknown
+10|opening day friday|Unknown|Boolean|Only true or false allowed.|True or False|NA|False|FBO contact and law enforcement|True|True|unknown
+11|opening day saturday|Unknown|Boolean|Only true or false allowed.|True or False|NA|False|FBO contact and law enforcement|True|True|unknown
+12|opening day sunday|Unknown|Boolean|Only true or false allowed.|True or False|NA|False|FBO contact and law enforcement|True|True|unknown
+13|opening day irregular|Unknown|String|All characters allowed|String less than 1550 characters|1550|False|FBO contact and law enforcement|True|True|unknown
 
-### 7. Last Red Tractor Dairy Inspection Date  
-**Field Name:** `last rt dairy inspection date`  
-**Data Type:** Date (format: `YYYY-MM-DD`)  
+### 1. Import export activities
+**Field Name:** `import export activities`  
+**Data Type:** string  
 **Optional:** No  
-**Source:** Red Tractor  
-**Comments:** The date of Red Tractor’s last inspection of the milk production establishment. This should follow the YYYY-MM-DD format as laid out in the International Standard ISO 8601.
+**Source:** unknown
+**Comments:** unknown
+
+### 2. Customer Type
+**Field Name:** `customer type`  
+**Data Type:** string  
+**Optional:** No  
+**Source:** unknown
+**Comments:** unknown
+
+### 3. Business Type
+**Field Name:** `Business Type`  
+**Data Type:** string  
+**Optional:** No  
+**Source:** unknown
+**Comments:** unknown
+
+### 4. Business Type Search Term
+**Field Name:** `buisness type search term`  
+**Data Type:** string  
+**Optional:** No  
+**Source:** unknown
+**Comments:** unknown
+
+### 5. Business other details
+**Field Name:** `Buisness other details`  
+**Data Type:** string  
+**Optional:** No  
+**Source:** unknown
+**Comments:** unknown
+
+### 6. Opening Day Monday
+**Field Name:** `opening day monday`  
+**Data Type:** Boolean  
+**Optional:** No  
+**Source:** unknown
+**Comments:** unknown
+
+### 7. Opening Day Tuesday
+**Field Name:** `opening day tuesday`  
+**Data Type:** Boolean  
+**Optional:** No  
+**Source:** unknown
+**Comments:** unknown
+
+### 8. Opening Day Wednesday
+**Field Name:** `opening day wednesday`  
+**Data Type:** Boolean  
+**Optional:** No  
+**Source:** unknown
+**Comments:** unknown
+
+### 9. Opening Day Thursday
+**Field Name:** `opening day thursday`  
+**Data Type:** Boolean  
+**Optional:** No  
+**Source:** unknown
+**Comments:** unknown
+
+### 10. Opening Day Friday
+**Field Name:** `opening day friday`  
+**Data Type:** Boolean  
+**Optional:** No  
+**Source:** unknown
+**Comments:** unknown
+
+### 11. Opening Day Saturday
+**Field Name:** `opening day saturday`  
+**Data Type:** Boolean  
+**Optional:** No  
+**Source:** unknown
+**Comments:** unknown
+
+### 12. Opening Day Sunday
+**Field Name:** `opening day sunday`  
+**Data Type:** Boolean  
+**Optional:** No  
+**Source:** unknown
+**Comments:** unknown
+
+### 13. Opening Days Irregular
+**Field Name:** `opening days irregular`  
+**Data Type:** string  
+**Optional:** No  
+**Source:** unknown
+**Comments:** unknown
+
+
 
 ## Declaration and metadata Data Overview
 The following table lists the fields (name and description), their data types, whether they are optional, and whether they use a controlled vocabulary.
 
+Index | Field Name | Description | Data Type | Validation rule | Validation implemented | Max character length | Personal Data | Reason for collection | Sent to local council | Stored in tempoary Rof database | Reason for storage
+------|------------|-------------|-----------|-----------------|------------------------|----------------------|---------------|-----------------------|-----------------------|---------------------------------|-------------------
+1|declaration|Unknown|String|preset values|custom validation to check if exists|NA|False|FBO contact and law enforcement|True|True|unknown
+2|fsa-rn|string|only letters,numbers and dashes|NA|20|False|Enables linking of records to other FSA systems|True|True|Enables linking of records to other FSA systems
+3|reg submission date|unknown|Date|ISO8061|NA|NA|False|Informs risk and prioritisation|True|True|Informs prioritisation calculation and enables understanding of FBO behaviour
+4|trading start retroactive|unknown|date|ISO8061|Custom validation to check date is the same day or before the day calculated by the npm package moment|NA|False|unknown|True|True|Unknown
+5|trading start proactive|unknown|date|ISO8061|Custom validation to check date is the same day or before the day calculated by the npm package moment|NA|False|unknown|True|True|Unknown
+6|pipeline config|unknown|unknown|unknown|NA|unknown|False|NA|False|True|enables debugging of modular pipeline
+7|risk scores|unknown|string|Predetermined values, "high", "medium" or "low"|NA|NA|False|NA|True|True|Informs risk calculations and improvements
+8|inspection recommendation|unknown|string|predetermined values, "high", "medium" or "low"||NA|NA|False|NA|True|True|Informs prioritisation calculations and improvements
+9|sent successfully|unknown|unknown|unknown|NA|unknown|False|NA|False|True|Enables debugging of transfer mechanisms
+10|sent failed|unknown|unknown|unknown|NA|unknown|False|NA|False|True|Enables debugging of transfer mechanisms
+11|answer ids|unknown|unknown|unknown|NA|unknown|False|NA|False|True|Enables debugging of transfer mechanisms
+12|local council|unknown|String|values are predetermined from lookup service. Only letters and spaces max 50 carachters|NA|unknown|False|NA|True|True|Enables debugging of transfer mechanisms
 
-Index | Field Name | Description | Data Type | Optional | Controlled Vocabulary | Source
-------|------------|-------------|-----------|----------|-----------------------|-------
-1|fsa producer id|FSA producer unique identifier|Number|No|Yes|FSA
-
-### 7. Last Red Tractor Dairy Inspection Date  
-**Field Name:** `last rt dairy inspection date`  
-**Data Type:** Date (format: `YYYY-MM-DD`)  
+### 1. Declaration
+**Field Name:** `declaration`  
+**Data Type:** string  
 **Optional:** No  
-**Source:** Red Tractor  
-**Comments:** The date of Red Tractor’s last inspection of the milk production establishment. This should follow the YYYY-MM-DD format as laid out in the International Standard ISO 8601.
+**Source:** unknown
+**Comments:** unknown
 
+### 2. fsa-rn
+**Field Name:** `fsa-rn`  
+**Data Type:** string  
+**Optional:** No  
+**Source:** unknown
+**Comments:** unknown
 
+### 3. Reg Submission Date  
+**Field Name:** `reg submission date`  
+**Data Type:** date  
+**Optional:** No  
+**Source:** unknown
+**Comments:** unknown
 
+### 4. Trading Start Retroactive
+**Field Name:** `trading start retroactive`  
+**Data Type:** date  
+**Optional:** No  
+**Source:** unknown
+**Comments:** unknown
 
+### 5. Trading Start Proactive
+**Field Name:** `trading start proactive`  
+**Data Type:** date  
+**Optional:** No  
+**Source:** unknown
+**Comments:** unknown
 
+### 6. Pipeline Config
+**Field Name:** `pipeline config`  
+**Data Type:** unknown  
+**Optional:** No  
+**Source:** unknown
+**Comments:** unknown
 
+### 7. Risk Scores
+**Field Name:** `Risk Scores`  
+**Data Type:** string  
+**Optional:** No  
+**Source:** unknown
+**Comments:** unknown
 
+### 8. Inspection Recommendation
+**Field Name:** `inspection recommendation`  
+**Data Type:** string  
+**Optional:** No  
+**Source:** unknown
+**Comments:** unknown
 
+### 9. Sent Successfully
+**Field Name:** `Sent Successfully`  
+**Data Type:** unknown  
+**Optional:** No  
+**Source:** unknown
+**Comments:** unknown
 
+### 10. Send Failed
+**Field Name:** `send failed`  
+**Data Type:** unknown
+**Optional:** No  
+**Source:** unknown
+**Comments:** unknown
 
+### 11. Answer IDs
+**Field Name:** `answer ids`  
+**Data Type:** unknown  
+**Optional:** No  
+**Source:** unknown
+**Comments:** unknown
 
-
-
-
-
-
-
-## Supported File Types
-
-Currently we are supporting the standard for comma separated values (CSV), Json and XML files.
-
-The [current standard for CSV](https://tools.ietf.org/html/rfc4180) gives a detailed explanation of the common format for CSV files. It's concise and clear and we recommend reading it.
-
-## Other Requirements
-
-### Text Fields
-
-The majority of the fields in the standard are text, which needs to be treated carefully when stored in a CSV file. All text fields must be enclosed within double quotes `"this is the text"`. You should try to avoid using double quotes within a text field as this can cause the field to be misread, but the RFC4180 standard allows it if handled appropriately.
-
->If double-quotes are used to enclose fields, then a double-quote appearing inside a field must be escaped by preceding it with another double quote. For example: `"aaa","b""bb","ccc"`
-
-### Encoding
-
-Where possible please use `UTF-8` encoding.
-
-## File Naming Conventions
-
-In order to make it easy for us to manage the files longer term, it will be important to name files so that we can tell the time period that each file covers. The format will be RT and the date and time of submission in `YYYYMMDD-HHMMSS` format.
-
-For example, the file submitted the 31st of January 2017 15:20:33 would be named `RT20170131-152033.csv`.
+### 12. Local Council
+**Field Name:** `local council`  
+**Data Type:** string  
+**Optional:** No  
+**Source:** unknown
+**Comments:** unknown
