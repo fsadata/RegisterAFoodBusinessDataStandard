@@ -5,15 +5,13 @@ This document does not describe the mechanism by which data can be submitted to 
 ### Who Is This Document For?
 This document is written for the FSA for the collation of data from Food Businesses.
 ### How This Document Is Structured
-- [Establishment Data overview](#establishment-Data-Overview) Contains a brief overview of all the fields in the standard.  
-- [Field Definitions](#field-definitions) Complete definitions for each field in the standard, includes constraints and specific data type formatting requirements.  
+- [Establishment Data overview](#establishment-Data-Overview)
  1. [establishment trading name](#1-establishment-trading-name)
  2. [establishment primary number](#2-establishment-primary-number)
  3. [establishment secondary number](#3-establishment-secondary-number)
  4. [establishment email](#4-establishment-email)
  5. [establishment opening date](#5-establishment-opening-date)
  - [Establishment Operator Data Overview](#Establishment-Operator-Data-Overview)
- - [Field Definitions](#field-definitions) Complete definitions for each field in the standard, includes constraints and specific data type formatting requirements.  
  1. [operator name](#1-operator-name)
  2. [operator postcode](#2-operator-postcode)
  3. [operator first line](#3-operator-first-line)
@@ -32,14 +30,12 @@ This document is written for the FSA for the collation of data from Food Busines
  16. [operator charity name](#16-operator-charity-name)
  17. [operator charity number](#17-operator-charity-number)
 - [Establishment Premises](#establishment-premises)
-- [Field Definitions](#field-definitions) Complete definitions for each field in the standard, includes constraints and specific data type formatting requirements.  
  1. [establishment postcode](#1-establishment-postcode)
  2. [establishment first line](#2-establishment-first-line)
  3. [establishment street](#3-establishment-street)
  4. [estabishment town](#4-estabishment-town)
  5. [establishment address type](#5-estabishment-address-type)
  - [Establishment Activities](#establishment-activities)
- - [Field Definitions](#field-definitions) Complete definitions for each field in the standard, includes constraints and specific data type formatting requirements.  
  1. [import export activities](#1-import-export-activities)
  2. [customer type](#2-customer-type)
  3. [business type](#3-buisness-type)
@@ -54,7 +50,6 @@ This document is written for the FSA for the collation of data from Food Busines
  12. [opening day sunday](#12-opening-day-sunday)
  13. [opening days irregular](#13-opening-days-irregular)
  - [Declaration and Metadata](#declaration-and-metadata)
- - [Field Definitions](#field-definitions) Complete definitions for each field in the standard, includes constraints and specific data type formatting requirements.  
  1. [declaration](#1-declaration)
  2. [fsa-rn](#2-fsa-rn)
  3. [reg submission date](#3-reg-submission-date)
