@@ -17,7 +17,7 @@ This document is written for the FSA for the collation of data from Food Busines
  1. [operator name](#1-operator-name)
  2. [operator postcode](#2-operator-postcode)
  3. [operator first line](#3-operator-first-line)
- 4. [operator street](#4-operator street)
+ 4. [operator street](#4-operator-street)
  5. [operator town](#5-operator-town)
  6. [contact representative name](#6-contact-representative-name)
  7. [contact representative role](#7-contact-representative-role)
@@ -142,7 +142,7 @@ Index | Field Name | Description | Data Type | Validation rule | Validation impl
 16|operator charity name|string|Any character allowed|String Less than 50 characters|50|True|Local Council use this to validate registration details|True|False|NA
 17|operator charity number|string|Only letters, numbers and dashes allowed|String Allows "-" Between 6 to 8 characters in length (6 < x < 8) npm validator isAlphanumeric (GB)|8|True|Local Council use this to validate registration details|True|True|NA
 
-
+## Field Definitions
 
 ### 1. Operator Name  
 **Field Name:** `operator name`  
@@ -277,6 +277,8 @@ Index | Field Name | Description | Data Type | Validation rule | Validation impl
 5|estabishment town|string|Any characters allowed|ASCII string|256|False|FBO contact and LC enforcement|True|True||
 6|establishment address type|boolean|Predetermined values|Radio button validation (i.e. whether one has been selected or not)|NA|False|FBO contact and LC enforcement|True|True|Informs risk calculations and improvements
 
+## Field Definitions
+
 
 ### 1. Establishment Postcode  
 **Field Name:** `establishment postcode`  
@@ -334,6 +336,9 @@ Index | Field Name | Description | Data Type | Validation rule | Validation impl
 11|opening day saturday|Unknown|Boolean|Only true or false allowed.|True or False|NA|False|FBO contact and law enforcement|True|True|unknown
 12|opening day sunday|Unknown|Boolean|Only true or false allowed.|True or False|NA|False|FBO contact and law enforcement|True|True|unknown
 13|opening day irregular|Unknown|String|All characters allowed|String less than 1550 characters|1550|False|FBO contact and law enforcement|True|True|unknown
+
+## Field Definitions
+
 
 ### 1. Import export activities
 **Field Name:** `import export activities`  
@@ -445,6 +450,8 @@ Index | Field Name | Description | Data Type | Validation rule | Validation impl
 10|sent failed|unknown|unknown|unknown|NA|unknown|False|NA|False|True|Enables debugging of transfer mechanisms
 11|answer ids|unknown|unknown|unknown|NA|unknown|False|NA|False|True|Enables debugging of transfer mechanisms
 12|local council|unknown|String|values are predetermined from lookup service. Only letters and spaces max 50 carachters|NA|unknown|False|NA|True|True|Enables debugging of transfer mechanisms
+
+## Field Definitions
 
 ### 1. Declaration
 **Field Name:** `declaration`  
