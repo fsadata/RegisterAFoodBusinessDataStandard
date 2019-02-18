@@ -268,9 +268,9 @@ Index | Field Name | Description | Data Type | Validation rule | Validation impl
 ------|------------|-------------|-----------|-----------------|------------------------|----------------------|---------------|-----------------------|-----------------------|---------------------------------|-------------------
 1|establishment postcode|unknown|String|Only numbers, letters and spaces allowed|String npm validator isPostalCode (GB)|8|False|FBO contact and LC enforcement|True|True|Allows comparison of our data with returned FHRS data
 2|establishment first line |string|Any characters allowed|ASCII string|256|False|FBO contact and LC enforcement|True|True||
-4|estabishment street||string|Any characters allowed|ASCII string|256|False|FBO contact and LC enforcement|True|True||
-5|estabishment town|string|Any characters allowed|ASCII string|256|False|FBO contact and LC enforcement|True|True||
-6|establishment address type|boolean|Predetermined values|Radio button validation (i.e. whether one has been selected or not)|NA|False|FBO contact and LC enforcement|True|True|Informs risk calculations and improvements
+3|estabishment street||string|Any characters allowed|ASCII string|256|False|FBO contact and LC enforcement|True|True||
+4|estabishment town|string|Any characters allowed|ASCII string|256|False|FBO contact and LC enforcement|True|True||
+5|establishment address type|boolean|Predetermined values|Radio button validation (i.e. whether one has been selected or not)|NA|False|FBO contact and LC enforcement|True|True|Informs risk calculations and improvements
 
 ## Field Definitions
 
