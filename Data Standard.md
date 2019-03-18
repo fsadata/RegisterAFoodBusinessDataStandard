@@ -70,11 +70,11 @@ The following table lists the fields (name and description), their data types, w
 
 Index | Field Name | Description | Data Type | Validation rule | Validation implemented | Max character length | Personal Data | Reason for collection | Sent to local council | Stored in tempoary Rof database | Reason for storage
 ------|------------|-------------|-----------|-----------------|------------------------|----------------------|---------------|-----------------------|-----------------------|---------------------------------|-------------------
-1|establishment_trading_name|unknown|String|Any character allowed|ASCII string|50|False|FBO contact and LC enforcement|True|True|Allows comparison of our data with returned FHRS data
-2|establishment_primary_number|unknown|List of Strings|"+" and any numeric character allowed|Numeric string Between 5 and 20 charcaters (5 < x < 20) Allows "blank space" and "+"|15|True|FBO contact and LC enforcement|True|True|
+1|establishment_trading_name|The proposed trading name of the new food business|String|Any character allowed|ASCII string|50|False|FBO contact and LC enforcement|True|True|Allows comparison of our data with returned FHRS data
+2|establishment_primary_number|unknown|List of Strings|"+" and any numeric character allowed|Numeric string Between 5 and 20 characters (5 < x < 20) Allows "blank space" and "+"|15|True|FBO contact and LC enforcement|True|True|
 3|establishment_secondary number|unknown|List of Strings|"+" and any numeric character allowed|Numeric string Between 5 and 20 charcaters (5 < x < 20) Allows "blank space" and "+"|15|True|FBO contact and LC enforcement|True|True|
-4|establishment_email|unknown|String|must be email format|String npm validator isEmail |254|True|FBO contact and LC enforcement|True|True|
-5|establishment_opening_date|unknown|ISO8061 Date|ISO date allowed characters|String npm validator isISO8601|11|False|FBO contact and LC enforcement|True|True|FBO registration analysis, risk correlation analysis
+4|establishment_email|Email address for the proposed food business|String|must be email format|String npm validator isEmail |254|True|FBO contact and LC enforcement|True|True|
+5|establishment_opening_date|Estimated opening date for the proposed food business|ISO8061 Date|ISO date allowed characters|String npm validator isISO8601|11|False|FBO contact and LC enforcement|True|True|FBO registration analysis, risk correlation analysis
 
 ## Field Definitions
 
@@ -82,35 +82,35 @@ Index | Field Name | Description | Data Type | Validation rule | Validation impl
 **Field Name:** `establishment trading name`  
 **Data Type:** String
 **Optional:** No  
-**Source:** unknown
+**Source:** Submitted by service user
 **Comments:** unknown
 
 ### 2. Establishment_Primary_Number
 **Field Name:** `establishment primary number`  
 **Data Type:** List of Strings ("+" and any numeric character allowed)
 **Optional:** No  
-**Source:** unknown
+**Source:** Submitted by service user
 **Comments:** unknown
 
 ### 3. Establishment_Secondary_Number
 **Field Name:** `establishment secondary number`  
 **Data Type:** List of Strings ("+" and any numeric character allowed)   
 **Optional:** No  
-**Source:** unknown
+**Source:** Submitted by service user
 **Comments:** unknown  
 
 ### 4. Establishment_Email
 **Field Name:** `establishment email`  
 **Data Type:** must be email format  
 **Optional:** No  
-**Source:** unknown
+**Source:** Submitted by service user
 **Comments:** unknown
 
 ### 5. Establishment_Opening_Date
 **Field Name:** `establishment opening date`  
 **Data Type:** Date (format: `YYYY-MM-DD`)  
 **Optional:** No  
-**Source:** unknown
+**Source:** Submitted by service user
 **Comments:** unknown
 
 ## Establishment_Operator_Data_Overview
@@ -119,7 +119,7 @@ The following table lists the fields (name and description), their data types, w
 
 Index | Field Name | Description | Data Type | Validation rule | Validation implemented | Max character length | Personal Data | Reason for collection | Sent to local council | Stored in tempoary Rof database | Reason for storage
 ------|------------|-------------|-----------|-----------------|------------------------|----------------------|---------------|-----------------------|-----------------------|---------------------------------|-------------------
-1|operator_name|unknown|String|Any character allowed|ASCII string|70|True|FBO contact and LC enforcement|True|False|NA
+1|operator_name|Full name of the proposed food business operator|String|Any character allowed|ASCII string|70|True|FBO contact and LC enforcement|True|False|NA
 2|operator_postcode|string|only numbers and letters allowed, min 3 max 8 characters|String npm validator isPostalCode (GB)|8|True|FBO contact and LC enforcement|True|False|NA
 3|operator_first_line |string|Any characters allowed|ASCII string|256|true|FBO contact and LC enforcement|True|False||
 4|operator_street||string|Any characters allowed|ASCII string|256|true|FBO contact and LC enforcement|True|False||
@@ -143,119 +143,119 @@ Index | Field Name | Description | Data Type | Validation rule | Validation impl
 **Field Name:** `operator name`  
 **Data Type:** string  
 **Optional:** No  
-**Source:** unknown
+**Source:** Submitted by service user
 **Comments:** unknown
 
 ### 2. Operator_Postcode  
 **Field Name:** `operator postcode`  
 **Data Type:** string  
 **Optional:** No  
-**Source:** unknown
+**Source:** Submitted by service user
 **Comments:** unknown
 
 ### 3. Operator_First_Line  
 **Field Name:** `operator first line`  
 **Data Type:** string  
 **Optional:** No  
-**Source:** unknown
+**Source:** Submitted by service user
 **Comments:** unknown
 
 ### 4. Operator_Street  
 **Field Name:** `operator street`  
 **Data Type:** string  
 **Optional:** No  
-**Source:** unknown
+**Source:** Submitted by service user
 **Comments:** unknown
 
 ### 5. Operator_Town  
 **Field Name:** `operator Town`  
 **Data Type:** string  
 **Optional:** No  
-**Source:** unknown
+**Source:** Submitted by service user
 **Comments:** unknown
 
 ### 6. Contact_Representative_Name  
 **Field Name:** `Contact Representative Name`  
 **Data Type:** string  
 **Optional:** No  
-**Source:** unknown
+**Source:** Submitted by service user
 **Comments:** unknown
 
 ### 7. Contact_Representative_Role  
 **Field Name:** `Contact Representative Role`  
 **Data Type:** string  
 **Optional:** No  
-**Source:** unknown
+**Source:** Submitted by service user
 **Comments:** unknown
 
 ### 8. Contact_Representative_Number  
 **Field Name:** `Contact Representative Number`  
 **Data Type:** string  
 **Optional:** No  
-**Source:** unknown
+**Source:** Submitted by service user
 **Comments:** unknown
 
 ### 9. Contact_Representative_Email  
 **Field Name:** `Contact Representative Email`  
 **Data Type:** string  
 **Optional:** No  
-**Source:** unknown
+**Source:** Submitted by service user
 **Comments:** unknown
 
 ### 10. Operator_Primary_Number  
 **Field Name:** `operator primary number`  
 **Data Type:** string  
 **Optional:** No  
-**Source:** unknown
+**Source:** Submitted by service user
 **Comments:** unknown
 
 ### 11. Operator_Secondary_Number  
 **Field Name:** `operator secondary number`  
 **Data Type:** string  
 **Optional:** No  
-**Source:** unknown
+**Source:** Submitted by service user
 **Comments:** unknown
 
 ### 12. Operator_Email  
 **Field Name:** `operator email`  
 **Data Type:** string  
 **Optional:** No  
-**Source:** unknown
+**Source:** Submitted by service user
 **Comments:** unknown
 
 ### 13. Operator_Type  
 **Field Name:** `operator type`  
 **Data Type:** string  
 **Optional:** No  
-**Source:** unknown
+**Source:** Submitted by service user
 **Comments:** unknown
 
 ### 14. Operator_Secondary_Number  
 **Field Name:** operator secondary number  
 **Data Type:** string  
 **Optional:** No  
-**Source:** unknown
+**Source:** Submitted by service user
 **Comments:** unknown
 
 ### 15. Operator_Secondary_Number  
 **Field Name:** operator secondary number  
 **Data Type:** string  
 **Optional:** No  
-**Source:** unknown
+**Source:** Submitted by service user
 **Comments:** unknown
 
 ### 16. Operator_Secondary_Number  
 **Field Name:** operator secondary number  
 **Data Type:** string  
 **Optional:** No  
-**Source:** unknown
+**Source:** Submitted by service user
 **Comments:** unknown
 
 ### 17. Operator_Secondary_Number  
 **Field Name:** operator secondary number  
 **Data Type:** string  
 **Optional:** No  
-**Source:** unknown
+**Source:** Submitted by service user
 **Comments:** unknown
 
 
@@ -279,35 +279,35 @@ Index | Field Name | Description | Data Type | Validation rule | Validation impl
 **Field Name:** `establishment postcode`  
 **Data Type:** string  
 **Optional:** No  
-**Source:** unknown
+**Source:** Submitted by service user
 **Comments:** unknown
 
 ### 2. Establishment_First_Line  
 **Field Name:** `establishment first line`  
 **Data Type:** string  
 **Optional:** No  
-**Source:** unknown
+**Source:** Submitted by service user
 **Comments:** unknown
 
 ### 3. Establishment_Street  
 **Field Name:** `establishment street`  
 **Data Type:** string  
 **Optional:** No  
-**Source:** unknown
+**Source:** Submitted by service user
 **Comments:** unknown
 
 ### 4. Establishment_Town  
 **Field Name:** `establishment Town`  
 **Data Type:** string  
 **Optional:** No  
-**Source:** unknown
+**Source:** Submitted by service user
 **Comments:** unknown
 
 ### 5. Establishment_Address_Type  
 **Field Name:** `establishment address type`  
 **Data Type:** boolean  
 **Optional:** No  
-**Source:** unknown
+**Source:** Submitted by service user
 **Comments:** unknown
 
 
@@ -339,91 +339,91 @@ Index | Field Name | Description | Data Type | Validation rule | Validation impl
 **Field Name:** `import export activities`  
 **Data Type:** string  
 **Optional:** No  
-**Source:** unknown
+**Source:** Submitted by service user
 **Comments:** unknown
 
 ### 2. Customer_Type
 **Field Name:** `customer type`  
 **Data Type:** string  
 **Optional:** No  
-**Source:** unknown
+**Source:** Submitted by service user
 **Comments:** unknown
 
 ### 3. Business_Type
 **Field Name:** `Business Type`  
 **Data Type:** string  
 **Optional:** No  
-**Source:** unknown
+**Source:** Submitted by service user
 **Comments:** unknown
 
 ### 4. Business_Type_Search_Term
 **Field Name:** `buisness type search term`  
 **Data Type:** string  
 **Optional:** No  
-**Source:** unknown
+**Source:** Submitted by service user
 **Comments:** unknown
 
 ### 5. Business_other_details
 **Field Name:** `Buisness other details`  
 **Data Type:** string  
 **Optional:** No  
-**Source:** unknown
+**Source:** Submitted by service user
 **Comments:** unknown
 
 ### 6. Opening_Day_Monday
 **Field Name:** `opening day monday`  
 **Data Type:** Boolean  
 **Optional:** No  
-**Source:** unknown
+**Source:** Submitted by service user
 **Comments:** unknown
 
 ### 7. Opening_Day_Tuesday
 **Field Name:** `opening day tuesday`  
 **Data Type:** Boolean  
 **Optional:** No  
-**Source:** unknown
+**Source:** Submitted by service user
 **Comments:** unknown
 
 ### 8. Opening_Day_Wednesday
 **Field Name:** `opening day wednesday`  
 **Data Type:** Boolean  
 **Optional:** No  
-**Source:** unknown
+**Source:** Submitted by service user
 **Comments:** unknown
 
 ### 9. Opening_Day_Thursday
 **Field Name:** `opening day thursday`  
 **Data Type:** Boolean  
 **Optional:** No  
-**Source:** unknown
+**Source:** Submitted by service user
 **Comments:** unknown
 
 ### 10. Opening_Day_Friday
 **Field Name:** `opening day friday`  
 **Data Type:** Boolean  
 **Optional:** No  
-**Source:** unknown
+**Source:** Submitted by service user
 **Comments:** unknown
 
 ### 11. Opening_Day_Saturday
 **Field Name:** `opening day saturday`  
 **Data Type:** Boolean  
 **Optional:** No  
-**Source:** unknown
+**Source:** Submitted by service user
 **Comments:** unknown
 
 ### 12. Opening_Day_Sunday
 **Field Name:** `opening day sunday`  
 **Data Type:** Boolean  
 **Optional:** No  
-**Source:** unknown
+**Source:** Submitted by service user
 **Comments:** unknown
 
 ### 13. Opening_Days_Irregular
 **Field Name:** `opening days irregular`  
 **Data Type:** string  
 **Optional:** No  
-**Source:** unknown
+**Source:** Submitted by service user
 **Comments:** unknown
 
 
@@ -452,7 +452,7 @@ Index | Field Name | Description | Data Type | Validation rule | Validation impl
 **Field Name:** `declaration`  
 **Data Type:** string  
 **Optional:** No  
-**Source:** unknown
+**Source:** Submitted by service user
 **Comments:** unknown
 
 ### 2. fsa-rn
