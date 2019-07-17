@@ -68,195 +68,195 @@ This document is written for the FSA for the collation of data from Food Busines
 The following table lists the fields (name and description), their data types, whether they are optional, and whether they use a controlled vocabulary.
 
 
-Index | Field Name | Description | Data Type | Validation rule | Validation implemented | Max character length | Personal Data | Reason for collection | Sent to local council | Stored in tempoary Rof database | Reason for storage
-------|------------|-------------|-----------|-----------------|------------------------|----------------------|---------------|-----------------------|-----------------------|---------------------------------|-------------------
-1|establishment_trading_name|The proposed trading name of the new food business|String|Any character allowed|ASCII string|50|False|FBO contact and LC enforcement|True|True|Allows comparison of our data with returned FHRS data
-2|establishment_primary_number|unknown|List of Strings|"+" and any numeric character allowed|Numeric string Between 5 and 20 characters (5 < x < 20) Allows "blank space" and "+"|15|True|FBO contact and LC enforcement|True|True|
-3|establishment_secondary number|unknown|List of Strings|"+" and any numeric character allowed|Numeric string Between 5 and 20 charcaters (5 < x < 20) Allows "blank space" and "+"|15|True|FBO contact and LC enforcement|True|True|
-4|establishment_email|Email address for the proposed food business|String|must be email format|String npm validator isEmail |254|True|FBO contact and LC enforcement|True|True|
-5|establishment_opening_date|Estimated opening date for the proposed food business|ISO8061 Date|ISO date allowed characters|String npm validator isISO8601|11|False|FBO contact and LC enforcement|True|True|FBO registration analysis, risk correlation analysis
+Index | Field Name | Description | Data Type | Validation rule | Validation implemented | Max character length | Personal Data
+------|------------|-------------|-----------|-----------------|------------------------|----------------------|---------------
+1|establishment_trading_name|The proposed trading name of the new food business|String|Any character allowed|ASCII string|50|False
+2|establishment_primary_number|unknown|List of Strings|"+" and any numeric character allowed|Numeric string Between 5 and 20 characters (5 < x < 20) Allows "blank space" and "+"|15|True
+3|establishment_secondary number|unknown|List of Strings|"+" and any numeric character allowed|Numeric string Between 5 and 20 charcaters (5 < x < 20) Allows "blank space" and "+"|15|True
+4|establishment_email|Email address for the proposed food business|String|must be email format|String npm validator isEmail |254|True
+5|establishment_opening_date|Estimated opening date for the proposed food business|ISO8061 Date|ISO date allowed characters|String npm validator isISO8601|11|False
 
 ## Field Definitions
 
-### 1. Establishment_Trading_Name
-**Field Name:** `establishment trading name`  
+### 1. Establishment Trading Name
+**Field Name:** `establishment_trading_name`  
 **Data Type:** String
 **Optional:** No  
 **Source:** Submitted by service user
-**Comments:** unknown
+**Comments:** The proposed trading name of the new food business
 
-### 2. Establishment_Primary_Number
-**Field Name:** `establishment primary number`  
+### 2. Establishment Primary Number
+**Field Name:** `establishment_primary_number`  
 **Data Type:** List of Strings ("+" and any numeric character allowed)
 **Optional:** No  
 **Source:** Submitted by service user
 **Comments:** unknown
 
-### 3. Establishment_Secondary_Number
-**Field Name:** `establishment secondary number`  
+### 3. Establishment Secondary Number
+**Field Name:** `establishment_secondary_number`  
 **Data Type:** List of Strings ("+" and any numeric character allowed)   
 **Optional:** No  
 **Source:** Submitted by service user
 **Comments:** unknown  
 
-### 4. Establishment_Email
-**Field Name:** `establishment email`  
+### 4. Establishment Email
+**Field Name:** `establishment_email`  
 **Data Type:** must be email format  
 **Optional:** No  
 **Source:** Submitted by service user
-**Comments:** unknown
+**Comments:** Email address for the proposed food business
 
-### 5. Establishment_Opening_Date
-**Field Name:** `establishment opening date`  
+### 5. Establishment Opening Date
+**Field Name:** `establishment_opening_date`  
 **Data Type:** Date (format: `YYYY-MM-DD`)  
 **Optional:** No  
 **Source:** Submitted by service user
-**Comments:** unknown
+**Comments:** Estimated opening date for the proposed food business
 
-## Establishment_Operator_Data_Overview
+## Establishment Operator Data Overview
 The following table lists the fields (name and description), their data types, whether they are optional, and whether they use a controlled vocabulary.
 
 
-Index | Field Name | Description | Data Type | Validation rule | Validation implemented | Max character length | Personal Data | Reason for collection | Sent to local council | Stored in tempoary Rof database | Reason for storage
-------|------------|-------------|-----------|-----------------|------------------------|----------------------|---------------|-----------------------|-----------------------|---------------------------------|-------------------
-1|operator_name|Full name of the proposed food business operator|String|Any character allowed|ASCII string|70|True|FBO contact and LC enforcement|True|False|NA
-2|operator_postcode|string|only numbers and letters allowed, min 3 max 8 characters|String npm validator isPostalCode (GB)|8|True|FBO contact and LC enforcement|True|False|NA
-3|operator_first_line |string|Any characters allowed|ASCII string|256|true|FBO contact and LC enforcement|True|False||
-4|operator_street||string|Any characters allowed|ASCII string|256|true|FBO contact and LC enforcement|True|False||
-5|operator_town|string|Any characters allowed|ASCII string|256|true|FBO contact and LC enforcement|True|False||
-6|contact_representative_name|string|Any characters allowed|ASCII string|70|true|FBO contact and LC enforcement|True|False||
-7|contact_representative_role|string|Any characters allowed|ASCII string|256|true|FBO contact and LC enforcement|True|False||
-8|contact_representative_number|string|Any characters allowed|ASCII string|15|true|FBO contact and LC enforcement|True|False||
-9|contact_representative_email|string|standard email format|String npm validator isEmail|254|True|FBO contact and LC enforcement|True|False||
-10|operator_primary_number|string|"+" and any numeric character allowed|Numeric string Between 5 and 20 charcaters (5 < x < 20) Allows "blank space" and "+"|15|True|FBO contact and LC enforcement|True|False||
-11|operator_secondary_number|string|"+" and any numeric character allowed|Numeric string Between 5 and 20 charcaters (5 < x < 20) Allows "blank space" and "+"|15|True|FBO contact and LC enforcement|True|False||
-12|operator_email|string|standard email format|String npm validator isEmail|254|True|FBO contact and LC enforcement|True|False|NA
-13|operator_type|string|predetermined values. "I represent a person which operates this business", "I represent a charity which operates this business", "I represent a company which operates this business", "sole trader" or "partnership"|Radio button validation (i.e. whether one has been selected or not)|NA|False|Informs risk and prioritisation|True|True|Informs risk and prioritisation calculations, allows analytics of user group spread
-14|operator_company name|string|Any character allowed|String less than 50 characters|50|True|Local Council use this to validate registration details|True|False|NA
-15|operator_company_house number|string|Only letters and numbers allowed|String npm validator isAlphanumeric (GB) 8 Characters in length First two characters numeric|8|True|Local Council use this to validate registration details|True|True|NA
-16|operator_charity_name|string|Any character allowed|String Less than 50 characters|50|True|Local Council use this to validate registration details|True|False|NA
-17|operator_charity_number|string|Only letters, numbers and dashes allowed|String Allows "-" Between 6 to 8 characters in length (6 < x < 8) npm validator isAlphanumeric (GB)|8|True|Local Council use this to validate registration details|True|True|NA
+Index | Field Name | Description | Data Type | Validation rule | Validation implemented | Max character length | Personal Data
+------|------------|-------------|-----------|-----------------|------------------------|----------------------|---------------
+1|operator_name|Full name of the proposed food business operator|String|Any character allowed|ASCII string|70|True
+2|operator_postcode|string|only numbers and letters allowed, min 3 max 8 characters|String npm validator isPostalCode (GB)|8|True
+3|operator_first_line |string|Any characters allowed|ASCII string|256|true
+4|operator_street||string|Any characters allowed|ASCII string|256|true
+5|operator_town|string|Any characters allowed|ASCII string|256|true
+6|contact_representative_name|string|Any characters allowed|ASCII string|70|true
+7|contact_representative_role|string|Any characters allowed|ASCII string|256|true
+8|contact_representative_number|string|Any characters allowed|ASCII string|15|true
+9|contact_representative_email|string|standard email format|String npm validator isEmail|254|True
+10|operator_primary_number|string|"+" and any numeric character allowed|Numeric string Between 5 and 20 charcaters (5 < x < 20) Allows "blank space" and "+"|15|True
+11|operator_secondary_number|string|"+" and any numeric character allowed|Numeric string Between 5 and 20 charcaters (5 < x < 20) Allows "blank space" and "+"|15|True
+12|operator_email|string|standard email format|String npm validator isEmail|254|True
+13|operator_type|string|predetermined values. "I represent a person which operates this business", "I represent a charity which operates this business", "I represent a company which operates this business", "sole trader" or "partnership"|Radio button validation (i.e. whether one has been selected or not)|NA|False
+14|operator_company name|string|Any character allowed|String less than 50 characters|50|True
+15|operator_company_house number|string|Only letters and numbers allowed|String npm validator isAlphanumeric (GB) 8 Characters in length First two characters numeric|8|True
+16|operator_charity_name|string|Any character allowed|String Less than 50 characters|50|True
+17|operator_charity_number|string|Only letters, numbers and dashes allowed|String Allows "-" Between 6 to 8 characters in length (6 < x < 8) npm validator isAlphanumeric (GB)|8|True
 
 ## Field Definitions
 
-### 1. Operator_Name  
-**Field Name:** `operator name`  
+### 1. Operator Name  
+**Field Name:** `operator_name`  
+**Data Type:** string  
+**Optional:** No  
+**Source:** Submitted by service user
+**Comments:** Full name of the proposed food business operator
+
+### 2. Operator Postcode  
+**Field Name:** `operator_postcode`  
+**Data Type:** string  
+**Optional:** No  
+**Source:** Submitted by service user
+**Comments:** string
+
+### 3. Operator First Line  
+**Field Name:** `operator_first_line`  
+**Data Type:** string  
+**Optional:** No  
+**Source:** Submitted by service user
+**Comments:** string
+
+### 4. Operator Street  
+**Field Name:** `operator_street`  
 **Data Type:** string  
 **Optional:** No  
 **Source:** Submitted by service user
 **Comments:** unknown
 
-### 2. Operator_Postcode  
-**Field Name:** `operator postcode`  
+### 5. Operator Town  
+**Field Name:** `operator_town`  
 **Data Type:** string  
 **Optional:** No  
 **Source:** Submitted by service user
-**Comments:** unknown
+**Comments:** string
 
-### 3. Operator_First_Line  
-**Field Name:** `operator first line`  
+### 6. Contact Representative Name  
+**Field Name:** `contact_representative_name`  
 **Data Type:** string  
 **Optional:** No  
 **Source:** Submitted by service user
-**Comments:** unknown
+**Comments:** string
 
-### 4. Operator_Street  
-**Field Name:** `operator street`  
+### 7. Contact Representative Role  
+**Field Name:** `contact_representative_role`  
 **Data Type:** string  
 **Optional:** No  
 **Source:** Submitted by service user
-**Comments:** unknown
+**Comments:** string
 
-### 5. Operator_Town  
-**Field Name:** `operator Town`  
+### 8. Contact Representative Number  
+**Field Name:** `contact_representative_number`  
 **Data Type:** string  
 **Optional:** No  
 **Source:** Submitted by service user
-**Comments:** unknown
+**Comments:** string
 
-### 6. Contact_Representative_Name  
-**Field Name:** `Contact Representative Name`  
+### 9. Contact Representative Email  
+**Field Name:** `contact_representative_email`  
 **Data Type:** string  
 **Optional:** No  
 **Source:** Submitted by service user
-**Comments:** unknown
+**Comments:** string
 
-### 7. Contact_Representative_Role  
-**Field Name:** `Contact Representative Role`  
+### 10. Operator Primary Number  
+**Field Name:** `operator_primary_number`  
 **Data Type:** string  
 **Optional:** No  
 **Source:** Submitted by service user
-**Comments:** unknown
+**Comments:** string
 
-### 8. Contact_Representative_Number  
-**Field Name:** `Contact Representative Number`  
+### 11. Operator Secondary Number  
+**Field Name:** `operator_secondary_number`  
 **Data Type:** string  
 **Optional:** No  
 **Source:** Submitted by service user
-**Comments:** unknown
+**Comments:** string
 
-### 9. Contact_Representative_Email  
-**Field Name:** `Contact Representative Email`  
+### 12. Operator Email  
+**Field Name:** `operator_email`  
 **Data Type:** string  
 **Optional:** No  
 **Source:** Submitted by service user
-**Comments:** unknown
+**Comments:** string
 
-### 10. Operator_Primary_Number  
-**Field Name:** `operator primary number`  
+### 13. Operator Type  
+**Field Name:** `operator_type`  
 **Data Type:** string  
 **Optional:** No  
 **Source:** Submitted by service user
-**Comments:** unknown
+**Comments:** string
 
-### 11. Operator_Secondary_Number  
-**Field Name:** `operator secondary number`  
+### 14. Operator Secondary Number  
+**Field Name:** `operator_secondary_number`  
 **Data Type:** string  
 **Optional:** No  
 **Source:** Submitted by service user
-**Comments:** unknown
+**Comments:** string
 
-### 12. Operator_Email  
-**Field Name:** `operator email`  
+### 15. Operator Secondary Number  
+**Field Name:** `operator_secondary_number`  
 **Data Type:** string  
 **Optional:** No  
 **Source:** Submitted by service user
-**Comments:** unknown
+**Comments:** string
 
-### 13. Operator_Type  
-**Field Name:** `operator type`  
+### 16. Operator Secondary Number  
+**Field Name:** `operator_secondary_number`  
 **Data Type:** string  
 **Optional:** No  
 **Source:** Submitted by service user
-**Comments:** unknown
+**Comments:** string
 
-### 14. Operator_Secondary_Number  
-**Field Name:** operator secondary number  
+### 17. Operator Secondary Number  
+**Field Name:** `operator_secondary_number`  
 **Data Type:** string  
 **Optional:** No  
 **Source:** Submitted by service user
-**Comments:** unknown
-
-### 15. Operator_Secondary_Number  
-**Field Name:** operator secondary number  
-**Data Type:** string  
-**Optional:** No  
-**Source:** Submitted by service user
-**Comments:** unknown
-
-### 16. Operator_Secondary_Number  
-**Field Name:** operator secondary number  
-**Data Type:** string  
-**Optional:** No  
-**Source:** Submitted by service user
-**Comments:** unknown
-
-### 17. Operator_Secondary_Number  
-**Field Name:** operator secondary number  
-**Data Type:** string  
-**Optional:** No  
-**Source:** Submitted by service user
-**Comments:** unknown
+**Comments:** string
 
 
 
@@ -264,51 +264,51 @@ Index | Field Name | Description | Data Type | Validation rule | Validation impl
 The following table lists the fields (name and description), their data types, whether they are optional, and whether they use a controlled vocabulary.
 
 
-Index | Field Name | Description | Data Type | Validation rule | Validation implemented | Max character length | Personal Data | Reason for collection | Sent to local council | Stored in tempoary Rof database | Reason for storage
-------|------------|-------------|-----------|-----------------|------------------------|----------------------|---------------|-----------------------|-----------------------|---------------------------------|-------------------
-1|establishment_postcode|unknown|String|Only numbers, letters and spaces allowed|String npm validator isPostalCode (GB)|8|False|FBO contact and LC enforcement|True|True|Allows comparison of our data with returned FHRS data
-2|establishment_first_line |string|Any characters allowed|ASCII string|256|False|FBO contact and LC enforcement|True|True||
-3|estabishment_street||string|Any characters allowed|ASCII string|256|False|FBO contact and LC enforcement|True|True||
-4|estabishment_town|string|Any characters allowed|ASCII string|256|False|FBO contact and LC enforcement|True|True||
-5|establishment_address type|boolean|Predetermined values|Radio button validation (i.e. whether one has been selected or not)|NA|False|FBO contact and LC enforcement|True|True|Informs risk calculations and improvements
+Index | Field Name | Description | Data Type | Validation rule | Validation implemented | Max character length | Personal Data
+------|------------|-------------|-----------|-----------------|------------------------|----------------------|---------------
+1|establishment_postcode|unknown|String|Only numbers, letters and spaces allowed|String npm validator isPostalCode (GB)|8|False
+2|establishment_first_line |string|Any characters allowed|ASCII string|256|False
+3|estabishment_street||string|Any characters allowed|ASCII string|256|False
+4|estabishment_town|string|Any characters allowed|ASCII string|256|False
+5|establishment_address type|boolean|Predetermined values|Radio button validation (i.e. whether one has been selected or not)|NA|False
 
 ## Field Definitions
 
 
-### 1. Establishment_Postcode  
-**Field Name:** `establishment postcode`  
+### 1. Establishment Postcode  
+**Field Name:** `establishment_postcode`  
 **Data Type:** string  
 **Optional:** No  
 **Source:** Submitted by service user
 **Comments:** unknown
 
-### 2. Establishment_First_Line  
-**Field Name:** `establishment first line`  
+### 2. Establishment First Line  
+**Field Name:** `establishment_first_line`  
+**Data Type:** string  
+**Optional:** No  
+**Source:** Submitted by service user
+**Comments:** string
+
+### 3. Establishment Street  
+**Field Name:** `establishment_street`  
 **Data Type:** string  
 **Optional:** No  
 **Source:** Submitted by service user
 **Comments:** unknown
 
-### 3. Establishment_Street  
-**Field Name:** `establishment street`  
+### 4. Establishment Town  
+**Field Name:** `establishment_Town`  
 **Data Type:** string  
 **Optional:** No  
 **Source:** Submitted by service user
-**Comments:** unknown
+**Comments:** string
 
-### 4. Establishment_Town  
-**Field Name:** `establishment Town`  
-**Data Type:** string  
-**Optional:** No  
-**Source:** Submitted by service user
-**Comments:** unknown
-
-### 5. Establishment_Address_Type  
-**Field Name:** `establishment address type`  
+### 5. Establishment Address Type  
+**Field Name:** `establishment_address_type`  
 **Data Type:** boolean  
 **Optional:** No  
 **Source:** Submitted by service user
-**Comments:** unknown
+**Comments:** boolean
 
 
 
@@ -316,111 +316,111 @@ Index | Field Name | Description | Data Type | Validation rule | Validation impl
 ## establishment activities Data Overview
 The following table lists the fields (name and description), their data types, whether they are optional, and whether they use a controlled vocabulary.
 
-Index | Field Name | Description | Data Type | Validation rule | Validation implemented | Max character length | Personal Data | Reason for collection | Sent to local council | Stored in tempoary Rof database | Reason for storage
-------|------------|-------------|-----------|-----------------|------------------------|----------------------|---------------|-----------------------|-----------------------|---------------------------------|-------------------
-1|import_export_activities|unknown|String|predetermined values, "no import or export activities", "both import and export activities", "export activities" or "import activities"|String One of the allowed values ("Directly import","Directly export", "None", "Directly import and export")|NA|False|Informs risk and prioritisation|True|True|Informs risk calculations and improvements
-2|customer_type|unknown|string|predetermined value. "End consumer", "B2B" consumer or "End and B2B consumer"|String One of the allowed values ("Other businesses", "End consumer", "End consumer and other businesses")|NA|False|Informs risk and prioritisation|True|True|Informs risk calculations and improvements
-3|business_type|unknown|string|Predetermined values, see separate document for full business type list|String One of the allowed values from the business type list|NA|False|Informs risk and prioritisation|True|True|Informs risk calculations and improvements
-4|business_type_search_term|unknown|string|Predetermined values, see separate document for full business type list with search terms|NA|NA|Informs improvement of business type search feature|False|True|Informs improvement of business type search feature
-5|business_other_details|unknown|String|All characters allowed. Personal information filtered|String less than 1550 characters|1550|False|Informs risk and prioritisation|True|True|Informs risk calculations and improvements
-6|opening_day_monday|Unknown|Boolean|Only true or false allowed.|True or False|NA|False|FBO contact and law enforcement|True|True|unknown
-7|opening_day_tuesday|Unknown|Boolean|Only true or false allowed.|True or False|NA|False|FBO contact and law enforcement|True|True|unknown
-8|opening_day_wednesday|Unknown|Boolean|Only true or false allowed.|True or False|NA|False|FBO contact and law enforcement|True|True|unknown
-9|opening_day_thursday|Unknown|Boolean|Only true or false allowed.|True or False|NA|False|FBO contact and law enforcement|True|True|unknown
-10|opening_day_friday|Unknown|Boolean|Only true or false allowed.|True or False|NA|False|FBO contact and law enforcement|True|True|unknown
-11|opening_day_saturday|Unknown|Boolean|Only true or false allowed.|True or False|NA|False|FBO contact and law enforcement|True|True|unknown
-12|opening_day_sunday|Unknown|Boolean|Only true or false allowed.|True or False|NA|False|FBO contact and law enforcement|True|True|unknown
-13|opening_day_irregular|Unknown|String|All characters allowed|String less than 1550 characters|1550|False|FBO contact and law enforcement|True|True|unknown
+Index | Field Name | Description | Data Type | Validation rule | Validation implemented | Max character length | Personal Data
+------|------------|-------------|-----------|-----------------|------------------------|----------------------|---------------
+1|import_export_activities|unknown|String|predetermined values, "no import or export activities", "both import and export activities", "export activities" or "import activities"|String One of the allowed values ("Directly import","Directly export", "None", "Directly import and export")|NA|False
+2|customer_type|unknown|string|predetermined value. "End consumer", "B2B" consumer or "End and B2B consumer"|String One of the allowed values ("Other businesses", "End consumer", "End consumer and other businesses")|NA|False
+3|business_type|unknown|string|Predetermined values, see separate document for full business type list|String One of the allowed values from the business type list|NA|False
+4|business_type_search_term|unknown|string|Predetermined values, see separate document for full business type list with search terms|NA|NA
+5|business_other_details|unknown|String|All characters allowed. Personal information filtered|String less than 1550 characters|1550|False
+6|opening_day_monday|Unknown|Boolean|Only true or false allowed.|True or False|NA|False
+7|opening_day_tuesday|Unknown|Boolean|Only true or false allowed.|True or False|NA|False
+8|opening_day_wednesday|Unknown|Boolean|Only true or false allowed.|True or False|NA|False
+9|opening_day_thursday|Unknown|Boolean|Only true or false allowed.|True or False|NA|False
+10|opening_day_friday|Unknown|Boolean|Only true or false allowed.|True or False|NA|False
+11|opening_day_saturday|Unknown|Boolean|Only true or false allowed.|True or False|NA|False
+12|opening_day_sunday|Unknown|Boolean|Only true or false allowed.|True or False|NA|False
+13|opening_day_irregular|Unknown|String|All characters allowed|String less than 1550 characters|1550|False
 
 ## Field Definitions
 
 
-### 1. Import_export_activities
-**Field Name:** `import export activities`  
+### 1. Import export activities
+**Field Name:** `import_export_activities`  
 **Data Type:** string  
 **Optional:** No  
 **Source:** Submitted by service user
 **Comments:** unknown
 
-### 2. Customer_Type
-**Field Name:** `customer type`  
+### 2. Customer Type
+**Field Name:** `customer_type`  
 **Data Type:** string  
 **Optional:** No  
 **Source:** Submitted by service user
 **Comments:** unknown
 
-### 3. Business_Type
-**Field Name:** `Business Type`  
+### 3. Business Type
+**Field Name:** `business_type`  
 **Data Type:** string  
 **Optional:** No  
 **Source:** Submitted by service user
 **Comments:** unknown
 
-### 4. Business_Type_Search_Term
-**Field Name:** `buisness type search term`  
+### 4. Business Type Search Term
+**Field Name:** `buisness_type_search_term`  
 **Data Type:** string  
 **Optional:** No  
 **Source:** Submitted by service user
 **Comments:** unknown
 
-### 5. Business_other_details
-**Field Name:** `Buisness other details`  
+### 5. Business other details
+**Field Name:** `buisness_other_details`  
 **Data Type:** string  
 **Optional:** No  
 **Source:** Submitted by service user
 **Comments:** unknown
 
-### 6. Opening_Day_Monday
-**Field Name:** `opening day monday`  
+### 6. Opening Day Monday
+**Field Name:** `opening_day_monday`  
 **Data Type:** Boolean  
 **Optional:** No  
 **Source:** Submitted by service user
 **Comments:** unknown
 
-### 7. Opening_Day_Tuesday
-**Field Name:** `opening day tuesday`  
+### 7. Opening Day Tuesday
+**Field Name:** `opening_day_tuesday`  
 **Data Type:** Boolean  
 **Optional:** No  
 **Source:** Submitted by service user
 **Comments:** unknown
 
-### 8. Opening_Day_Wednesday
-**Field Name:** `opening day wednesday`  
+### 8. Opening Day Wednesday
+**Field Name:** `opening_day_wednesday`  
 **Data Type:** Boolean  
 **Optional:** No  
 **Source:** Submitted by service user
 **Comments:** unknown
 
-### 9. Opening_Day_Thursday
-**Field Name:** `opening day thursday`  
+### 9. Opening Day Thursday
+**Field Name:** `opening_day_thursday`  
 **Data Type:** Boolean  
 **Optional:** No  
 **Source:** Submitted by service user
 **Comments:** unknown
 
-### 10. Opening_Day_Friday
-**Field Name:** `opening day friday`  
+### 10. Opening Day Friday
+**Field Name:** `opening_day_friday`  
 **Data Type:** Boolean  
 **Optional:** No  
 **Source:** Submitted by service user
 **Comments:** unknown
 
-### 11. Opening_Day_Saturday
-**Field Name:** `opening day saturday`  
+### 11. Opening Day Saturday
+**Field Name:** `opening_day_saturday`  
 **Data Type:** Boolean  
 **Optional:** No  
 **Source:** Submitted by service user
 **Comments:** unknown
 
-### 12. Opening_Day_Sunday
-**Field Name:** `opening day sunday`  
+### 12. Opening Day Sunday
+**Field Name:** `opening_day_sunday`  
 **Data Type:** Boolean  
 **Optional:** No  
 **Source:** Submitted by service user
 **Comments:** unknown
 
-### 13. Opening_Days_Irregular
-**Field Name:** `opening days irregular`  
+### 13. Opening Days Irregular
+**Field Name:** `opening_days_irregular`  
 **Data Type:** string  
 **Optional:** No  
 **Source:** Submitted by service user
@@ -431,20 +431,20 @@ Index | Field Name | Description | Data Type | Validation rule | Validation impl
 ## Declaration and metadata Data Overview
 The following table lists the fields (name and description), their data types, whether they are optional, and whether they use a controlled vocabulary.
 
-Index | Field Name | Description | Data Type | Validation rule | Validation implemented | Max character length | Personal Data | Reason for collection | Sent to local council | Stored in tempoary Rof database | Reason for storage
-------|------------|-------------|-----------|-----------------|------------------------|----------------------|---------------|-----------------------|-----------------------|---------------------------------|-------------------
-1|declaration|Unknown|String|preset values|custom validation to check if exists|NA|False|FBO contact and law enforcement|True|True|unknown
-2|fsa-rn|string|only letters,numbers and dashes|NA|20|False|Enables linking of records to other FSA systems|True|True|Enables linking of records to other FSA systems
-3|reg_submission_date|unknown|Date|ISO8061|NA|NA|False|Informs risk and prioritisation|True|True|Informs prioritisation calculation and enables understanding of FBO behaviour
-4|trading_start_retroactive|unknown|date|ISO8061|Custom validation to check date is the same day or before the day calculated by the npm package moment|NA|False|unknown|True|True|Unknown
-5|trading_start_proactive|unknown|date|ISO8061|Custom validation to check date is the same day or before the day calculated by the npm package moment|NA|False|unknown|True|True|Unknown
-6|pipeline_config|unknown|unknown|unknown|NA|unknown|False|NA|False|True|enables debugging of modular pipeline
-7|risk_scores|unknown|string|Predetermined values, "high", "medium" or "low"|NA|NA|False|NA|True|True|Informs risk calculations and improvements
-8|inspection_recommendation|unknown|string|predetermined values, "high", "medium" or "low"||NA|NA|False|NA|True|True|Informs prioritisation calculations and improvements
-9|sent_successfully|unknown|unknown|unknown|NA|unknown|False|NA|False|True|Enables debugging of transfer mechanisms
-10|sent_failed|unknown|unknown|unknown|NA|unknown|False|NA|False|True|Enables debugging of transfer mechanisms
-11|answer_ids|unknown|unknown|unknown|NA|unknown|False|NA|False|True|Enables debugging of transfer mechanisms
-12|local_council|unknown|String|values are predetermined from lookup service. Only letters and spaces max 50 characters|NA|unknown|False|NA|True|True|Enables debugging of transfer mechanisms
+Index | Field Name | Description | Data Type | Validation rule | Validation implemented | Max character length | Personal Data
+------|------------|-------------|-----------|-----------------|------------------------|----------------------|---------------
+1|declaration|Unknown|String|preset values|custom validation to check if exists|NA|False
+2|fsa-rn|string|only letters,numbers and dashes|NA|NA|20|False
+3|reg_submission_date|unknown|Date|ISO8061|NA|NA|False
+4|trading_start_retroactive|unknown|date|ISO8061|Custom validation to check date is the same day or before the day calculated by the npm package moment|NA|False
+5|trading_start_proactive|unknown|date|ISO8061|Custom validation to check date is the same day or before the day calculated by the npm package moment|NA|False
+6|pipeline_config|unknown|unknown|unknown|NA|unknown|False
+7|risk_scores|unknown|string|Predetermined values, "high", "medium" or "low"|NA|NA|False
+8|inspection_recommendation|unknown|string|predetermined values, "high", "medium" or "low"||NA|NA|False
+9|sent_successfully|unknown|unknown|unknown|NA|unknown|False
+10|sent_failed|unknown|unknown|unknown|NA|unknown|False
+11|answer_ids|unknown|unknown|unknown|NA|unknown|False
+12|local_council|unknown|String|values are predetermined from lookup service. Only letters and spaces max 50 characters|NA|unknown|False
 
 ## Field Definitions
 
@@ -460,73 +460,73 @@ Index | Field Name | Description | Data Type | Validation rule | Validation impl
 **Data Type:** string  
 **Optional:** No  
 **Source:** unknown
-**Comments:** unknown
+**Comments:** string
 
-### 3. Reg_Submission_Date  
-**Field Name:** `reg submission date`  
+### 3. Reg Submission Date  
+**Field Name:** `reg_submission_date`  
 **Data Type:** date  
 **Optional:** No  
 **Source:** unknown
 **Comments:** unknown
 
-### 4. Trading_Start_Retroactive
-**Field Name:** `trading start retroactive`  
+### 4. Trading Start Retroactive
+**Field Name:** `trading_start_retroactive`  
 **Data Type:** date  
 **Optional:** No  
 **Source:** unknown
 **Comments:** unknown
 
-### 5. Trading_Start_Proactive
-**Field Name:** `trading start proactive`  
+### 5. Trading Start Proactive
+**Field Name:** `trading_start_proactive`  
 **Data Type:** date  
 **Optional:** No  
 **Source:** unknown
 **Comments:** unknown
 
-### 6. Pipeline_Config
-**Field Name:** `pipeline config`  
+### 6. Pipeline Config
+**Field Name:** `pipeline_config`  
 **Data Type:** unknown  
 **Optional:** No  
 **Source:** unknown
 **Comments:** unknown
 
-### 7. Risk_Scores
-**Field Name:** `Risk Scores`  
+### 7. Risk Scores
+**Field Name:** `Risk_Scores`  
 **Data Type:** string  
 **Optional:** No  
 **Source:** unknown
 **Comments:** unknown
 
-### 8. Inspection_Recommendation
-**Field Name:** `inspection recommendation`  
+### 8. Inspection Recommendation
+**Field Name:** `inspection_recommendation`  
 **Data Type:** string  
 **Optional:** No  
 **Source:** unknown
 **Comments:** unknown
 
-### 9. Sent_Successfully
-**Field Name:** `Sent Successfully`  
+### 9. Sent Successfully
+**Field Name:** `sent_successfully`  
 **Data Type:** unknown  
 **Optional:** No  
 **Source:** unknown
 **Comments:** unknown
 
-### 10. Send_Failed
-**Field Name:** `send failed`  
+### 10. Send Failed
+**Field Name:** `send_failed`  
 **Data Type:** unknown
 **Optional:** No  
 **Source:** unknown
 **Comments:** unknown
 
-### 11. Answer_IDs
-**Field Name:** `answer ids`  
+### 11. Answer IDs
+**Field Name:** `answer_ids`  
 **Data Type:** unknown  
 **Optional:** No  
 **Source:** unknown
 **Comments:** unknown
 
-### 12. Local_Council
-**Field Name:** `local council`  
+### 12. Local Council
+**Field Name:** `local_council`  
 **Data Type:** string  
 **Optional:** No  
 **Source:** unknown
