@@ -33,6 +33,7 @@ The data should be supplied to the FSA as a nested JSON. An example for what the
       "operator_uprn": "123456789012",
       "operator_first_line": "3",
       "operator_street": "generic-road-name",
+      "operator_dependent_locality": "Shotley Gate",
       "operator_town": "generic-town",
       "operator_primary_number": "01234567891",
       "operator_secondary_number": "01234567891",
@@ -61,6 +62,7 @@ The data should be supplied to the FSA as a nested JSON. An example for what the
     "premise": {
       "establishment_first_line": "3",
       "establishment_street": "generic street",
+      "establishment_dependent_locality": "Shotley Gate",
       "establishment_town": "generic town",
       "establishment_postcode": "ab12 3cd",
       "establishment_uprn": "01234567891",
@@ -100,51 +102,53 @@ The fields and tables in the above example json can be found in the list bellow 
 22. [Operator Postcode](#22-operator-postocde)
 23. [Operator Address First Line](#23-operator-address-first-line)
 24. [Operator Address Street](#24-operator-address-street)
-25. [Operator Address Town](#25-operator-address-town)
-26. [Operator Address UPRN](#26-operator-address-uprn)
-27. [Operator Primary Telephone Number](#27-operator-primary-telephone-number)
-28. [Operator Secondary Telephone Number](#28-operator-secondary-telephone-number)
-29. [Operator Email Address](#29-operator-email-address)
-30. [Operator Contact Representative](30-operatpr-contact-representative)
-31. [Operator Contact Role](#31-operator-contact-role)
-32. [Operator Contact Phone Number](#32-operator-contact-phone-number)
-33. [Operator Contact Email Address](#33-operator-contact-email-address)
-34. [Operator Partners](#34-operator-partners)
-35. [Operator Partner Name](#35-operator-partner-name)
-36. [Operator Partner Is primary Contact](#36-operator-partner-is-primary-contact)
-37. [Food Business Activities](#37-food-business-activities)
-38. [Customer Type](#38-customer-type)
-39. [Business Type](#39-business-type)
-40. [Business Type Search Term](#40-business-type-search-term)
-41. [Import Export Activities](#41-import-export-activities)
-42. [Water Supply](#42-water-supply)
-43. [Business Other Details](#43-business-other-details)
-44. [Opening Days Irregular](#44-opening-days-irregular)
-45. [Opening Day Monday](#45-opening-day-monday)
-46. [Opening Day Tuesday](#46-opening-day-tuesday)
-47. [Opening Day Wednesday](#47-opening-day-wednesday)
-48. [Opening Day Thursday](#48-opening-day-thursday)
-49. [Opening Day Friday](#49-opening-day-friday)
-50. [Opening Day Saturday](#50-opening-day-saturday)
-51. [Opening Day Sunday](#51-opening-day-sunday)
-52. [Opening Hours Monday](#52-opening-hours-monday)
-53. [Opening Hours Tuesday](#53-opening-hours-tuesday)
-54. [Opening Hours Wednesday](54-opening-hours-wednesday)
-55. [Opening Hours Thursday](#55-opening-hours-thursday)
-56. [Opening Hours Friday](#56-opening-hours-friday)
-57. [Opening Hours Saturday](#57-opening-hours-saturday)
-58. [Opening Hours Sunday](#58-opening-hours-sunday)
-59. [Food Business Premises](#59-food-business-premises)
-60. [Establishment Address First Line](#60-estabishment-address-first-line)
-61. [Establishment Address Street](#61-establishment-address-street)
-62. [Establishment Address Town](#62-establishment-address-town)
-63. [Establishment Address Postcode](63-estabishment-address-postcode)
-64. [Establishment Address UPRN](#64-estabishment-address-uprb)
-65. [Establishment Type](#65-estabishment-type)
-66. [Declaration](#66-declaration)
-67. [Declaration 1](#67-declaration-1)
-68. [Declaration 2](#68-declaration-2)
-69. [Declaration 3](#69-declaration-3)  
+25. [Operator Address Locality](#25-operator-address-locality)
+26. [Operator Address Town](#26-operator-address-town)
+27. [Operator Address UPRN](#27-operator-address-uprn)
+28. [Operator Primary Telephone Number](#28-operator-primary-telephone-number)
+29. [Operator Secondary Telephone Number](#29-operator-secondary-telephone-number)
+30. [Operator Email Address](#30-operator-email-address)
+31. [Operator Contact Representative](31-operatpr-contact-representative)
+32. [Operator Contact Role](#32-operator-contact-role)
+33. [Operator Contact Phone Number](#33-operator-contact-phone-number)
+34. [Operator Contact Email Address](#34-operator-contact-email-address)
+35. [Operator Partners](#35-operator-partners)
+36. [Operator Partner Name](#36-operator-partner-name)
+37. [Operator Partner Is primary Contact](#37-operator-partner-is-primary-contact)
+38. [Food Business Activities](#38-food-business-activities)
+39. [Customer Type](#39-customer-type)
+40. [Business Type](#40-business-type)
+41. [Business Type Search Term](#41-business-type-search-term)
+42. [Import Export Activities](#42-import-export-activities)
+43. [Water Supply](#43-water-supply)
+44. [Business Other Details](#44-business-other-details)
+45. [Opening Days Irregular](#45-opening-days-irregular)
+46. [Opening Day Monday](#46-opening-day-monday)
+47. [Opening Day Tuesday](#47-opening-day-tuesday)
+48. [Opening Day Wednesday](#48-opening-day-wednesday)
+49. [Opening Day Thursday](#49-opening-day-thursday)
+50. [Opening Day Friday](#50-opening-day-friday)
+51. [Opening Day Saturday](#51-opening-day-saturday)
+52. [Opening Day Sunday](#52-opening-day-sunday)
+53. [Opening Hours Monday](#53-opening-hours-monday)
+54. [Opening Hours Tuesday](#54-opening-hours-tuesday)
+55. [Opening Hours Wednesday](55-opening-hours-wednesday)
+56. [Opening Hours Thursday](#56-opening-hours-thursday)
+57. [Opening Hours Friday](#57-opening-hours-friday)
+58. [Opening Hours Saturday](#58-opening-hours-saturday)
+59. [Opening Hours Sunday](#59-opening-hours-sunday)
+60. [Food Business Premises](#60-food-business-premises)
+61. [Establishment Address First Line](#61-estabishment-address-first-line)
+62. [Establishment Address Street](#62-establishment-address-street)
+63. [Establishment Address Locality](#63-establishment-address-locality)
+64. [Establishment Address Town](#64-establishment-address-town)
+65. [Establishment Address Postcode](65-estabishment-address-postcode)
+66. [Establishment Address UPRN](#66-estabishment-address-uprb)
+67. [Establishment Type](#67-estabishment-type)
+68. [Declaration](#68-declaration)
+69. [Declaration 1](#69-declaration-1)
+70. [Declaration 2](#70-declaration-2)
+71. [Declaration 3](#71-declaration-3)  
 
 ## Details  
 
@@ -502,7 +506,21 @@ Data retrieved from the address record supplied by API call to the Postcoder ser
 **Data Sent to LA in Notification Emails (Y/N):** Y  
 **Collected by Unified View Y/N):** Y  
 **Collected by LA Y/N):** Y  
-### 25. Operator Address Town
+### 25. Operator Address Locality
+**JSON Name:** `operator_dependent_locality`  
+**Data Type and Size:** String (256)  
+**Description of Field and Reason for Collection:** ""Locality of the food business operator address.
+Data retrieved from the address record supplied by API call to the Postcoder service or entered by the food business operator user.""  
+**Source of Data:** Data entered or confirmed by the food business operator user.  
+**Validation Rules:** Optional.  
+**Validation Implemented in RAFB:** ASCII String.  
+**Data Example:** Shotley Gate  
+**Personal Data (Y/N):**  
+**Stored in RAFB temporary data store (Y/N):** Y  
+**Data Sent to LA in Notification Emails (Y/N):** Y  
+**Collected by Unified View Y/N):** Y  
+**Collected by LA Y/N):** Y
+### 26. Operator Address Town
 **JSON Name:** `operator_town`  
 **Data Type and Size:** String (256)  
 **Description of Field and Reason for Collection:** "Town of operator address.
@@ -518,7 +536,7 @@ Data retrieved from the address record supplied by API call to the Postcoder ser
 **Data Sent to LA in Notification Emails (Y/N):** Y  
 **Collected by Unified View Y/N):** Y  
 **Collected by LA Y/N):** Y  
-### 26. Operator Address UPRN
+### 27. Operator Address UPRN
 **JSON Name:** `operator_uprn`  
 **Data Type and Size:** String (12)  
 **Description of Field and Reason for Collection:** "UPRN (Unique Property Reference Number) of the operator address.
@@ -532,7 +550,7 @@ Data retrieved from the address record supplied by API call to the Postcoder ser
 **Data Sent to LA in Notification Emails (Y/N):** N  
 **Collected by Unified View Y/N):** Y  
 **Collected by LA Y/N):** Y  
-### 27. Operator Primary Telephone Number
+### 28. Operator Primary Telephone Number
 **JSON Name:** `operator_primary_number`  
 **Data Type and Size:** String (15)  
 **Description of Field and Reason for Collection:** "Operator primary phone number.
@@ -550,7 +568,7 @@ Allows ""blank space"" and ""+"" "
 **Data Sent to LA in Notification Emails (Y/N):** Y  
 **Collected by Unified View Y/N):** Y  
 **Collected by LA Y/N):** Y  
-### 28. Operator Secondary Telephone Number
+### 29. Operator Secondary Telephone Number
 **JSON Name:** `operator_secondary_number`  
 **Data Type and Size:** String (15)  
 **Description of Field and Reason for Collection:** "Operator secondary phone number.
@@ -567,7 +585,7 @@ Allows ""blank space"" and ""+"" "
 **Data Sent to LA in Notification Emails (Y/N):** Y  
 **Collected by Unified View Y/N):** Y  
 **Collected by LA Y/N):** Y  
-### 29. Operator Email Address
+### 30. Operator Email Address
 **JSON Name:** `operator_email`  
 **Data Type and Size:** String (254)  
 **Description of Field and Reason for Collection:** "Email address of the food business operator.
@@ -582,7 +600,7 @@ npm validator isEmail"
 **Data Sent to LA in Notification Emails (Y/N):** Y  
 **Collected by Unified View Y/N):** Y  
 **Collected by LA Y/N):** Y  
-### 30. Operator Contact Representative
+### 31. Operator Contact Representative
 **JSON Name:** `contact_representative_name`  
 **Data Type and Size:** String (70)  
 **Description of Field and Reason for Collection:** "Name of person representing the food business operator.
@@ -596,7 +614,7 @@ Data entered by the food business operator user."
 **Data Sent to LA in Notification Emails (Y/N):** Y  
 **Collected by Unified View Y/N):** Y  
 **Collected by LA Y/N):** Y  
-### 31. Operator Contact Role
+### 32. Operator Contact Role
 **JSON Name:** `contact_representative_role`  
 **Data Type and Size:** String (256)  
 **Description of Field and Reason for Collection:** "Role of the person representing the food business operator.
@@ -610,7 +628,7 @@ Data entered by the food business operator user."
 **Data Sent to LA in Notification Emails (Y/N):** Y  
 **Collected by Unified View Y/N):** Y  
 **Collected by LA Y/N):** Y  
-### 32. Operator Contact Phone Number
+### 33. Operator Contact Phone Number
 **JSON Name:** `contact_representative_number`  
 **Data Type and Size:** String (15)  
 **Description of Field and Reason for Collection:** "Phone number for the person representing the food business operator.
@@ -624,7 +642,7 @@ Data entered by the food business operator user."
 **Data Sent to LA in Notification Emails (Y/N):** Y  
 **Collected by Unified View Y/N):** Y  
 **Collected by LA Y/N):** Y  
-### 33. Operator Contact Email Address
+### 34. Operator Contact Email Address
 **JSON Name:** `contact_representative_email`  
 **Data Type and Size:** String (254)  
 **Description of Field and Reason for Collection:** "Email address for the person representing the food business operator.
@@ -638,7 +656,7 @@ Data entered by the food business operator user."
 **Data Sent to LA in Notification Emails (Y/N):** Y  
 **Collected by Unified View Y/N):** Y  
 **Collected by LA Y/N):** Y  
-### 34. Operator Partners
+### 35. Operator Partners
 **JSON Name:** `partners`  
 **Data Type and Size:** Array  
 **Description of Field and Reason for Collection:** "Array of partner data – containing sets of between two and five partner_name and partner_is_primary_contact data fields.  
@@ -654,7 +672,7 @@ One partner only must be the primary contact."
 **Data Sent to LA in Notification Emails (Y/N):** Y  
 **Collected by Unified View Y/N):** Y  
 **Collected by LA Y/N):** Y  
-### 35. [Operator Partner Name](#35-operator-partner-name)
+### 36. [Operator Partner Name]
 **JSON Name:** `partner_name`  
 **Data Type and Size:** String (56)  
 **Description of Field and Reason for Collection:** Partner name as entered by the food business operator user.  
@@ -668,7 +686,7 @@ John Edward Smith"
 **Data Sent to LA in Notification Emails (Y/N):** Y  
 **Collected by Unified View Y/N):** Y  
 **Collected by LA Y/N):** Y  
-### 36. [Operator Partner Is primary Contact](#36-operator-partner-is-primary-contact)
+### 37. [Operator Partner Is primary Contact]
 **JSON Name:** `partner_is_primary_contact`  
 **Data Type and Size:** Boolean  
 **Description of Field and Reason for Collection:** "Selected by the food business operator user.  true means the partner is the primary contact for this registration, and false means the partner is not the primary contact.  
@@ -683,7 +701,7 @@ false"
 **Data Sent to LA in Notification Emails (Y/N):** Y  
 **Collected by Unified View Y/N):** Y  
 **Collected by LA Y/N):** Y  
-### 37. Food Business Activities
+### 38. Food Business Activities
 **JSON Name:** `activities`  
 **Data Type and Size:** Data structure  
 **Description of Field and Reason for Collection:** This data structure describes the activities of the food business  
@@ -696,7 +714,7 @@ false"
 **Data Sent to LA in Notification Emails (Y/N):** N  
 **Collected by Unified View Y/N):** Y  
 **Collected by LA Y/N):** Y  
-### 38. Customer Type
+### 39. Customer Type
 **JSON Name:** `customer_type`  
 **Data Type and Size:** String  
 **Description of Field and Reason for Collection:** Food business operator user selects the type of customers served by the food business.  
@@ -713,7 +731,7 @@ Other businesses"
 **Data Sent to LA in Notification Emails (Y/N):** Y  
 **Collected by Unified View Y/N):** Y  
 **Collected by LA Y/N):** Y  
-### 39. Business Type
+### 40. Business Type
 **JSON Name:** `business_type`  
 **Data Type and Size:** String  
 **Description of Field and Reason for Collection:** "Type of food business as selected by the food business operator from a predefined list.  
@@ -732,7 +750,7 @@ Alcoholic drinks manufacturer
 **Data Sent to LA in Notification Emails (Y/N):** Y  
 **Collected by Unified View Y/N):** Y  
 **Collected by LA Y/N):** Y  
-### 40. Business Type Search Term
+### 41. Business Type Search Term
 **JSON Name:** `business_type_search_term`  
 **Data Type and Size:** String  
 **Description of Field and Reason for Collection:** "Search term used by the food business operator user to find a business_type.   This is a predefined list that maps business_type_search_term values to a specific business_type  
@@ -749,7 +767,7 @@ Halal"
 **Data Sent to LA in Notification Emails (Y/N):** N  
 **Collected by Unified View Y/N):** Y  
 **Collected by LA Y/N):** Y  
-### 41. Import Export Activities
+### 42. Import Export Activities
 **JSON Name:** `import_export_activities`  
 **Data Type and Size:** String  
 **Description of Field and Reason for Collection:** "Food business operator user selects the type of import and export activity from four choices.
@@ -766,7 +784,7 @@ Directly import and export"
 **Data Sent to LA in Notification Emails (Y/N):** Y  
 **Collected by Unified View Y/N):** Y  
 **Collected by LA Y/N):** Y  
-### 42. Water Supply
+### 43. Water Supply
 **JSON Name:** `water_supply`  
 **Data Type and Size:** String  
 **Description of Field and Reason for Collection:** "Selected by the food business operator user from the following values: Public, Private,
@@ -782,7 +800,7 @@ Private and public"
 **Data Sent to LA in Notification Emails (Y/N):** Y  
 **Collected by Unified View Y/N):** Y  
 **Collected by LA Y/N):** Y  
-### 43. Business Other Details
+### 44. Business Other Details
 **JSON Name:** `business_other_details`  
 **Data Type and Size:** String (150)  
 **Description of Field and Reason for Collection:** Additional information that the food business operator user may enter to accurately describe what the business does.  
@@ -795,7 +813,7 @@ Private and public"
 **Data Sent to LA in Notification Emails (Y/N):** Y  
 **Collected by Unified View Y/N):** Y  
 **Collected by LA Y/N):** Y  
-### 44. Opening Days Irregular
+### 45. Opening Days Irregular
 **JSON Name:** `opening_days_irregular`  
 **Data Type and Size:** String (1500)  
 **Description of Field and Reason for Collection:** "Descriptive text entered by food business operator user to describe irregular opening days.  
@@ -809,7 +827,7 @@ Private and public"
 **Data Sent to LA in Notification Emails (Y/N):** Y  
 **Collected by Unified View Y/N):** Y  
 **Collected by LA Y/N):** Y  
-### 45. Opening Day Monday
+### 46. Opening Day Monday
 **JSON Name:** `opening_day_monday`  
 **Data Type and Size:** Boolean  
 **Description of Field and Reason for Collection:** Selected by food business operator user.  true if open this day, false if not.  
@@ -822,7 +840,7 @@ Private and public"
 **Data Sent to LA in Notification Emails (Y/N):** Y  
 **Collected by Unified View Y/N):** Y  
 **Collected by LA Y/N):** Y  
-### 46. Opening Day Tuesday
+### 47. Opening Day Tuesday
 **JSON Name:** `opening_day_tuesday`  
 **Data Type and Size:** Boolean  
 **Description of Field and Reason for Collection:** Selected by food business operator user.  true if open this day, false if not.  
@@ -835,7 +853,7 @@ Private and public"
 **Data Sent to LA in Notification Emails (Y/N):** Y  
 **Collected by Unified View Y/N):** Y  
 **Collected by LA Y/N):** Y  
-### 47. Opening Day Wednesday
+### 48. Opening Day Wednesday
 **JSON Name:** `opening_day_wednesday`  
 **Data Type and Size:** Boolean  
 **Description of Field and Reason for Collection:** Selected by food business operator user.  true if open this day, false if not.  
@@ -848,7 +866,7 @@ Private and public"
 **Data Sent to LA in Notification Emails (Y/N):** Y  
 **Collected by Unified View Y/N):** Y  
 **Collected by LA Y/N):** Y  
-### 48. Opening Day Thursday
+### 49. Opening Day Thursday
 **JSON Name:** `opening_day_thursday`  
 **Data Type and Size:** Boolean  
 **Description of Field and Reason for Collection:** Selected by food business operator user.  true if open this day, false if not.  
@@ -861,7 +879,7 @@ Private and public"
 **Data Sent to LA in Notification Emails (Y/N):** Y  
 **Collected by Unified View Y/N):** Y  
 **Collected by LA Y/N):** Y  
-### 49. Opening Day Friday
+### 50. Opening Day Friday
 **JSON Name:** `opening_day_friday`  
 **Data Type and Size:** Boolean  
 **Description of Field and Reason for Collection:** Selected by food business operator user.  true if open this day, false if not.  
@@ -874,7 +892,7 @@ Private and public"
 **Data Sent to LA in Notification Emails (Y/N):** Y  
 **Collected by Unified View Y/N):** Y  
 **Collected by LA Y/N):** Y  
-### 50. Opening Day Saturday
+### 51. Opening Day Saturday
 **JSON Name:** `opening_day_saturday`  
 **Data Type and Size:** Boolean  
 **Description of Field and Reason for Collection:** Selected by food business operator user.  true if open this day, false if not.  
@@ -887,7 +905,7 @@ Private and public"
 **Data Sent to LA in Notification Emails (Y/N):** Y  
 **Collected by Unified View Y/N):** Y  
 **Collected by LA Y/N):** Y  
-### 51. Opening Day Sunday
+### 52. Opening Day Sunday
 **JSON Name:** `opening_day_sunday`  
 **Data Type and Size:** Boolean  
 **Description of Field and Reason for Collection:** Selected by food business operator user.  true if open this day, false if not.  
@@ -900,7 +918,7 @@ Private and public"
 **Data Sent to LA in Notification Emails (Y/N):** Y  
 **Collected by Unified View Y/N):** Y  
 **Collected by LA Y/N):** Y  
-### 52. Opening Hours Monday
+### 53. Opening Hours Monday
 **JSON Name:** `opening_hours_monday`  
 **Data Type and Size:** String (50)  
 **Description of Field and Reason for Collection:** "Free text description of the Monday opening hours of the food business establishment.
@@ -914,7 +932,7 @@ Data entered by the food business operator user."
 **Data Sent to LA in Notification Emails (Y/N):** Y  
 **Collected by Unified View Y/N):** Y  
 **Collected by LA Y/N):** Y  
-### 53. Opening Hours Tuesday
+### 54. Opening Hours Tuesday
 **JSON Name:** `opening_hours_tuesday`  
 **Data Type and Size:** String (50)  
 **Description of Field and Reason for Collection:** "Free text description of the Tuesday opening hours of the food business establishment.
@@ -928,7 +946,7 @@ Data entered by the food business operator user."
 **Data Sent to LA in Notification Emails (Y/N):** Y  
 **Collected by Unified View Y/N):** Y  
 **Collected by LA Y/N):** Y  
-### 54. Opening Hours Wednesday
+### 55. Opening Hours Wednesday
 **JSON Name:** `opening_hours_wednesday`  
 **Data Type and Size:** String (50)  
 **Description of Field and Reason for Collection:** "Free text description of the Wednesday opening hours of the food business establishment.
@@ -942,7 +960,7 @@ Data entered by the food business operator user."
 **Data Sent to LA in Notification Emails (Y/N):** Y  
 **Collected by Unified View Y/N):** Y  
 **Collected by LA Y/N):** Y  
-### 55. Opening Hours Thursday
+### 56. Opening Hours Thursday
 **JSON Name:** `opening_hours_thursday`  
 **Data Type and Size:** String (50)  
 **Description of Field and Reason for Collection:** "Free text description of the Thursday opening hours of the food business establishment.
@@ -956,7 +974,7 @@ Data entered by the food business operator user."
 **Data Sent to LA in Notification Emails (Y/N):** Y  
 **Collected by Unified View Y/N):** Y  
 **Collected by LA Y/N):** Y  
-### 56. Opening Hours Friday
+### 57. Opening Hours Friday
 **JSON Name:** `opening_hours_friday`  
 **Data Type and Size:** String (50)  
 **Description of Field and Reason for Collection:** "Free text description of the Friday opening hours of the food business establishment.
@@ -970,7 +988,7 @@ Data entered by the food business operator user."
 **Data Sent to LA in Notification Emails (Y/N):** Y  
 **Collected by Unified View Y/N):** Y  
 **Collected by LA Y/N):** Y  
-### 57. Opening Hours Saturday
+### 58. Opening Hours Saturday
 **JSON Name:** `opening_hours_saturday`  
 **Data Type and Size:** String (50)  
 **Description of Field and Reason for Collection:** "Free text description of the Saturday opening hours of the food business establishment.
@@ -984,7 +1002,7 @@ Data entered by the food business operator user."
 **Data Sent to LA in Notification Emails (Y/N):** Y  
 **Collected by Unified View Y/N):** Y  
 **Collected by LA Y/N):** Y  
-### 58. Opening Hours Sunday
+### 59. Opening Hours Sunday
 **JSON Name:** `opening_hours_sunday`  
 **Data Type and Size:** String (50)  
 **Description of Field and Reason for Collection:** "Free text description of the Sunday opening hours of the food business establishment.
@@ -998,7 +1016,7 @@ Data entered by the food business operator user."
 **Data Sent to LA in Notification Emails (Y/N):** Y  
 **Collected by Unified View Y/N):** Y  
 **Collected by LA Y/N):** Y  
-### 59. Food Business Premises
+### 60. Food Business Premises
 **JSON Name:** `premise`  
 **Data Type and Size:** Data structure  
 **Description of Field and Reason for Collection:** This data structure conatins data on the food business premises  
@@ -1011,7 +1029,7 @@ Data entered by the food business operator user."
 **Data Sent to LA in Notification Emails (Y/N):** Y  
 **Collected by Unified View Y/N):** Y  
 **Collected by LA Y/N):** Y  
-### 60. Establishment Address First Line
+### 61. Establishment Address First Line
 **JSON Name:** `establishment_first_line`  
 **Data Type and Size:** String (256)  
 **Description of Field and Reason for Collection:** "First line (or street number) of the food business establishment address.
@@ -1025,7 +1043,7 @@ Data entered by the food business operator user."
 **Data Sent to LA in Notification Emails (Y/N):** Y  
 **Collected by Unified View Y/N):** Y  
 **Collected by LA Y/N):** Y  
-### 61. Establishment Address Street
+### 62. Establishment Address Street
 **JSON Name:** `establishment_street`  
 **Data Type and Size:** String (256)  
 **Description of Field and Reason for Collection:** "Street Name of the food business establishment address.
@@ -1039,7 +1057,21 @@ Data retrieved from the address record supplied by API call to the Postcoder ser
 **Data Sent to LA in Notification Emails (Y/N):** Y  
 **Collected by Unified View Y/N):** Y  
 **Collected by LA Y/N):** Y  
-### 62. Establishment Address Town
+### 63. Establishment Address Locality
+**JSON Name:** `establishment_dependent_locality`  
+**Data Type and Size:** String (256)  
+**Description of Field and Reason for Collection:** ""Locality of the food business establishment address.
+Data retrieved from the address record supplied by API call to the Postcoder service or entered by the food business operator user.""  
+**Source of Data:** Data entered or confirmed by the food business operator user.  
+**Validation Rules:** Optional.  
+**Validation Implemented in RAFB:** ASCII String.  
+**Data Example:** Sholey Gate  
+**Personal Data (Y/N):** N  
+**Stored in RAFB temporary data store (Y/N):** Y  
+**Data Sent to LA in Notification Emails (Y/N):** Y  
+**Collected by Unified View Y/N):** Y  
+**Collected by LA Y/N):** Y  
+### 64. Establishment Address Town
 **JSON Name:** `establishment_town`  
 **Data Type and Size:** String (256)  
 **Description of Field and Reason for Collection:** "Town of the food business establishment address.
@@ -1053,7 +1085,7 @@ Data retrieved from the address record supplied by API call to the Postcoder ser
 **Data Sent to LA in Notification Emails (Y/N):** Y  
 **Collected by Unified View Y/N):** Y  
 **Collected by LA Y/N):** Y  
-### 63. Establishment Address Postcode
+### 65. Establishment Address Postcode
 **JSON Name:** `establishment_postcode`  
 **Data Type and Size:** String (8)  
 **Description of Field and Reason for Collection:** "Postcode of the food business establishment address.
@@ -1068,7 +1100,7 @@ npm validator isPostalCode (GB)"
 **Data Sent to LA in Notification Emails (Y/N):** Y  
 **Collected by Unified View Y/N):** Y  
 **Collected by LA Y/N):** Y  
-### 64. Establishment Address UPRN
+### 66. Establishment Address UPRN
 **JSON Name:** `establishment_uprn`  
 **Data Type and Size:** String (12)  
 **Description of Field and Reason for Collection:** UPRN (Unique Property Reference Number) of the food business establishment address.  Data retrieved from the address record supplied by API call to the Postcoder service.  
@@ -1081,7 +1113,7 @@ npm validator isPostalCode (GB)"
 **Data Sent to LA in Notification Emails (Y/N):** N  
 **Collected by Unified View Y/N):** Y  
 **Collected by LA Y/N):** Y  
-### 65. Establishment Type
+### 67. Establishment Type
 **JSON Name:** `establishment_type`  
 **Data Type and Size:** String (50)  
 **Description of Field and Reason for Collection:** "Selected by the food business operator user from three options.  
@@ -1097,7 +1129,7 @@ Home or domestic premises"
 **Data Sent to LA in Notification Emails (Y/N):** Y  
 **Collected by Unified View Y/N):** Y  
 **Collected by LA Y/N):** Y  
-### 66. Declaration
+### 68. Declaration
 **JSON Name:** `metadata`  
 **Data Type and Size:** "A data structure in the data set that contains the declaration data fields.  This structure is likely to be removed in a future release and the declaration data fields placed in the top-level registrations structure.
 "  
@@ -1111,7 +1143,7 @@ Home or domestic premises"
 **Data Sent to LA in Notification Emails (Y/N):** Y  
 **Collected by Unified View Y/N):** Y  
 **Collected by LA Y/N):** Y  
-### 67. Declaration 1
+### 69. Declaration 1
 **JSON Name:** `declaration1`  
 **Data Type and Size:** String  
 **Description of Field and Reason for Collection:** Food business operator user must tick agreement to this preset declaration.  
@@ -1124,7 +1156,7 @@ Home or domestic premises"
 **Data Sent to LA in Notification Emails (Y/N):**  
 **Collected by Unified View Y/N):** Y  
 **Collected by LA Y/N):** Y  
-### 68. Declaration 2
+### 70. Declaration 2
 **JSON Name:** `declaration2`  
 **Data Type and Size:** String  
 **Description of Field and Reason for Collection:** Food business operator user must tick agreement to this preset declaration.  
@@ -1137,7 +1169,7 @@ Home or domestic premises"
 **Data Sent to LA in Notification Emails (Y/N):**  
 **Collected by Unified View Y/N):** Y  
 **Collected by LA Y/N):** Y  
-### 69. Declaration 3
+### 71. Declaration 3
 **JSON Name:** `declaration3`  
 **Data Type and Size:** String  
 **Description of Field and Reason for Collection:** Food business operator user must tick agreement to this preset declaration.  
@@ -1178,7 +1210,8 @@ If you would prefer the information above is also available as a table
 | Operator Last Name | operator\_last\_name | String \(70\) | Sole Trader, Person: Operator Last Name\. Data entered by the food business operator user\. | Data entered by the food business operator user\. | Must be present when operator type is Person or Sole Trader\. | String\. | Wills | Y | Y | Y | Y |
 | Operator Postcode | operator\_postcode | String \(8\) | Postcode of the operator address\. Data entered by the food business operator user\. | Data entered by the food business operator user\. | Must be present\. | String npm validator isPostalCode \(GB\) | CF23 5AT | Y | Y | Y | Y |
 | Operator Address First Line | operator\_first\_line | String \(70\) | First line \(or street number\) of operator address\. Data entered by the food business operator user\. | Data entered by the food business operator user\. | Must be present\. | ASCII String\. | 241 | Y | Y | Y | Y |
-| Operator Address Street | operator\_street | String \(256\) | Street Name of operator address\. Data retrieved from the address record supplied by API call to the Postcoder service or entered by the food business operator user\. | Data entered by the food business operator user\. | Must be present\. | ASCII String\. | Southminster Road | Y | Y | Y | Y |
+| Operator Address Street | operator\_dependent\_locality | String \(256\) | Locality of the food business operator address. Data retrieved from the address record supplied by API call to the Postcoder service or entered by the food business operator user\. | Data entered or confirmed by the food business operator user\. | Optional\. | ASCII String\. | Shotley Gate | Y | Y | Y | Y |
+| Operator Address Locality | operator\_street | String \(256\) | Street Name of operator address\. Data retrieved from the address record supplied by API call to the Postcoder service or entered by the food business operator user\. | Data entered by the food business operator user\. | Must be present\. | ASCII String\. | Southminster Road | Y | Y | Y | Y |
 | Operator Address Town | operator\_town | String \(256\) | Town of operator address\. Data retrieved from the address record supplied by API call to the Postcoder service or entered by the food business operator user\. | Data entered by the food business operator user\. | Must be present\. | ASCII String\. | Cardiff | Y | Y | Y | Y |
 | Operator Address UPRN | operator\_uprn | String \(12\) | UPRN \(Unique Property Reference Number\) of the operator address\. Data retrieved from the address record supplied by API call to the Postcoder service\. | Data generated from the postcode lookup and validation API calls\. | Highly desirable to be present\. May be missing in edge cases where address was not found in postcode lookup\. | Not applicable \- generated during postcode lookup\. | 520887636906 | Y | N | Y | Y |
 | Operator Primary Telephone Number | operator\_primary\_number | String \(15\) | Operator primary phone number\. Data entered by the food business operator user\. | Data entered by the food business operator user\. | Valid phone number must be provided\. | Numeric string Between 5 and 20 characters \(5 < x < 20\) Allows "blank space" and "\+" | 02921455657 029 21455657 | Y | Y | Y | Y |
@@ -1216,6 +1249,7 @@ If you would prefer the information above is also available as a table
 | Food Business Premises | premise | Data structure | This data structure conatins data on the food business premises | N | Y | Y | Y | Y |
 | Establishment Address First Line | establishment\_first\_line | String \(256\) | First line \(or street number\) of the food business establishment address\. Data entered by the food business operator user\. | Data entered by the food business operator user\. | Must be present\. | ASCII String\. | 612 | N | Y | Y | Y | Y |
 | Establishment Address Street | establishment\_street | String \(256\) | Street Name of the food business establishment address\. Data retrieved from the address record supplied by API call to the Postcoder service or entered by the food business operator user\. | Data entered by the food business operator user\. | Must be present\. | ASCII String\. | Newport Road | N | Y | Y | Y | Y |
+| Establishment Address Locality | establishment\_dependent\_locality | String \(256\) | Locality of the food business establishment address. Data retrieved from the address record supplied by API call to the Postcoder service or entered by the food business operator user\. | Data entered or confirmed by the food business operator user\. | Optional\. | ASCII String\. | Shotley Gate | N | Y | Y | Y | Y |
 | Establishment Address Town | establishment\_town | String \(256\) | Town of the food business establishment address\. Data retrieved from the address record supplied by API call to the Postcoder service or entered by the food business operator user\. | Data entered by the food business operator user\. | Must be present\. | ASCII String\. | Cardiff | N | Y | Y | Y | Y |
 | Establishment Address Postcode | establishment\_postcode | String \(8\) | Postcode of the food business establishment address\. Data entered by the food business operator user\. | Data entered by the food business operator user\. | Must be present\. | String npm validator isPostalCode \(GB\) | CF99 6TR | N | Y | Y | Y | Y |
 | Establishment Address UPRN | establishment\_uprn | String \(12\) | UPRN \(Unique Property Reference Number\) of the food business establishment address\. Data retrieved from the address record supplied by API call to the Postcoder service\. | Data entered by the food business operator user\. | Highly desirable to be present\. May be missing in edge cases where address was not found in postcode lookup\. | Not applicable \- generated during postcode lookup\. | 824683234325 | N | Y | N | Y | Y |
