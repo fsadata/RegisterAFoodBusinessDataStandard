@@ -14,6 +14,8 @@ This document provides developer guidance on the Food Standards Agency Register 
 This version of the document is current as at 20th February 2020. In API v1.4 a small number of additional data fields have been
 made available through the API.
 
+***
+
 ### 2 Introduction
 
 #### Regulatory Background
@@ -73,6 +75,8 @@ The Register a food business service is in the [beta phase](https://www.gov.uk/s
 
 To use the collections API, you will need to engage with the Register a Food Business project team – [Contact Us](#7-contact-us) and work through the information in the [Getting Started](#4-getting-started) section.
 
+***
+
 ### 3 API Reference
 
 #### Link to Full Open API Reference Documentation
@@ -123,6 +127,8 @@ This is an example of how the API calls are assembled.
 | **Example** Get All New Food Business Operator Registrations for Wintervale Borough Council returning the establishment data | Test API `GET https://integration-fsa-rof-gateway.azureapi.net/registrations/v1/wintervale?fields=establishment&new=true`  Production API `GET https://fsa-rof-gateway.azureapi.net/registrations/v1/wintervale?fields=establishment&new=true` | Ocp-ApimSubscription-Key=e567ed19c79b46c48adf0e59f4573a3e |
 | Example Update Single Food Business Operator Registration AHFGHLCNFVJQ-D6H8BH received by Wintervale Borough Council to collected status | Production API `PUT https://fsa-rof-gateway.azureapi.net/registrations/v1/wintervale/AHFGHL-CNFVJQ-D6H8BH`  Data provided (to set collection flag value) `{“collected”: true}` | Ocp-ApimSubscription-Key=e567ed19c79b46c48adf0e59f4573a3e |
 
+***
+
 ### 4. Gettting Started
 
 This section explains how to get started with the Register a food business collections API a developer.
@@ -158,6 +164,8 @@ When satisfied that your integration with the collections API is complete, we ne
 
 The service can now be implemented as a production service. The Register a food business front-end URL for the local authority will be implemented and linked to from external sites so that food business operators will be signposted to the site to register.
 
+***
+
 ### 5 Live Support
 
 The Food Standards Agency have a service desk team to capture information on support incidents and route to the appropriate application support teams to investigate further. As part of the implementation of the Register a Food Business web sites, contact details for each local authority are entered into the service desk IT system (Service Now) so that incidents and service requests can be tracked and co-ordinated. The project team will work with you to implement the routing for support calls.
@@ -173,6 +181,8 @@ Subscription **Rate limits** for subscriptions will be reviewed. The current wor
 *   Can be collected once per hour and will not be collected more frequently than this.
 
 Finally, Information Security controls will continue to be actively managed by the Foods Standards Agency and its IT partners, including periodic external IT Health Check review of the system.
+
+***
 
 ### 6 Development Roadmap
 
@@ -222,6 +232,7 @@ The project team intend to provide a Register a Food Business service dashboard 
 
 We will consult on the anticipated time frames for implementing future API changes and for deprecating old versions.
 
+***
 
 ### 7 Contact Us
 The first point of contact for information about the API is the Register a Food Business project team in the Food Standards Agency who can be reached via the email address [FutureDelivery@food.gov.uk](mailto:FutureDelivery@food.gov.uk).

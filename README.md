@@ -1,7 +1,6 @@
 # Register a Food Business Data Standard
 
-This repository contains the documentation describing the data standard which should be used for registering a food business through the Food Standards Agency's online portal.
+This repository contains the documentation describing both the data standard and API documentation which should be used for registering a food business through the Food Standards Agency's online portal.
 
-It currently only describes the data standards, rather than the mechanism for submitting data to the Food Standards Agency.
-
- - [Data Standard](https://github.com/fsadata/RegisterAFoodBusinessDataStandard/blob/master/Data%20Standard.md)
+-   [Data Standard](https://github.com/fsadata/RegisterAFoodBusinessDataStandard/blob/master/Data%20Standard.md)
+-   [API Documentation](https://github.com/fsadata/RegisterAFoodBusinessDataStandard/blob/master/Api%20Documentation.md)
