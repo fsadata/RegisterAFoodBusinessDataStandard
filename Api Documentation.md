@@ -3,18 +3,19 @@
 ### 1. Contents:
 
 This document provides developer guidance on the Food Standards Agency Register a food business (RAFB) Collections API. The guidance is written for developers and systems administrators. It is expected to be of interest to local authorities in England, Wales and Northern Ireland, and to their management information systems software providers. The documentation provides information on the following areas.
-1.  [Introduction](#2.-Introduction)
-2.  [API Reference](#3.-API-Reference)
-3.  [Getting Started](#4.-getting-started)
-4.  [Live Support](#5.-Live-Support)
-5.  [Development Roadmap](#6.-Development-Roadmap)
-6.  [Contact Us](#7.-contact-us)
+1.  [Introduction](#2-introduction)
+2.  [API Reference](#3-api-reference)
+3.  [Getting Started](#4-getting-started)
+4.  [Live Support](#5-live-support)
+5.  [Development Roadmap](#6-development-roadmap)
+6.  [Contact Us](#7-contact-us)
 
 
 This version of the document is current as at 20th February 2020. In API v1.4 a small number of additional data fields have been
 made available through the API.
 
-### 2. Introduction
+### 2 Introduction
+
 #### Regulatory Background
 The **Register a food business service** is a partnership between the Food Standards Agency and local authorities across England, Wales and Northern Ireland. The service improves the registration user experience for food business operators and captures highquality data for regulatory use.
 
@@ -40,7 +41,7 @@ This sequence diagram summarises the collections process in the beta RAFB Collec
 
 ![sequence diagram for the collections process in the beta RAFB Collections API](https://raw.githubusercontent.com/fsadata/RegisterAFoodBusinessDataStandard/master/images/CollectionsProcessSequenceDiagram.PNG "sequence diagram for the collections process in the beta RAFB Collections API")
 
-Please refer to the [API Reference](#3.-API-Reference) section of this documentation for more detail on the API operations.
+Please refer to the [API Reference](#3-api-reference) section of this documentation for more detail on the API operations.
 
 #### How the Collections API is Accessed
 The API is internet-facing. API calls must use a specific URL for each local authority, and supply the correct API Key. API users can log in and manage their API Key as part of their account and subscription information in the API gateway portal. Two API keys (primary, secondary) are provided for each subscription and either can be used.
@@ -70,11 +71,11 @@ The Register a food business service is in the [beta phase](https://www.gov.uk/s
 
 #### Working together to implement the collections API
 
-To use the collections API, you will need to engage with the Register a Food Business project team – [Contact Us](#7.-contact-us) and work through the information in the [Getting Started](#3.-getting-started) section.
+To use the collections API, you will need to engage with the Register a Food Business project team – [Contact Us](#7-contact-us) and work through the information in the [Getting Started](#4-getting-started) section.
 
-### 3. API Reference
+### 3 API Reference
 
-### Link to Full Open API Reference Documentation
+#### Link to Full Open API Reference Documentation
 The RAFB Collections API is a RESTful API that has been built to meet the [Open API standard](https://swagger.io/docs/specification/about/) using the Swagger editor.
 
 The most recent specification can be downloaded from the [Integration Test API Gateway](https://integration-fsa-rof-gateway.portal.azure-api.net/) site where you see the icon on screen. The RAFB Collections API can be downloaded as an Open API 2.0 JSON definition that can be uploaded into the [Swagger editor](https://editor.swagger.io/) to view as interactive documentation.
@@ -126,7 +127,7 @@ This is an example of how the API calls are assembled.
 
 This section explains how to get started with the Register a food business collections API a developer.
 
-Firstly please [Get in touch](#7.-contact-us) with the project team to let us know about your interest.
+Firstly please [Get in touch](#7-contact-us) with the project team to let us know about your interest.
 
 [Register](https://integration-fsa-rof-gateway.portal.azure-api.net/signup) for a developer account on our Integration Test API Developer Portal. We can set up the account for you but suggest that you start this so as to setup and maintain your password through the portal.
 ![Integration Test Api Developer Portal](https://raw.githubusercontent.com/fsadata/RegisterAFoodBusinessDataStandard/master/images/IntegrationTestApiDeveloperPortal.PNG "Integration Test Api Developer Portal")
@@ -157,7 +158,7 @@ When satisfied that your integration with the collections API is complete, we ne
 
 The service can now be implemented as a production service. The Register a food business front-end URL for the local authority will be implemented and linked to from external sites so that food business operators will be signposted to the site to register.
 
-### 5. Live Support
+### 5 Live Support
 
 The Food Standards Agency have a service desk team to capture information on support incidents and route to the appropriate application support teams to investigate further. As part of the implementation of the Register a Food Business web sites, contact details for each local authority are entered into the service desk IT system (Service Now) so that incidents and service requests can be tracked and co-ordinated. The project team will work with you to implement the routing for support calls.
 
@@ -173,7 +174,7 @@ Subscription **Rate limits** for subscriptions will be reviewed. The current wor
 
 Finally, Information Security controls will continue to be actively managed by the Foods Standards Agency and its IT partners, including periodic external IT Health Check review of the system.
 
-### 6. Development Roadmap
+### 6 Development Roadmap
 
 This section highlights those parts of the API that may be developed further, and those areas on which we intend to consult further with the developer community.
 
@@ -217,10 +218,10 @@ The project team intend to provide a Register a Food Business service dashboard 
 *   individual local authorities
 *   management information systems providers supporting multiple local authorities.
 
-### API Versions
+#### API Versions
 
 We will consult on the anticipated time frames for implementing future API changes and for deprecating old versions.
 
 
-### 7. Contact Us
+### 7 Contact Us
 The first point of contact for information about the API is the Register a Food Business project team in the Food Standards Agency who can be reached via the email address [FutureDelivery@food.gov.uk](mailto:FutureDelivery@food.gov.uk).
