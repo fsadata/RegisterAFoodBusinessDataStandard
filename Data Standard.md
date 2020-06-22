@@ -5,7 +5,7 @@ This document does not describe the mechanism by which data can be submitted to 
 ### Who Is This Document For?
 This document is written for two audiences. The first is for the FSA for the collation of data from Food Businesses. The second is for local authorities to inform them on how to capture food business  registration data in a consistent format.  
 ## What should the data look like?
-The data should be supplied to the FSA as a nested JSON. An example for what the JSON should look like can be found directly bellow  
+The data will be supplied by the FSA as a nested JSON. An example for what the JSON should look like can be found directly bellow. Please note some of the fields listed are legacy fields and may be removed at a later date and thus should not be used in any new services, these are "operator_first_line, operator_street, operator_dependent_locality, establishment_first_line, establishment_street, establishment_dependent_locality"
 ```
 [{
   "id": 95,
@@ -387,7 +387,7 @@ npm validator isEmail"
 **JSON Name:** `operator`  
 **Data Type and Size:** Data structure  
 **Description of Field and Reason for Collection:** "This data structure contains the operator type and details
-The operator address is intended to be processed in one of three ways.1. Use the operator_uprn to match the address to your own address gazetteer records. 2. Construct the address using the PAF fields (not all PAF fields are supplied): operator_first_line, operator_street, operator_dependent_locality, operator_town, operator_postcode.3. Construct the address using the Address Label fields:  operator_address_line_1, operator_address_line_2, operator_address_line_3, operator_town, operator_postcode."
+The operator address is intended to be processed in one of three ways.1. Use the operator_uprn to match the address to your own address gazetteer records. 2. Construct the address using the Address Label fields:  operator_address_line_1, operator_address_line_2, operator_address_line_3, operator_town, operator_postcode."
 **Source of Data:**  
 **Validation Rules:**  
 **Validation Implemented in RAFB:**  
@@ -524,7 +524,7 @@ npm validator isPostalCode (GB)
 ### 25. Operator Address First Line
 **JSON Name:** `operator_first_line`  
 **Data Type and Size:** String (70)  
-**Description of Field and Reason for Collection:** First line (or street number) of operator address.  Data entered by the food business operator user.  
+**Description of Field and Reason for Collection:** This is a legacy field, it is still presented within the data standard for any legacy integrations. This field may be removed from the standard at a later date and should not be used within any new integrations. This field is currently a mirror of operator_address_line_1
 **Source of Data:** Data entered by the food business operator user.  
 **Validation Rules:** Must be present.  
 **Validation Implemented in RAFB:** ASCII String.  
@@ -537,8 +537,7 @@ npm validator isPostalCode (GB)
 ### 26. Operator Address Street
 **JSON Name:** `operator_street`  
 **Data Type and Size:** String (256)  
-**Description of Field and Reason for Collection:** "Street Name of operator address.
-Data retrieved from the address record supplied by API call to the Postcoder service or entered by the food business operator user."  
+**Description of Field and Reason for Collection:** This is a legacy field, it is still presented within the data standard for any legacy integrations. This field may be removed from the standard at a later date and should not be used within any new integrations. This field is currently a mirror of operator_address_line_2
 **Source of Data:** Data entered by the food business operator user.  
 **Validation Rules:** Must be present.  
 **Validation Implemented in RAFB:** ASCII String.  
@@ -551,8 +550,7 @@ Data retrieved from the address record supplied by API call to the Postcoder ser
 ### 27. Operator Address Locality
 **JSON Name:** `operator_dependent_locality`  
 **Data Type and Size:** String (256)  
-**Description of Field and Reason for Collection:** ""•	The locality is an optional field that will be present in some addresses.  Locality can help differentiate a small town, village or other area from a larger town or city nearby that populates the town field for that address.  For example, 51 Kitchener Way, Shotley Gate, Ipswich, IP9 1RN helpfully indicates that Shotley Gate is not in Ipswich itself, but that Ipswich forms part of the postal routing.
-Data retrieved from the address record supplied by API call to the Postcoder service or entered by the food business operator user.""  
+**Description of Field and Reason for Collection:** This is a legacy field, it is still presented within the data standard for any legacy integrations. This field may be removed from the standard at a later date and should not be used within any new integrations. This field is currently a mirror of operator_address_line_3
 **Source of Data:** Data entered or confirmed by the food business operator user.  
 **Validation Rules:** Optional.  
 **Validation Implemented in RAFB:** ASCII String.  
@@ -1103,8 +1101,7 @@ Data entered by the food business operator user."
 **Description of Field and Reason for Collection:** "This data structure conatins data on the food business premises
 The establishment address is intended to be processed in one of three ways.
 1. Use the establishment_uprn to match the address to your own address gazetteer records.
-2. Construct the address using the PAF fields (not all PAF fields are supplied): establishment_first_line, establishment_street, establishment_dependent_locality, establishment_town, establishment_postcode.
-3. Construct the address using the Address Label fields:  establishment_address_line_1, establishment_address_line_2, establishment_address_line_3, establishment_town, establishment_postcode."
+2.  Construct the address using the Address Label fields:  establishment_address_line_1, establishment_address_line_2, establishment_address_line_3, establishment_town, establishment_postcode."
 **Source of Data:**  
 **Validation Rules:**  
 **Validation Implemented in RAFB:**  
@@ -1117,8 +1114,7 @@ The establishment address is intended to be processed in one of three ways.
 ### 66. Establishment Address First Line
 **JSON Name:** `establishment_first_line`  
 **Data Type and Size:** String (256)  
-**Description of Field and Reason for Collection:** "First line (or street number) of the food business establishment address.
-Data entered by the food business operator user."  
+**Description of Field and Reason for Collection:** This is a legacy field, it is still presented within the data standard for any legacy integrations. This field may be removed from the standard at a later date and should not be used within any new integrations. This field is currently a mirror of estabishment_address_line_1
 **Source of Data:** Data entered by the food business operator user.  
 **Validation Rules:** Must be present.  
 **Validation Implemented in RAFB:** ASCII String.  
@@ -1131,8 +1127,7 @@ Data entered by the food business operator user."
 ### 67. Establishment Address Street
 **JSON Name:** `establishment_street`  
 **Data Type and Size:** String (256)  
-**Description of Field and Reason for Collection:** "Street Name of the food business establishment address.
-Data retrieved from the address record supplied by API call to the Postcoder service or entered by the food business operator user."  
+**Description of Field and Reason for Collection:** This is a legacy field, it is still presented within the data standard for any legacy integrations. This field may be removed from the standard at a later date and should not be used within any new integrations. This field is currently a mirror of estabishment_address_line_2
 **Source of Data:** Data entered by the food business operator user.  
 **Validation Rules:** Must be present.  
 **Validation Implemented in RAFB:** ASCII String.  
@@ -1145,8 +1140,7 @@ Data retrieved from the address record supplied by API call to the Postcoder ser
 ### 68. Establishment Address Locality
 **JSON Name:** `establishment_dependent_locality`  
 **Data Type and Size:** String (256)  
-**Description of Field and Reason for Collection:** ""•	The locality is an optional field that will be present in some addresses.  Locality can help differentiate a small town, village or other area from a larger town or city nearby that populates the town field for that address.  For example, 51 Kitchener Way, Shotley Gate, Ipswich, IP9 1RN helpfully indicates that Shotley Gate is not in Ipswich itself, but that Ipswich forms part of the postal routing.
-Data retrieved from the address record supplied by API call to the Postcoder service or entered by the food business operator user.""  
+**Description of Field and Reason for Collection:** This is a legacy field, it is still presented within the data standard for any legacy integrations. This field may be removed from the standard at a later date and should not be used within any new integrations. This field is currently a mirror of estabishment_address_line_3
 **Source of Data:** Data entered or confirmed by the food business operator user.  
 **Validation Rules:** Optional.  
 **Validation Implemented in RAFB:** ASCII String.  
@@ -1326,7 +1320,7 @@ If you would prefer the information above is also available as a table
 | Establishment Primary Telephone Number | establishment\_primary\_number | String \(15\) | Primary telephone number of the food business\. | Data entered by the food business operator user\. | Valid phone number must be provided\. | Numeric string Between 5 and 20 characters \(5 < x < 20\) Allows "blank space" and "\+" | 02921455657 029 21455657 | Y | Y | Y | Y | Y |
 | Establishment Secondary Telephone Number | establishment\_secondary\_number | String \(15\) | Primary telephone number of the food business\. | Data entered by the food business operator user\. | Optional, must be a valid phone number if provided\. | Numeric string Between 5 and 20 characters \(5 < x < 20\) Allows "blank space" and "\+" | 07976765432 \+4435021022345 | Y | Y | Y | Y | Y |
 | Establishment Email Address | establishment\_email | String \(254\) | Email address of the food business establishment\. | Data entered by the food business operator user\. | Valid email address must be provided\. | String, npm validator isEmail | orders@tropical\-pizzas\.co\.uk | Y | Y | Y | Y | Y |
-| Food Business Operator | operator | Data structure | This data structure contains the operator type and details The operator address is intended to be processed in one of three ways. 1. Use the operator_uprn to match the address to your own address gazetteer records.  2. Construct the address using the PAF fields (not all PAF fields are supplied): operator_first_line, operator_street, operator_dependent_locality, operator_town, operator_postcode. 3. Construct the address using the Address Label fields:  operator_address_line_1, operator_address_line_2, operator_address_line_3, operator_town, operator_postcode. " | Y | Y | N | Y | Y |
+| Food Business Operator | operator | Data structure | This data structure contains the operator type and details The operator address is intended to be processed in one of three ways. 1. Use the operator_uprn to match the address to your own address gazetteer records.  2. Construct the address using the Address Label fields:  operator_address_line_1, operator_address_line_2, operator_address_line_3, operator_town, operator_postcode. " | Y | Y | N | Y | Y |
 | Establishment Operator Type | operator\_type | String | Type of food business operator \- sole trader, partnership, limited company, person or charity\. The answer to this question determines the data captured for the operator of the establishment\. | Chosen by the food business operator user\. | One of five fixed values must be present\. Sole Trader: Sole trader Partnership: Partnership Limited Company: A company \(registered by a representative\) Person: A person \(registered by a representative\) Charity: A charity \(registered by a representative\) | Radio button selection in RAFB\. | Sole trader A company \(registered by a representative\) | N | Y | Y | Y | Y |
 | Operator Company Name | operator\_company\_name | String \(50\) | Limited Company only: Company name\. Data entered by the food business operator user\. | Data entered by the food business operator user\. | Must be present when operator type is Limited Company\. | String\. | Tropical Pizzas South Wales Limited | Y | Y | Y | Y | Y |
 | Operator Companies House Reference Number | operator\_company\_house\_number | String \(8\) | Limited Company only: Companies House number\. Data entered by the food business operator user\. | Data entered by the food business operator user\. | Must be present when operator type is Limited Company\. | String npm validator isAlphanumeric \(GB\) 8 Characters in length First two characters numeric | 3875473 | Y | Y | Y | Y | Y |
@@ -1375,7 +1369,7 @@ If you would prefer the information above is also available as a table
 | Opening Hours Friday | opening\_hours\_friday | String \(50\) | Free text description of the Friday opening hours of the food business establishment\. Data entered by the food business operator user\. | Data entered by the food business operator user\. | If opening\_hours\_friday is true then a value must be present\. | String\. | 09:00\-12:30 13:00\-18:00 | N | Y | Y | Y | Y |
 | Opening Hours Saturday | opening\_hours\_saturday | String \(50\) | Free text description of the Saturday opening hours of the food business establishment\. Data entered by the food business operator user\. | Data entered by the food business operator user\. | If opening\_hours\_saturday is true then a value must be present\. | String\. | 10:00\-18:00 | N | Y | Y | Y | Y |
 | Opening Hours Sunday | opening\_hours\_sunday | String \(50\) | Free text description of the Sunday opening hours of the food business establishment\. Data entered by the food business operator user\. | Data entered by the food business operator user\. | If opening\_hours\_sunday is true then a value must be present\. | String\. | 10:30\-16:30 | N | Y | Y | Y | Y |
-| Food Business Premises | premise | Data structure | This data structure conatins data on the food business premises The establishment address is intended to be processed in one of three ways. 1. Use the establishment_uprn to match the address to your own address gazetteer records.  2. Construct the address using the PAF fields (not all PAF fields are supplied): establishment_first_line, establishment_street, establishment_dependent_locality, establishment_town, establishment_postcode. 3. Construct the address using the Address Label fields:  establishment_address_line_1, establishment_address_line_2, establishment_address_line_3, establishment_town, establishment_postcode. ||||| N | Y | Y | Y | Y |
+| Food Business Premises | premise | Data structure | This data structure conatins data on the food business premises The establishment address is intended to be processed in one of three ways. 1. Use the establishment_uprn to match the address to your own address gazetteer records.  2. Construct the address using the Address Label fields:  establishment_address_line_1, establishment_address_line_2, establishment_address_line_3, establishment_town, establishment_postcode. ||||| N | Y | Y | Y | Y |
 | Establishment Address First Line | establishment\_first\_line | String \(256\) | First line \(or street number\) of the food business establishment address\. Data entered by the food business operator user\. | Data entered by the food business operator user\. | Must be present\. | ASCII String\. | 612 | N | Y | Y | Y | Y |
 | Establishment Address Street | establishment\_street | String \(256\) | Street Name of the food business establishment address\. Data retrieved from the address record supplied by API call to the Postcoder service or entered by the food business operator user\. | Data entered by the food business operator user\. | Must be present\. | ASCII String\. | Newport Road | N | Y | Y | Y | Y |
 | Establishment Address Locality | establishment\_dependent\_locality | String \(256\) | The locality is an optional field that will be present in some addresses.  Locality can help differentiate a small town, village or other area from a larger town or city nearby that populates the town field for that address.  For example, 51 Kitchener Way, Shotley Gate, Ipswich, IP9 1RN helpfully indicates that Shotley Gate is not in Ipswich itself, but that Ipswich forms part of the postal routing. Data retrieved from the address record supplied by API call to the Postcoder service or entered by the food business operator user\. | Data entered or confirmed by the food business operator user\. | Optional\. | ASCII String\. | Shotley Gate | N | Y | Y | Y | Y |
