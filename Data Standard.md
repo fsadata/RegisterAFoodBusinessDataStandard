@@ -90,7 +90,7 @@ Example JSON
       "establishment_dependent_locality": "Shotley Gate",
       "establishment_address_line_1": "42 Wallaby Way",
       "establishment_address_line_2": "Sydney",
-      "establishment_address_line_3": "Australia"
+      "establishment_address_line_3": "Australia",
       "establishment_town": "generic town",
       "establishment_postcode": "ab12 3cd",
       "establishment_uprn": "01234567891",
