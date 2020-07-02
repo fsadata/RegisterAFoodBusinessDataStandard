@@ -26,7 +26,7 @@ Please note the following fields are considered legacy fields which remain in th
 *   `establishment_dependent_locality`
 
 Example JSON
-```
+```JSON
 [{
   "id": 95,
   "fsa_rn": "ABCDEF-GHIJKL-MNOPQR",
