@@ -53,8 +53,8 @@ Example JSON
       "operator_last_name": "blogs",
       "operator_postcode": "ab12 3cd",
       "operator_uprn": "123456789012",
-      "operator_first_line": "3",
-      "operator_street": "generic-road-name",
+      "operator_first_line": "Flat 2",
+      "operator_street": "612 Newport Road",
       "operator_dependent_locality": "Shotley Gate",
       "operator_address_line_1": "Flat 2",
       "operator_address_line_2": "612 Newport Road",
@@ -85,12 +85,12 @@ Example JSON
       "opening_day_sunday": true,
     },
     "premise": {
-      "establishment_first_line": "3",
-      "establishment_street": "generic street",
+      "establishment_first_line": "Flat 2",
+      "establishment_street": "612 Newport Road",
       "establishment_dependent_locality": "Shotley Gate",
-      "establishment_address_line_1": "42 Wallaby Way",
-      "establishment_address_line_2": "Sydney",
-      "establishment_address_line_3": "Australia",
+      "establishment_address_line_1": "Flat 2",
+      "establishment_address_line_2": "612 Newport Road",
+      "establishment_address_line_3": "Shotley Gate",
       "establishment_town": "generic town",
       "establishment_postcode": "ab12 3cd",
       "establishment_uprn": "01234567891",
@@ -221,9 +221,9 @@ Full field information can be found for each field below, but a short summary ta
 25. [Operator Address First Line](#25-operator-address-first-line)
 26. [Operator Address Street](#26-operator-address-street)
 27. [Operator Address Locality](#27-operator-address-locality)
-28. [Operator Address Label Line 1](#28-operator-address-line-label-1)
-29. [Operator Address Label Line 2](#29-operator-address-line-label-2)
-30. [Operator Address Label Line 3](#30-operator-address-line-label-3)
+28. [Operator Address Label 1](#28-operator-address-line-1)
+29. [Operator Address Label 2](#29-operator-address-line-2)
+30. [Operator Address Label 3](#30-operator-address-line-3)
 31. [Operator Address Town](#31-operator-address-town)
 32. [Operator Address UPRN](#32-operator-address-uprn)
 33. [Operator Primary Telephone Number](#33-operator-primary-telephone-number)
@@ -262,9 +262,9 @@ Full field information can be found for each field below, but a short summary ta
 66. [Establishment Address First Line](#66-estabishment-address-first-line)
 67. [Establishment Address Street](#67-establishment-address-street)
 68. [Establishment Address Locality](#68-establishment-address-locality)
-69. [Establishment Address Label Line 1](#69-establishment-address-line-1)
-70. [Establishment Address Label Line 2](#70-establishment-address-line-2)
-71. [Establishment Address Label Line 3](#71-establishment-address-line-3)
+69. [Establishment Address Line 1](#69-establishment-address-1)
+70. [Establishment Address Line 2](#70-establishment-address-2)
+71. [Establishment Address Line 3](#71-establishment-address-3)
 72. [Establishment Address Town](#72-establishment-address-town)
 73. [Establishment Address Postcode](#73-establishment-address-postcode)
 74. [Establishment Address UPRN](#74-establishment-address-uprn)
@@ -327,7 +327,7 @@ Full field information can be found for each field below, but a short summary ta
 **Source:** Generated as configuration data within the registration service.  
 **Validation rules:** Must be present in a food business registration record.  
 **Validation implementation:** Must be present in a food business registration record.  
-**Example:** "<https://www.example.com>"  
+**Example:** "Cardiff"  
 **Personal data:**  No  
 **Data sent in notification emails:** No.  
 
@@ -475,10 +475,10 @@ Full field information can be found for each field below, but a short summary ta
 **Validation implementation:** String.  
 **Example:** Tropical Pizzas South Wales Limited  
 **Personal data:** Yes.
-**Data sent in notification emails:** Yes.  
+**Data sent in notification emails:** Yes.
 
 ### 19. Operator Companies House Reference Number
-**Field name:** `operator_company_house_number`  
+**Field name:** `operator_company_house_number`
 **Data type and size:** String (8)  
 **Description:** For limited companies only, the operating company reference number from Companies House.  
 **Source:** Data entered by the user.  
