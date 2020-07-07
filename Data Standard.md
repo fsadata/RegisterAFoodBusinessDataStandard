@@ -448,6 +448,7 @@ Full field information can be found for each field below, but a short summary ta
 **Description:** This data structure contains the operator type and details. The operator address can be processed in one of two ways.
 1. Use the operator_uprn to match the address to your own address gazetteer records.
 2. Construct the address using the address label fields:  `operator_address_line_1`, `operator_address_line_2`, `operator_address_line_3`, `operator_town`, `operator_postcode`.
+
 **Source:** N/A.  
 **Validation rules:** N/A.  
 **Validation implementation:** N/A.  
@@ -990,6 +991,7 @@ npm validator isEmail"
 **Description:** This data structure conatins data about the food business premises. The establishment address is intended to be processed in one of two ways:
 1. Use the `establishment_uprn` to match the address to your own address gazetteer records.
 2. Construct the address using the address label fields; `establishment_address_line_1`, `establishment_address_line_2`, `establishment_address_line_3`, `establishment_town`, `establishment_postcode`.
+
 **Source:** N/A.  
 **Validation rules:** N/A.  
 **Validation implementation:** N/A.  
