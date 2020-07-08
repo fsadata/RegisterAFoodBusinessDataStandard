@@ -26,7 +26,7 @@ Please note the following fields are considered legacy fields which remain in th
 *   `establishment_dependent_locality`
 
 Example JSON
-```JSON
+```
 [{
   "id": 95,
   "fsa_rn": "ABCDEF-GHIJKL-MNOPQR",
@@ -221,9 +221,9 @@ Full field information can be found for each field below, but a short summary ta
 25. [Operator Address First Line](#25-operator-address-first-line)
 26. [Operator Address Street](#26-operator-address-street)
 27. [Operator Address Locality](#27-operator-address-locality)
-28. [Operator Address Label 1](#28-operator-address-line-1)
-29. [Operator Address Label 2](#29-operator-address-line-2)
-30. [Operator Address Label 3](#30-operator-address-line-3)
+28. [Operator Address Line 1](#28-operator-address-line-1)
+29. [Operator Address Line 2](#29-operator-address-line-2)
+30. [Operator Address Line 3](#30-operator-address-line-3)
 31. [Operator Address Town](#31-operator-address-town)
 32. [Operator Address UPRN](#32-operator-address-uprn)
 33. [Operator Primary Telephone Number](#33-operator-primary-telephone-number)
@@ -280,10 +280,10 @@ Full field information can be found for each field below, but a short summary ta
 **Field name:** `registration`  
 **Data type and size:** Data structure  
 **Description:** The top-level data structure for a single registration  
-**Source:**  
-**Validation rules:**  
-**Validation implementation:**  
-**Example:**  
+**Source:** N/A.  
+**Validation rules:** N/A.  
+**Validation implementation:** N/A.  
+**Example:** N/A.  
 **Personal data:** Yes.  
 **Data sent in notification emails:** No.  
 
@@ -327,7 +327,7 @@ Full field information can be found for each field below, but a short summary ta
 **Source:** Generated as configuration data within the registration service.  
 **Validation rules:** Must be present in a food business registration record.  
 **Validation implementation:** Must be present in a food business registration record.  
-**Example:** "Cardiff"  
+**Example:** `"cardiff"`  
 **Personal data:**  No  
 **Data sent in notification emails:** No.  
 
@@ -415,7 +415,7 @@ Full field information can be found for each field below, but a short summary ta
 **Description:** Primary telephone number of the food business.  
 **Source:** Data entered by the user.  
 **Validation rules:** Valid phone number must be provided.  
-**Validation implementation:** Numeric string between 5 and 20 characters (5 < x < 20). Allows ``""blank space""`` and `+`.  
+**Validation implementation:** Numeric string between 5 and 20 characters. Allows blank spaces and `+`.  
 **Example:** `02921455657` or `029 21455657`  
 **Personal data:** Yes.  
 **Data sent in notification emails:** Yes.  
@@ -426,7 +426,7 @@ Full field information can be found for each field below, but a short summary ta
 **Description:** Secondary telephone number of the food business.  
 **Source:** Data entered by the user.  
 **Validation rules:** Optional, must be a valid phone number if provided.  
-**Validation implementation:** Numeric string between 5 and 20 characters (5 < x < 20). Allows `""blank space""` and `+`.  
+**Validation implementation:** Numeric string between 5 and 20 characters. Allows blank spaces and `+`.  
 **Example:** `07976765432` or `+4435021022345`  
 **Personal data:** Yes.  
 **Data sent in notification emails:** Yes.  
@@ -437,8 +437,8 @@ Full field information can be found for each field below, but a short summary ta
 **Description:** Email address of the food business establishment.  
 **Source:** Data entered by the user.  
 **Validation rules:** Valid email address must be provided.  
-**Validation implementation:** "String, npm validator isEmail"  
-**Example:** orders@tropical-pizzas.co.uk  
+**Validation implementation:** String, npm validator `isEmail`  
+**Example:** `"orders@tropical-pizzas.co.uk"`
 **Personal data:** Yes.  
 **Data sent in notification emails:** Yes.  
 
@@ -446,14 +446,13 @@ Full field information can be found for each field below, but a short summary ta
 **Field name:** `operator`  
 **Data type and size:** Data structure  
 **Description:** This data structure contains the operator type and details. The operator address can be processed in one of two ways.
-1. Use the operator_uprn to match the address to your own address gazetteer records.
-2. Construct the address using the address label fields:  `operator_address_line_1`, `operator_address_line_2`, `operator_address_line_3`, `operator_town`, `operator_postcode`.
-
+1. Use the `operator_uprn` to match the address to your own address gazetteer records.
+2. Construct the address using the address label fields:  `operator_address_line_1`, `operator_address_line_2`, `operator_address_line_3`, `operator_town`, `operator_postcode`.  
 **Source:** N/A.  
 **Validation rules:** N/A.  
 **Validation implementation:** N/A.  
 **Example:** N/A.  
-**Personal data:** N/A.
+**Personal data:** N/A.  
 **Data sent in notification emails:** No.  
 
 ### 17. Establishment Operator Type
@@ -474,19 +473,19 @@ Full field information can be found for each field below, but a short summary ta
 **Source:** Data entered by the user.  
 **Validation rules:** Must be present when operator type is limited company.  
 **Validation implementation:** String.  
-**Example:** Tropical Pizzas South Wales Limited  
+**Example:** `"Tropical Pizzas South Wales Limited"`  
 **Personal data:** Yes.
 **Data sent in notification emails:** Yes.
 
 ### 19. Operator Companies House Reference Number
-**Field name:** `operator_company_house_number`
+**Field name:** `operator_company_house_number`  
 **Data type and size:** String (8)  
 **Description:** For limited companies only, the operating company reference number from Companies House.  
 **Source:** Data entered by the user.  
 **Validation rules:** Must be present when operator type is limited company.  
 **Validation implementation:** String, 8 characters in length, first two characters numeric.  
 **Example:** `12345678`  
-**Personal data:** Yes.
+**Personal data:** Yes.  
 **Data sent in notification emails:** Yes.  
 
 ### 20. Operator Charity Name
@@ -506,7 +505,7 @@ Full field information can be found for each field below, but a short summary ta
 **Description:** For charities only, the chairty registration number.  
 **Source:** Data entered by the user.  
 **Validation rules:** Must be present when operator type is charity.  
-**Validation implementation:** String, allows `-`, between 6 and 8 characters in length.  
+**Validation implementation:** String, between 6 and 8 characters in length, allows `-`.  
 **Example:** `10028465`  
 **Personal data:** Yes.  
 **Data sent in notification emails:** Yes.  
@@ -530,7 +529,7 @@ Full field information can be found for each field below, but a short summary ta
 **Validation rules:** Must be present when operator type is person or sole trader.  
 **Validation implementation:** String.  
 **Example:** `Wills`  
-**Personal data:** Yes.
+**Personal data:** Yes.  
 **Data sent in notification emails:** Yes.  
 
 ### 24. Operator Postcode
@@ -541,8 +540,8 @@ Full field information can be found for each field below, but a short summary ta
 **Validation rules:** Must be present.  
 **Validation implementation:** String, passes npm validator `isPostalCode (GB)`  
 **Example:** `CF23 5AT`  
-**Personal data:** Yes.
-**Data sent in notification emails:** Yes.    
+**Personal data:** Yes.  
+**Data sent in notification emails:** Yes.  
 
 ### 25. Operator Address First Line
 **Field name:** `operator_first_line`  
@@ -577,7 +576,7 @@ Full field information can be found for each field below, but a short summary ta
 **Personal data:** Yes.  
 **Data sent in notification emails:** Yes.  
 
-### 28. Operator Address Label Line 1
+### 28. Operator Address Line 1
 **Field name:** `operator_address_line_1`  
 **Data type and size:** String (256)  
 **Description:** An alternative presentation of the address that combines required PAF fields into an address label.  
@@ -588,26 +587,26 @@ Full field information can be found for each field below, but a short summary ta
 **Personal data:** Yes.  
 **Data sent in notification emails:** Yes.  
 
-### 29. Operator Address Label Line 2
+### 29. Operator Address Line 2
 **Field name:** `operator_address_line_2`  
 **Data type and size:** String (256)  
 **Description:** An alternative presentation of the address that combines required PAF fields into an address label.  
-**Source:** Data returned by postcode lookup.
-**Validation rules:** May be present.
+**Source:** Data returned by postcode lookup.  
+**Validation rules:** May be present.  
 **Validation implementation:** ASCII String.  
-**Example:** `612 Newport Road`
-**Personal data:**  Yes.
+**Example:** `612 Newport Road`  
+**Personal data:**  Yes.  
 **Data sent in notification emails:** Yes.  
 
-### 30. Operator Address Label Line 3
+### 30. Operator Address Line 3
 **Field name:** `operator_address_line_3`  
 **Data type and size:** String (256)  
 **Description:** An alternative presentation of the address that combines required PAF fields into an address label.  
 **Source:** Data returned by postcode lookup.  
-**Validation rules:** May be present.
+**Validation rules:** May be present.  
 **Validation implementation:** ASCII String.  
 **Example:** `Shotley Gate`  
-**Personal data:**  Yes.
+**Personal data:**  Yes.  
 **Data sent in notification emails:** Yes.  
 
 ### 31. Operator Address Town
@@ -638,7 +637,7 @@ Full field information can be found for each field below, but a short summary ta
 **Description:** Operator primary telephone number.  
 **Source:** Data entered by the user.  
 **Validation rules:** A string of permitted characters.  
-**Validation implementation:** String, between 5 and 20 characters, allows blank spaces and `+`  
+**Validation implementation:** String, between 5 and 20 characters, allows blank spaces and `+`.  
 **Example:** `02921455657` or `+4429 21455657`  
 **Personal data:** Yes.  
 **Data sent in notification emails:** Yes.  
@@ -649,7 +648,7 @@ Full field information can be found for each field below, but a short summary ta
 **Description:** Operator secondary telephone number.  
 **Source:** Data entered by the user.  
 **Validation rules:** Optional, must be a string of permitted characters.  
-**Validation implementation:** String, between 5 and 20 characters, allows blank spaces and `+`  
+**Validation implementation:** String, between 5 and 20 characters, allows blank spaces and `+`.  
 **Example:** `07976765432` or `+4435021022345`  
 **Personal data:** Yes.  
 **Data sent in notification emails:** Yes.  
@@ -662,7 +661,7 @@ Full field information can be found for each field below, but a short summary ta
 **Validation rules:** Valid email address must be provided.  
 **Validation implementation:** "String,
 npm validator isEmail"  
-**Example:** orders@tropical-pizzas.co.uk  
+**Example:** `orders@tropical-pizzas.co.uk`  
 **Personal data:** Yes.  
 **Data sent in notification emails:** Yes.  
 
@@ -685,7 +684,7 @@ npm validator isEmail"
 **Validation rules:** If business type is `Limited Company` or `Charity` then a value must be present.  
 **Validation implementation:** ASCII String.  
 **Example:** `Restaurant Manager`  
-**Personal data:** Yes.
+**Personal data:** Yes.  
 **Data sent in notification emails:** Yes.  
 
 ### 38. Operator Contact Phone Number
@@ -793,7 +792,7 @@ npm validator isEmail"
 **Description:** The user selects the type of import and export activity from four choices: `None`, `Directly import`, `Directly export`, `Directly import and export`.  
 **Source:** Data entered by the user.  
 **Validation rules:** Must be present  
-**Validation implementation:** N/A. Radio button selection in .  
+**Validation implementation:** N/A. Radio button selection in the service.  
 **Example:** `Directly import and export`  
 **Personal data:** No.  
 **Data sent in notification emails:** Yes.  
@@ -804,7 +803,7 @@ npm validator isEmail"
 **Description:** Selected by the user from one of the following values: `Public`, `Private`, `Private and public`.  
 **Source:** Data entered by the user.  
 **Validation rules:** Must be one of the following values: `Public`, `Private`, `Private and public`.  
-**Validation implementation:** N/A. User choice captured by RAFB .  
+**Validation implementation:** N/A. User choice captured by the service.  
 **Example:** `Private` `Private and public`  
 **Personal data:** No.  
 **Data sent in notification emails:** Yes.  
@@ -933,7 +932,7 @@ npm validator isEmail"
 ### 60. Opening Hours Wednesday
 **Field name:** `opening_hours_wednesday`  
 **Data type and size:** String (50)  
-**Description:** A free text description of the wednesday opening hours of the food business.  
+**Description:** A free text description of the Wednesday opening hours of the food business.  
 **Source:** Data entered by the user.  
 **Validation rules:** If `opening_hours_wednesday` is true then a value must be present.  
 **Validation implementation:** String.  
@@ -944,7 +943,7 @@ npm validator isEmail"
 ### 61. Opening Hours Thursday
 **Field name:** `opening_hours_thursday`  
 **Data type and size:** String (50)  
-**Description:** A free text description of the Monday opening hours of the food business.  
+**Description:** A free text description of the Thursday opening hours of the food business.  
 **Source:** Data entered by the user.  
 **Validation rules:** If `opening_hours_thursday` is true then a value must be present.  
 **Validation implementation:** String.  
@@ -955,7 +954,7 @@ npm validator isEmail"
 ### 62. Opening Hours Friday
 **Field name:** `opening_hours_friday`  
 **Data type and size:** String (50)  
-**Description:** A free text description of the Monday opening hours of the food business.  
+**Description:** A free text description of the Friday opening hours of the food business.  
 **Source:** Data entered by the user.  
 **Validation rules:** If `opening_hours_friday` is true then a value must be present.  
 **Validation implementation:** String.  
@@ -966,7 +965,7 @@ npm validator isEmail"
 ### 63. Opening Hours Saturday
 **Field name:** `opening_hours_saturday`  
 **Data type and size:** String (50)  
-**Description:** A free text description of the Monday opening hours of the food business.  
+**Description:** A free text description of the Saturday opening hours of the food business.  
 **Source:** Data entered by the user.  
 **Validation rules:** If `opening_hours_saturday` is true then a value must be present.  
 **Validation implementation:** String.  
@@ -977,7 +976,7 @@ npm validator isEmail"
 ### 64. Opening Hours Sunday
 **Field name:** `opening_hours_sunday`  
 **Data type and size:** String (50)  
-**Description:** A free text description of the Monday opening hours of the food business.  
+**Description:** A free text description of the Sunday opening hours of the food business.  
 **Source:** Data entered by the user.  
 **Validation rules:** If `opening_hours_sunday` is true then a value must be present.  
 **Validation implementation:** String.  
@@ -990,8 +989,7 @@ npm validator isEmail"
 **Data type and size:** Data structure  
 **Description:** This data structure conatins data about the food business premises. The establishment address is intended to be processed in one of two ways:
 1. Use the `establishment_uprn` to match the address to your own address gazetteer records.
-2. Construct the address using the address label fields; `establishment_address_line_1`, `establishment_address_line_2`, `establishment_address_line_3`, `establishment_town`, `establishment_postcode`.
-
+2. Construct the address using the address label fields; `establishment_address_line_1`, `establishment_address_line_2`, `establishment_address_line_3`, `establishment_town`, `establishment_postcode`.  
 **Source:** N/A.  
 **Validation rules:** N/A.  
 **Validation implementation:** N/A.  
@@ -1082,7 +1080,7 @@ npm validator isEmail"
 **Description:** The postcode of the food business address.  
 **Source:** Data entered by the user.  
 **Validation rules:** Must be present.  
-**Validation implementation:** String `npm validator isPostalCode (GB)`  
+**Validation implementation:** String npm validator `isPostalCode (GB)`.  
 **Example:** `CF99 6TR`  
 **Personal data:** Yes.  
 **Data sent in notification emails:** Yes.  
