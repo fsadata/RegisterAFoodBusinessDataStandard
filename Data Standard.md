@@ -1127,7 +1127,7 @@ Full field information can be found for each field below, but a short summary ta
 **Validation rules:** Declaration text must be present in a food business registration record.  
 **Validation implementation:** User agreement captured in the service.  
 **Example:** `I declare that the information I have given on this form is correct and complete to the best of my knowledge and belief.`  
-**Personal data:** Y  
+**Personal data:** Yes.  
 **Data sent in notification emails:** Yes.  
 
 ### 78. Declaration 2
