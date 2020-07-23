@@ -27,7 +27,7 @@ Please note the following fields are considered legacy fields which remain in th
 
 Example JSON
 ```
-[{
+{
   "id": 95,
   "fsa_rn": "ABCDEF-GHIJKL-MNOPQR",
   "council": "council-name",
