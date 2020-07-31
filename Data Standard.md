@@ -389,11 +389,11 @@ Full field information can be found for each field below, but a short summary ta
 
 ### 11. Establishment Trading Name
 **Field name:** `establishment_trading_name`  
-**Data type and size:** String (50)  
+**Data type and size:** String (255)  
 **Description:** The proposed trading name of the new food business. Collection allows comparison of RAFB and FHRS data.  
 **Source:** Data entered by the user.  
 **Validation rules:** Must be provided in this data set.  
-**Validation implementation:** ASCII string  
+**Validation implementation:** string  
 **Example:** `Tropical Pizzas`  
 **Personal data:** No.  
 **Data sent in notification emails:** Yes.  
@@ -411,7 +411,7 @@ Full field information can be found for each field below, but a short summary ta
 
 ### 13. Establishment Primary Telephone Number
 **Field name:** `establishment_primary_number`  
-**Data type and size:** String (15)  
+**Data type and size:** String (20)  
 **Description:** Primary telephone number of the food business.  
 **Source:** Data entered by the user.  
 **Validation rules:** Valid phone number must be provided.  
@@ -422,7 +422,7 @@ Full field information can be found for each field below, but a short summary ta
 
 ### 14. Establishment Secondary Telephone Number
 **Field name:** `establishment_secondary_number`  
-**Data type and size:** String (15)  
+**Data type and size:** String (20)  
 **Description:** Secondary telephone number of the food business.  
 **Source:** Data entered by the user.  
 **Validation rules:** Optional, must be a valid phone number if provided.  
@@ -433,7 +433,7 @@ Full field information can be found for each field below, but a short summary ta
 
 ### 15. Establishment Email Address
 **Field name:** `establishment_email`  
-**Data type and size:** String (254)  
+**Data type and size:** String (255)  
 **Description:** Email address of the food business establishment.  
 **Source:** Data entered by the user.  
 **Validation rules:** Valid email address must be provided.  
@@ -469,7 +469,7 @@ Full field information can be found for each field below, but a short summary ta
 
 ### 18. Operator Company Name
 **Field name:** `operator_company_name`  
-**Data type and size:** String (50)  
+**Data type and size:** String (255)  
 **Description:** For limited companies only, the operating company name.  
 **Source:** Data entered by the user.  
 **Validation rules:** Must be present when operator type is limited company.  
@@ -491,7 +491,7 @@ Full field information can be found for each field below, but a short summary ta
 
 ### 20. Operator Charity Name
 **Field name:** `operator_charity_name`  
-**Data type and size:** String (50)  
+**Data type and size:** String (255)  
 **Description:** For charities only, the operating charity name.  
 **Source:** Data entered by the user.  
 **Validation rules:** Must be present when operator type is charity.  
@@ -513,7 +513,7 @@ Full field information can be found for each field below, but a short summary ta
 
 ### 22. Operator First Name
 **Field name:** `operator_first_name`  
-**Data type and size:** String (70)  
+**Data type and size:** String (255)  
 **Description:** For sole traders and persons only, the first name of the sole trader or person.  
 **Source:** Data entered by the user.  
 **Validation rules:** Must be present when operator type is person or sole trader.  
@@ -524,7 +524,7 @@ Full field information can be found for each field below, but a short summary ta
 
 ### 23. Operator Last Name
 **Field name:** `operator_last_name`  
-**Data type and size:** String (70)  
+**Data type and size:** String (255)  
 **Description:** For sole traders and persons only, the last name of the sole trader or person.  
 **Source:** Data entered by the user.  
 **Validation rules:** Must be present when operator type is person or sole trader.  
@@ -579,7 +579,7 @@ Full field information can be found for each field below, but a short summary ta
 
 ### 28. Operator Address Line 1
 **Field name:** `operator_address_line_1`  
-**Data type and size:** String (256)  
+**Data type and size:** String (255)  
 **Description:** An alternative presentation of the address that combines required PAF fields into an address label.  
 **Source:** Data returned by postcode lookup service.  
 **Validation rules:** Must be present.  
@@ -590,7 +590,7 @@ Full field information can be found for each field below, but a short summary ta
 
 ### 29. Operator Address Line 2
 **Field name:** `operator_address_line_2`  
-**Data type and size:** String (256)  
+**Data type and size:** String (255)  
 **Description:** An alternative presentation of the address that combines required PAF fields into an address label.  
 **Source:** Data returned by postcode lookup.  
 **Validation rules:** May be present.  
@@ -601,7 +601,7 @@ Full field information can be found for each field below, but a short summary ta
 
 ### 30. Operator Address Line 3
 **Field name:** `operator_address_line_3`  
-**Data type and size:** String (256)  
+**Data type and size:** String (255)  
 **Description:** An alternative presentation of the address that combines required PAF fields into an address label.  
 **Source:** Data returned by postcode lookup.  
 **Validation rules:** May be present.  
@@ -612,7 +612,7 @@ Full field information can be found for each field below, but a short summary ta
 
 ### 31. Operator Address Town
 **Field name:** `operator_town`  
-**Data type and size:** String (256)  
+**Data type and size:** String (255)  
 **Description:** The town of the operator's address.  
 **Source:** Data entered by the food business operator user.  
 **Validation rules:** Must be present.  
@@ -634,7 +634,7 @@ Full field information can be found for each field below, but a short summary ta
 
 ### 33. Operator Primary Telephone Number
 **Field name:** `operator_primary_number`  
-**Data type and size:** String (15)  
+**Data type and size:** String (20)  
 **Description:** Operator primary telephone number.  
 **Source:** Data entered by the user.  
 **Validation rules:** A string of permitted characters.  
@@ -645,7 +645,7 @@ Full field information can be found for each field below, but a short summary ta
 
 ### 34. Operator Secondary Telephone Number
 **Field name:** `operator_secondary_number`  
-**Data type and size:** String (15)  
+**Data type and size:** String (20)  
 **Description:** Operator secondary telephone number.  
 **Source:** Data entered by the user.  
 **Validation rules:** Optional, must be a string of permitted characters.  
@@ -656,7 +656,7 @@ Full field information can be found for each field below, but a short summary ta
 
 ### 35. Operator Email Address
 **Field name:** `operator_email`  
-**Data type and size:** String (254)  
+**Data type and size:** String (255)  
 **Description:** Email address of the food business operator.  
 **Source:** Data entered by the user.  
 **Validation rules:** Valid email address must be provided.  
@@ -667,18 +667,18 @@ Full field information can be found for each field below, but a short summary ta
 
 ### 36. Operator Contact Representative
 **Field name:** `contact_representative_name`  
-**Data type and size:** String (70)  
+**Data type and size:** String (255)  
 **Description:** The name of the person representing the food business operator.  
 **Source:** Data entered by the user.  
 **Validation rules:** If business type is `Limited Company` or `Charity` then a value must be present.  
-**Validation implementation:** ASCII String.  
+**Validation implementation:** String.  
 **Example:** `John Smith`  
 **Personal data:** Yes.  
 **Data sent in notification emails:** Yes.  
 
 ### 37. Operator Contact Role
 **Field name:** `contact_representative_role`  
-**Data type and size:** String (256)  
+**Data type and size:** String (255)  
 **Description:** The role of the person representing the food business operator.  
 **Source:** Data entered by the user.  
 **Validation rules:** If business type is `Limited Company` or `Charity` then a value must be present.  
@@ -689,18 +689,18 @@ Full field information can be found for each field below, but a short summary ta
 
 ### 38. Operator Contact Phone Number
 **Field name:** `contact_representative_number`  
-**Data type and size:** String (15)  
+**Data type and size:** String (20)  
 **Description:** The contact phone number for the person representing the food business operator.  
 **Source:** Data entered by the user.  
 **Validation rules:** Must be present.  
-**Validation implementation:** ASCII String.  
+**Validation implementation:** string between 5 and 20 characters
 **Example:** `7976765432`  
 **Personal data:** Yes.  
 **Data sent in notification emails:** Yes.  
 
 ### 39. Operator Contact Email Address
 **Field name:** `contact_representative_email`  
-**Data type and size:** String (254)  
+**Data type and size:** String (255)  
 **Description:** The email address for the person representing the food business operator.  
 **Source:** Data entered by the user.  
 **Validation rules:** Must be present.  
@@ -722,7 +722,7 @@ Full field information can be found for each field below, but a short summary ta
 
 ### 41. Operator Partner Name
 **Field name:** `partner_name`  
-**Data type and size:** String (56)  
+**Data type and size:** String (255)  
 **Description:** Partner name.  
 **Source:** Data entered by the user.  
 **Validation rules:** Must be present for a partnership.  
@@ -1033,7 +1033,7 @@ Full field information can be found for each field below, but a short summary ta
 
 ### 69. Establishment Address Label Line 1
 **Field name:** `establishment_address_line_1`  
-**Data type and size:** String (256)  
+**Data type and size:** String (255)  
 **Description:** The establishment address label line 1 is an alternative presentation of the address that combines required PAF fields into an address label. The service can return any address in a specific number of lines, we request three.  
 **Source:** Data returned by postcode lookup.  
 **Validation rules:** Must be present.  
@@ -1044,7 +1044,7 @@ Full field information can be found for each field below, but a short summary ta
 
 ### 70. Establishment Address Label Line 2
 **Field name:** `establishment_address_line_2`  
-**Data type and size:** String (256)  
+**Data type and size:** String (255)  
 **Description:** The establishment address label line 2 is an alternative presentation of the address that combines required PAF fields into an address label. The service can return any address in a specific number of lines, we request three.  
 **Source:** Data returned by postcode lookup.  
 **Validation rules:** May be present.  
@@ -1055,7 +1055,7 @@ Full field information can be found for each field below, but a short summary ta
 
 ### 70. Establishment Address Label Line 3
 **Field name:** `establishment_address_line_3`  
-**Data type and size:** String (256)  
+**Data type and size:** String (255)  
 **Description:** The establishment address label line 3 is an alternative presentation of the address that combines required PAF fields into an address label. The service can return any address in a specific number of lines, we request three.  
 **Source:** Data returned by postcode lookup.  
 **Validation rules:** May be present.  
@@ -1066,7 +1066,7 @@ Full field information can be found for each field below, but a short summary ta
 
 ### 72. Establishment Address Town
 **Field name:** `establishment_town`  
-**Data type and size:** String (256)  
+**Data type and size:** String (255)  
 **Description:** The town of the food business address. Data retrieved from the address record supplied by API call to the lookup service or entered by the user.  
 **Source:** Data entered by the user.  
 **Validation rules:** Must be present.  
