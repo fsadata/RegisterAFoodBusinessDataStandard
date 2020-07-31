@@ -123,37 +123,37 @@ Full field information can be found for each field below, but a short summary ta
 | 08 | Record Creation Date | `createdAt` | ISO date time | The date and time the reigstration record was created. |
 | 09 | Record Updated Date | `updatedAt` | ISO date time | The date and time of most recent update to the registration record. |
 | 10 | Food Business Establishment | `establishment` | Data structure |||| This data structure contains the establishment details, operator, premises and business activity information within the registration\. ||| Y | N | Y | Y |
-| 11 | Establishment Trading Name | `establishment_trading_name` | String (50) | Proposed trading name of the new food business. |
+| 11 | Establishment Trading Name | `establishment_trading_name` | String (255) | Proposed trading name of the new food business. |
 | 12 | Establishment Opening Date | `establishment_opening_date` | ISO8061 date | Opening date of the food business. |
-| 13 | Establishment Primary Telephone Number | `establishment_primary_number` | String (15) | Primary telephone number of the food business. |
-| 14 | Establishment Secondary Telephone Number | `establishment_secondary_number` | String (15) | Secondary telephone number of the food business. |
-| 15 | Establishment Email Address | `establishment_email` | String (254) | Email address of the food business establishment. |
+| 13 | Establishment Primary Telephone Number | `establishment_primary_number` | String (20) | Primary telephone number of the food business. |
+| 14 | Establishment Secondary Telephone Number | `establishment_secondary_number` | String (20) | Secondary telephone number of the food business. |
+| 15 | Establishment Email Address | `establishment_email` | String (255) | Email address of the food business establishment. |
 | 16 | Food Business Operator | `operator` | Data structure | This data structure contains the operator details. |
 | 17 | Establishment Operator Type | `operator_type` | String | Type of food business operator; sole trader, partnership, limited company, person, or charity. |
-| 18 | Operator Company Name | `operator_company_name` | String (50) | The name of the operating company, where the "limited company" operator type has been selected. |
+| 18 | Operator Company Name | `operator_company_name` | String (255) | The name of the operating company, where the "limited company" operator type has been selected. |
 | 19 | Operator Companies House Reference Number | `operator_company_house_number` | String (8) | The Companies House reference number, where the "limited company" operator type has been selected. |
-| 20 | Operator Charity Name | `operator_charity_name` | String (50) | The name of the operating charity, where the "charity" operator type has been selected. |
+| 20 | Operator Charity Name | `operator_charity_name` | String (255) | The name of the operating charity, where the "charity" operator type has been selected. |
 | 21 | Operator Charity Number | `operator_charity_number` | String (8) | The charity reference number, where the "chairty" operator type has been selected. |
-| 22 | Operator First Name | `operator_first_name` | String (70) | The first name of the operator, where the "sole trader" operator type has been selected. |
-| 23 | Operator Last Name | `operator_last_name` | String (70) | The last name of the operator, where the "sole trader" operator type has been selected. |
+| 22 | Operator First Name | `operator_first_name` | String (255) | The first name of the operator, where the "sole trader" operator type has been selected. |
+| 23 | Operator Last Name | `operator_last_name` | String (255) | The last name of the operator, where the "sole trader" operator type has been selected. |
 | 24 | Operator Postcode | `operator_postcode` | String (8) | Postcode of the operator address. |
 | 25 | Operator Address First Line | `operator_first_line` | String (70) | First line (or street number) of operator address. |
 | 26 | Operator Address Street | `operator_dependent_locality` | String (256) | Locality of the food business operator address. |
 | 27 | Operator Address Locality | `operator_street` | String (256) | The locality is an optional field that will be present in some addresses. Locality can help differentiate a small town, village or other area from a larger town or city nearby that populates the town field for that address. |
-| 28 | Operator Address Label Line 1 | `operator_address_line_1` | String (256) | Alternative presentation of the address that combines required PAF fields into an address label. |
-| 29 | Operator Address Label Line 2 | `operator_address_line_2` | String (256) | Alternative presentation of the address that combines required PAF fields into an address label. |
-| 30 | Operator Address Label Line 3 | `operator_address_line_3` | String (256) | Alternative presentation of the address that combines required PAF fields into an address label. |
-| 31 | Operator Address Town | `operator_town` | String (256) | Town of operator address. Data retrieved from the address record supplied by API call to the Postcoder service or entered by the user. |
+| 28 | Operator Address Label Line 1 | `operator_address_line_1` | String (255) | Alternative presentation of the address that combines required PAF fields into an address label. |
+| 29 | Operator Address Label Line 2 | `operator_address_line_2` | String (255) | Alternative presentation of the address that combines required PAF fields into an address label. |
+| 30 | Operator Address Label Line 3 | `operator_address_line_3` | String (255) | Alternative presentation of the address that combines required PAF fields into an address label. |
+| 31 | Operator Address Town | `operator_town` | String (255) | Town of operator address. Data retrieved from the address record supplied by API call to the Postcoder service or entered by the user. |
 | 32 | Operator Address UPRN | `operator_uprn` | String (12) | Unique Property Reference Number of the operator address. |
-| 33 | Operator Primary Telephone Number | `operator_primary_number` | String (15) | Operator primary telephone number. |
-| 34 | Operator Secondary Telephone Number | `operator_secondary_number` | String (15) | Operator secondary telephone number. |
-| 35 | Operator Email Address | `operator_email` | String (254) | Email address of the food business operator. |
-| 36 | Operator Contact Representative | `contact_representative_name` | String (70) | Name of person representing the food business operator. |
-| 37 | Operator Contact Role | `contact_representative_role` | String (256) | Role of the person representing the food business operator. |
-| 38 | Operator Contact Phone Number | `contact_representative_number` | String (15) | Phone number for the person representing the food business operator. |
-| 39 | Operator Contact Email Address | `contact_representative_email` | String (254) | Email address for the person representing the food business operator. |
+| 33 | Operator Primary Telephone Number | `operator_primary_number` | String (20) | Operator primary telephone number. |
+| 34 | Operator Secondary Telephone Number | `operator_secondary_number` | String (20) | Operator secondary telephone number. |
+| 35 | Operator Email Address | `operator_email` | String (255) | Email address of the food business operator. |
+| 36 | Operator Contact Representative | `contact_representative_name` | String (255) | Name of person representing the food business operator. |
+| 37 | Operator Contact Role | `contact_representative_role` | String (255) | Role of the person representing the food business operator. |
+| 38 | Operator Contact Phone Number | `contact_representative_number` | String (20) | Phone number for the person representing the food business operator. |
+| 39 | Operator Contact Email Address | `contact_representative_email` | String (255) | Email address for the person representing the food business operator. |
 | 40 | Operator Partners | `partners` | String array | Array of partner data – containing sets of between two and five `partner_name` and `partner_is_primary_contact` data fields, limited to the first five partners. |
-| 41 | Operator Partner Name | `partner_name` | String (56) | Partner name as entered by the food business operator user. |
+| 41 | Operator Partner Name | `partner_name` | String (255) | Partner name as entered by the food business operator user. |
 | 42 | Operator Partner Primary Contact | `partner_is_primary_contact` | Boolean | A value of `true` means the partner is the primary contact for this registration, and `false` means the partner is not the primary contact. |
 | 43 | Food Business Activities | `activities` | Data structure | This data structure describes the activities of the food business |
 | 44 | Customer Type | `customer_type` | String | The type of customers served by the food business. Must be one of the following three values: `End consumer`, `Other businesses`, `End consumer and other businesses`. |
@@ -181,10 +181,10 @@ Full field information can be found for each field below, but a short summary ta
 | 66 | Establishment Address First Line | `establishment_first_line` | String (256) | First line (or street number) of the establishment address. **This is a legacy field which remains solely to support older integrations.** |
 | 67 | Establishment Address Street | `establishment_street` | String (256) | Street name of the establishment address. |
 | 68 | Establishment Address Locality | `establishment_dependent_locality` | String (256) | The locality is an optional field that will be present in some addresses. Locality can help differentiate a small town, village, or other area from a larger town or city nearby that populates the town field for that address. |
-| 69 | Establishment Address Label Line 1 | `establishment_address_line_1` | String (256) | Establishment Address Label Line 1. Alternative presentation of the address that combines required PAF fields into an address label. |
-| 70 | Establishment Address Label Line 2 | `establishment_address_line_2` | String (256) | Establishment Address Label Line 2. Alternative presentation of the address that combines required PAF fields into an address label. |
-| 71 | Establishment Address Label Line 3 | `establishment_address_line_3` | String (256) | Establishment Address Label Line 3. Alternative presentation of the address that combines required PAF fields into an address label. |
-| 72 | Establishment Address Town | `establishment_town` | String (256) | Town of the establishment address. |
+| 69 | Establishment Address Label Line 1 | `establishment_address_line_1` | String (255) | Establishment Address Label Line 1. Alternative presentation of the address that combines required PAF fields into an address label. |
+| 70 | Establishment Address Label Line 2 | `establishment_address_line_2` | String (255) | Establishment Address Label Line 2. Alternative presentation of the address that combines required PAF fields into an address label. |
+| 71 | Establishment Address Label Line 3 | `establishment_address_line_3` | String (255) | Establishment Address Label Line 3. Alternative presentation of the address that combines required PAF fields into an address label. |
+| 72 | Establishment Address Town | `establishment_town` | String (255) | Town of the establishment address. |
 | 73 | Establishment Address Postcode | `establishment_postcode` | String (8) | Postcode of the establishment address. |
 | 74 | Establishment Address UPRN | `establishment_uprn` | String (12) | The Unique Property Reference Number of the establishment address. |
 | 75 | Establishment Type | `establishment_type` | String (50) | Selected by the user from three options: `Place of business or commercial premises`, `Mobile or moveable premises`, `Home or domestic premises`. |
