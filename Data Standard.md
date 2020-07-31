@@ -484,7 +484,7 @@ Full field information can be found for each field below, but a short summary ta
 **Description:** For limited companies only, the operating company reference number from Companies House.  
 **Source:** Data entered by the user.  
 **Validation rules:** Must be present when operator type is limited company.  
-**Validation implementation:** String, 8 characters in length, first two characters numeric.  
+**Validation implementation:** String (8)  
 **Example:** `12345678`  
 **Personal data:** Yes.  
 **Data sent in notification emails:** Yes.  
