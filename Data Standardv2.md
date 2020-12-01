@@ -52,7 +52,7 @@ Example JSON
     "establishment_secondary_number": "12345678901",
     "establishment_email": "generic@email.com",
     "operator": {
-      "operator_type": "A company (registered by a representative)",
+      "operator_type": "COMPANY",
       "operator_company_name": "generic-company-name",
       "operator_company_house_number": "12345678",
       "operator_charity_name": "generic-charity-name",
@@ -72,16 +72,20 @@ Example JSON
       "contact_representative_role": "restaurant manager",
       "contact_representative_number": "01234567891",
       "contact_representative_email": "generic@email.com",
-      "partners": {
+      "partners": [{
 	"partner_name": "Joe Blogs",
-	"partner_is_primary_contact": "TRUE"
-	}
+        "partner_is_primary_contact": true
+	    },{
+        "partner_name": "Jim Blogs",
+        "partner_is_primary_contact": false
+      }]
     },
     "activities": {
-      "customer_type": "End consumer",
+      "customer_type": "END_CONSUMER",
       "business_type": "Greengrocer",
       "business_type_search_term": null,
-      "import_export_activities": "Directly import",
+      "import_export_activities": "IMPORT",
+      "water_supply": "PUBLIC",
       "business_other_details": "generic other business details",
       "opening_days_irregular": null,
       "opening_day_monday": false,
@@ -99,7 +103,7 @@ Example JSON
       "establishment_town": "generic town",
       "establishment_postcode": "ab12 3cd",
       "establishment_uprn": "01234567891",
-      "establishment_type": "Mobile or moveable premises",  
+      "establishment_type": "MOBILE",
     }
   },
   "metadata": {
@@ -191,6 +195,10 @@ Full field information can be found for each field below, but a short summary ta
 | 71 | Declaration 1 | `declaration1` | String | The user must tick "agree" to this preset declaration. |
 | 72 | Declaration 2 | `declaration2` | String | The user must tick "agree" to this preset declaration. |
 | 73 | Declaration 3 | `declaration3` | String | The user must tick "agree" to this preset declaration. |
+| 18  | Operator Company Name                     | `operator_company_name`          | String (50)        | The name of the operating company, where the `COMPANY` operator type has been selected.                                                                                |
+| 25  | Operator Address Label Line 1             | `operator_address_line_1`        | String (256)       | Line 1 of the operator address.                                                                                                                                        |
+| 26  | Operator Address Label Line 2             | `operator_address_line_2`        | String (256)       | Line 2 of the operator address.                                                                                                                                        |
+| 27  | Operator Address Label Line 3             | `operator_address_line_3`        | String (256)       | Line 3 of the operator address.                                                                                                                                        |
 
 ## Field Definitions
 1.  [Food Business Registration](#1-food-business-registration)
@@ -454,9 +462,9 @@ Full field information can be found for each field below, but a short summary ta
 **Data type and size:** String  
 **Description:** Defines the type of food business operator. The answer to this question determines the data captured about the operator of the establishment.  
 **Source:** Data entered by the user.  
-**Validation rules:** One of five fixed values. `Sole trader`, `Partnership`, `A company (registered by a representative)` for limited companies, `A person (registered by a representative)` for persons registered by a representative, or `A charity (registered by a representative)` for charities.  
+**Validation rules:** One of five fixed values. `SOLETRADER`, `PARTNERSHIP`, `COMPANY` for limited companies, `PERSON` for persons registered by a representative, or `CHARITY` for charities.  
 **Validation implementation:** Radio button selection in service.  
-**Example:** `Sole trader`  
+**Example:** `SOLETRADER`  
 **Personal data:** No.  
 **Data sent in notification emails:** Yes.  
 
@@ -465,7 +473,7 @@ Full field information can be found for each field below, but a short summary ta
 **Data type and size:** String (50)  
 **Description:** For limited companies only, the operating company name.  
 **Source:** Data entered by the user.  
-**Validation rules:** Must be present when operator type is limited company.  
+**Validation rules:** Must be present when operator type is limited company i.e. `COMPANY`.  
 **Validation implementation:** String.  
 **Example:** `"Tropical Pizzas South Wales Limited"`  
 **Personal data:** Yes.
