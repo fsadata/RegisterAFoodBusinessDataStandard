@@ -119,78 +119,78 @@ Full field information can be found for each field below, but a short summary ta
 | No. | Field name | JSON name | Data type and size | Description |
 |-----|------------|-----------|--------------------|-------------|
 | 01 | Food Business Registration | `registration` | Data structure | The top-level data structure for a single registration. |
-| 02 | Food Business Reference Number | `fsa_rn` | String (20) | Food Standards Agency transaction Reference Number. |
-| 03 | Local Authority | `council` | String \(50\) | The name of the local authority (or competent authority) that the service associates with the registration. |
-| 04 | Competent Authority ID | `competent_authority_id` | String (4) | Competent authority identifier, this is configuration data that originates from the register of competent authorities. |
-| 05 | Local Council URL | `local_council_url` | String (50) | Local Authority URL, this is configuration data identifying the URL name for the local authority. |
-| 06 | Record Collected | `collected` | Boolean | True if registration has been collected, false if not. |
-| 07 | Record Collection Date | `collected_at` | ISO date time | Date and time the registration was collected. |
-| 08 | Record Creation Date | `createdAt` | ISO date time | The date and time the reigstration record was created. |
-| 09 | Record Updated Date | `updatedAt` | ISO date time | The date and time of most recent update to the registration record. |
+| 02 | Food Business Reference Number | `fsa_rn` | String (20) | The unique registration application reference that identifies this registration. |
+| 03 | Local Authority | `council` | String  | The full name of the local authority. |
+| 04 | Competent Authority ID | `competent_authority_id` | integer | The unique id for the local authority. |
+| 05 | Local Council URL | `local_council_url` | String (50) | The unique url for the local authority. |
+| 06 | Record Collected | `collected` | Boolean | Flag indicating whether this registration has been collected by the local authority or not. |
+| 07 | Record Collection Date | `collected_at` | string | The date and time that the registration was collected. |
+| 08 | Record Creation Date | `createdAt` | string | The date and time that the registration was created. |
+| 09 | Record Updated Date | `updatedAt` | string | The date and time that the registration was updated. |
 | 10 | Food Business Establishment | `establishment` | Data structure |||| This data structure contains the establishment details, operator, premises and business activity information within the registration\. ||| Y | N | Y | Y |
-| 11 | Establishment Trading Name | `establishment_trading_name` | String (50) | Proposed trading name of the new food business. |
-| 12 | Establishment Opening Date | `establishment_opening_date` | ISO8061 date | Opening date of the food business. |
-| 13 | Establishment Primary Telephone Number | `establishment_primary_number` | String (15) | Primary telephone number of the food business. |
-| 14 | Establishment Secondary Telephone Number | `establishment_secondary_number` | String (15) | Secondary telephone number of the food business. |
-| 15 | Establishment Email Address | `establishment_email` | String (254) | Email address of the food business establishment. |
+| 11 | Establishment Trading Name | `establishment_trading_name` | String (255) | Proposed trading name of the new food business. |
+| 12 | Establishment Opening Date | `establishment_opening_date` | string | Uses YYYY-MM-DD [npm Validator](https://www.npmjs.com/package/validator) isISO8601. |
+| 13 | Establishment Primary Telephone Number | `establishment_primary_number` | String (5,20) | Numeric string. Blank spaces and + allowed. |
+| 14 | Establishment Secondary Telephone Number | `establishment_secondary_number` | String (5,20) | Numeric string. Blank spaces and + allowed. |
+| 15 | Establishment Email Address | `establishment_email` | String (255) | Uses [npm Validator](https://www.npmjs.com/package/validator) isEmail. |
 | 16 | Food Business Operator | `operator` | Data structure | This data structure contains the operator details. |
 | 17 | Establishment Operator Type | `operator_type` | String | Type of food business operator; sole trader, partnership, limited company, person, or charity. |
-| 18 | Operator Company Name | `operator_company_name` | String (50) | The name of the operating company, where the "limited company" operator type has been selected. |
-| 19 | Operator Companies House Reference Number | `operator_company_house_number` | String (8) | The Companies House reference number, where the "limited company" operator type has been selected. |
-| 20 | Operator Charity Name | `operator_charity_name` | String (50) | The name of the operating charity, where the "charity" operator type has been selected. |
-| 21 | Operator Charity Number | `operator_charity_number` | String (8) | The charity reference number, where the "chairty" operator type has been selected. |
-| 22 | Operator First Name | `operator_first_name` | String (70) | The first name of the operator, where the "sole trader" operator type has been selected. |
-| 23 | Operator Last Name | `operator_last_name` | String (70) | The last name of the operator, where the "sole trader" operator type has been selected. |
-| 24 | Operator Postcode | `operator_postcode` | String (8) | Postcode of the operator address. |
-| 25 | Operator Address Label Line 1 | `operator_address_line_1` | String (256) | Alternative presentation of the address that combines required PAF fields into an address label. |
-| 26 | Operator Address Label Line 2 | `operator_address_line_2` | String (256) | Alternative presentation of the address that combines required PAF fields into an address label. |
-| 27 | Operator Address Label Line 3 | `operator_address_line_3` | String (256) | Alternative presentation of the address that combines required PAF fields into an address label. |
-| 28 | Operator Address Town | `operator_town` | String (256) | Town of operator address. Data retrieved from the address record supplied by API call to the Postcoder service or entered by the user. |
-| 29 | Operator Address UPRN | `operator_uprn` | String (12) | Unique Property Reference Number of the operator address. |
-| 30 | Operator Primary Telephone Number | `operator_primary_number` | String (15) | Operator primary telephone number. |
-| 31 | Operator Secondary Telephone Number | `operator_secondary_number` | String (15) | Operator secondary telephone number. |
-| 32 | Operator Email Address | `operator_email` | String (254) | Email address of the food business operator. |
-| 33 | Operator Contact Representative | `contact_representative_name` | String (70) | Name of person representing the food business operator. |
-| 34 | Operator Contact Role | `contact_representative_role` | String (256) | Role of the person representing the food business operator. |
-| 35 | Operator Contact Phone Number | `contact_representative_number` | String (15) | Phone number for the person representing the food business operator. |
-| 36 | Operator Contact Email Address | `contact_representative_email` | String (254) | Email address for the person representing the food business operator. |
+| 18 | Operator Company Name | `operator_company_name` | String (255) | Required if operator_type is 'COMPANY'. |
+| 19 | Operator Companies House Reference Number | `operator_company_house_number` | String (8,8) | Uses [npm Validator](https://www.npmjs.com/package/validator) isAlphanumeric (GB) - Required if operator_type is 'COMPANY'. |
+| 20 | Operator Charity Name | `operator_charity_name` | String (50) | TRequired if operator_type is 'CHARITY'. |
+| 21 | Operator Charity Number | `operator_charity_number` | String (8,8) | Uses [npm Validator](https://www.npmjs.com/package/validator) isAlphanumeric (GB), allows ''-'' -  Required if operator_type is 'CHARITY'. |
+| 22 | Operator First Name | `operator_first_name` | String (255) | Required if operator_type is 'SOLETRADER, 'PARTNERSHIP', or 'PERSON'. |
+| 23 | Operator Last Name | `operator_last_name` | String (255) | Required if operator_type is 'SOLETRADER, 'PARTNERSHIP', or 'PERSON'. |
+| 24 | Operator Postcode | `operator_postcode` | String | Uses [npm Validator](https://www.npmjs.com/package/validator) isPostalCode (GB). |
+| 25 | Operator Address Label Line 1 | `operator_address_line_1` | String (255) | ASCII string. |
+| 26 | Operator Address Label Line 2 | `operator_address_line_2` | String (255) | ASCII string. |
+| 27 | Operator Address Label Line 3 | `operator_address_line_3` | String (255) | ASCII string. |
+| 28 | Operator Address Town | `operator_town` | String (255) | ASCII string. |
+| 29 | Operator Address UPRN | `operator_uprn` | String (12) | Unique Property Reference Number. |
+| 30 | Operator Primary Telephone Number | `operator_primary_number` | String (5,20) | Numeric string. Blank spaces and + allowed. Required if operator_type is 'SOLETRADER, 'PARTNERSHIP', or 'PERSON'. |
+| 31 | Operator Secondary Telephone Number | `operator_secondary_number` | String (5,20) | Numeric string. Blank spaces and + allowed. |
+| 32 | Operator Email Address | `operator_email` | String (255) | Uses [npm Validator](https://www.npmjs.com/package/validator) isEmail. Required if operator_type is 'SOLETRADER, 'PARTNERSHIP', or 'PERSON'. |
+| 33 | Operator Contact Representative | `contact_representative_name` | String (255) | Required if operator_type is 'COMPANY' or 'CHARITY'. |
+| 34 | Operator Contact Role | `contact_representative_role` | String (255) | ASCII string - Required if operator_type is 'COMPANY' or 'CHARITY'. |
+| 35 | Operator Contact Phone Number | `contact_representative_number` | String (5,20) | Numeric string. Blank spaces and + allowed - Required if operator_type is 'COMPANY' or 'CHARITY'. |
+| 36 | Operator Contact Email Address | `contact_representative_email` | String (255) | Uses [npm Validator](https://www.npmjs.com/package/validator) isEmail - Required if operator_type is 'COMPANY' or 'CHARITY'. |
 | 37 | Operator Partners | `partners` | String array | Array of partner data – containing sets of between two and five `partner_name` and `partner_is_primary_contact` data fields, limited to the first five partners. |
-| 38 | Operator Partner Name | `partner_name` | String (56) | Partner name as entered by the food business operator user. |
-| 39 | Operator Partner Primary Contact | `partner_is_primary_contact` | Boolean | A value of `true` means the partner is the primary contact for this registration, and `false` means the partner is not the primary contact. |
+| 38 | Operator Partner Name | `partner_name` | String (255) | Required if operator_type is 'Partnership'. |
+| 39 | Operator Partner Primary Contact | `partner_is_primary_contact` | Boolean | Flag indicating whether the partner is the primary contact. |
 | 40 | Food Business Activities | `activities` | Data structure | This data structure describes the activities of the food business |
-| 41 | Customer Type | `customer_type` | String | The type of customers served by the food business. Must be one of the following three values: `End consumer`, `Other businesses`, `End consumer and other businesses`. |
-| 42 | Business Type | `business_type` | String | Type of food business as selected by the user from a predefined list. |
-| 43 | Business Type Search Term | `business_type_search_term` | String | Search term used by the food business operator user to find a business type. |
-| 44 | Import Export Activities | `import_export_activities` | String | The user selects the type of import and export activity from four choice:. `None`, `Directly import`, `Directly export`, `Directly import and export`. |
-| 45 | Water Supply | `water_supply` | String | Selected by the user from the following values: `Public`, `Private`, `Private and public`. |
-| 46 | Business Other Details | `business_other_details` | String (150) | Additional information that the food business operator user may enter to accurately describe what the business does. |
-| 47 | Opening Days Irregular | `opening_days_irregular` | String (1500) | Descriptive text entered by food business operator user to describe irregular opening days. |
-| 48 | Opening Day Monday | `opening_day_monday` | Boolean | Value is `true` if open Mondays, `false` if not. |
-| 49 | Opening Day Tuesday | `opening_day_tuesday` | Boolean | Value is `true` if open Tuesdays, `false` if not. |
-| 50 | Opening Day Wednesday | `opening_day_wednesday` | Boolean | Value is `true` if open Wednesdays, `false` if not. |
-| 51 | Opening Day Thursday | `opening_day_thursday` | Boolean | Value is `true` if open Thursdays, `false` if not. |
-| 52 | Opening Day Friday | `opening_day_friday` | Boolean | Value is `true` if open Fridays, `false` if not. |
-| 53 | Opening Day Saturday | `opening_day_saturday` | Boolean | Value is `true` if open Saturdays, `false` if not. |
-| 54 | Opening Day Sunday | `opening_day_sunday` | Boolean | Value is `true` if open Sundays, `false` if not. |
-| 55 | Opening Hours Monday | `opening_hours_monday` | String (50) | Free text description of the Monday opening hours. |
-| 56 | Opening Hours Tuesday | `opening_hours_tuesday` | String \(50\) | Free text description of the Tuesday opening hours. |
-| 57 | Opening Hours Wednesday | `opening_hours_wednesday` | String (50) | Free text description of the Wednesday opening hours. |
-| 58 | Opening Hours Thursday | `opening_hours_thursday` | String (50) | Free text description of the Thursday opening hours. |
-| 59 | Opening Hours Friday | `opening_hours_friday` | String (50) | Free text description of the Friday opening hours. |
-| 60 | Opening Hours Saturday | `opening_hours_saturday` | String (50) | Free text description of the Saturday opening hours. |
-| 61 | Opening Hours Sunday | `opening_hours_sunday` | String (50) | Free text description of the Sunday opening hours. |
+| 41 | Customer Type | `customer_type` | String | The type of customers served by the food business. Must be one of the following three values: "OTHER_BUSINESSES", "END_CONSUMER", "BOTH" |
+| 42 | Business Type | `business_type` | String | Predetermined values, see separate document for full business type list. |
+| 43 | Business Type Search Term | `business_type_search_term` | String |  |
+| 44 | Import Export Activities | `import_export_activities` | String | The user selects the type of import and export activity from four choice:. `"IMPORT", "EXPORT", "BOTH", "NONE" |
+| 45 | Water Supply | `water_supply` | String | Selected by the user from the following values: "PUBLIC", "PRIVATE", "BOTH" |
+| 46 | Business Other Details | `business_other_details` | String (1500) |  |
+| 47 | Opening Days Irregular | `opening_days_irregular` | String (1500) |  |
+| 48 | Opening Day Monday | `opening_day_monday` | Boolean | Required if opening_days_irregular not populated |
+| 49 | Opening Day Tuesday | `opening_day_tuesday` | Boolean | Required if opening_days_irregular not populated |
+| 50 | Opening Day Wednesday | `opening_day_wednesday` | Boolean | Required if opening_days_irregular not populated |
+| 51 | Opening Day Thursday | `opening_day_thursday` | Boolean | Required if opening_days_irregular not populated |
+| 52 | Opening Day Friday | `opening_day_friday` | Boolean | Required if opening_days_irregular not populated |
+| 53 | Opening Day Saturday | `opening_day_saturday` | Boolean | Required if opening_days_irregular not populated |
+| 54 | Opening Day Sunday | `opening_day_sunday` | Boolean | Required if opening_days_irregular not populated |
+| 55 | Opening Hours Monday | `opening_hours_monday` | String (50) | Required if 'opening_day_monday' is true. |
+| 56 | Opening Hours Tuesday | `opening_hours_tuesday` | String (50) | Required if 'opening_day_tuesday' is true. |
+| 57 | Opening Hours Wednesday | `opening_hours_wednesday` | String (50) | Required if 'opening_day_wednesday' is true. |
+| 58 | Opening Hours Thursday | `opening_hours_thursday` | String (50) | Required if 'opening_day_thursday' is true. |
+| 59 | Opening Hours Friday | `opening_hours_friday` | String (50) | Required if 'opening_day_friday' is true. |
+| 60 | Opening Hours Saturday | `opening_hours_saturday` | String (50) | Required if 'opening_day_saturday' is true. |
+| 61 | Opening Hours Sunday | `opening_hours_sunday` | String (50) | Required if 'opening_day_sunday' is true. |
 | 62 | Food Business Premises | `premise` | Data structure | This data structure conatins data on the food business premises. |
-| 63 | Establishment Address Label Line 1 | `establishment_address_line_1` | String (256) | Establishment Address Label Line 1. Alternative presentation of the address that combines required PAF fields into an address label. |
-| 64 | Establishment Address Label Line 2 | `establishment_address_line_2` | String (256) | Establishment Address Label Line 2. Alternative presentation of the address that combines required PAF fields into an address label. |
-| 65 | Establishment Address Label Line 3 | `establishment_address_line_3` | String (256) | Establishment Address Label Line 3. Alternative presentation of the address that combines required PAF fields into an address label. |
-| 66 | Establishment Address Town | `establishment_town` | String (256) | Town of the establishment address. |
-| 67 | Establishment Address Postcode | `establishment_postcode` | String (8) | Postcode of the establishment address. |
-| 68 | Establishment Address UPRN | `establishment_uprn` | String (12) | The Unique Property Reference Number of the establishment address. |
-| 69 | Establishment Type | `establishment_type` | String (50) | Selected by the user from three options: `Place of business or commercial premises`, `Mobile or moveable premises`, `Home or domestic premises`. |
+| 63 | Establishment Address Label Line 1 | `establishment_address_line_1` | String (255) | ASCII string. |
+| 64 | Establishment Address Label Line 2 | `establishment_address_line_2` | String (255) | ASCII string. |
+| 65 | Establishment Address Label Line 3 | `establishment_address_line_3` | String (255) | ASCII string. |
+| 66 | Establishment Address Town | `establishment_town` | String (255) | ASCII string. |
+| 67 | Establishment Address Postcode | `establishment_postcode` | String | Uses [npm Validator](https://www.npmjs.com/package/validator) isPostalCode (GB). |
+| 68 | Establishment Address UPRN | `establishment_uprn` | String (12) | Unique Property Reference Number. |
+| 69 | Establishment Type | `establishment_type` | String (50) | Selected by the user from three options: "COMMERCIAL", "MOBILE", "DOMESTIC" |
 | 70 | Declaration | `metadata` | Data structure | This structure is likely to be removed in a future release and the declaration data fields placed in the top-level registrations structure. |
-| 71 | Declaration 1 | `declaration1` | String | The user must tick "agree" to this preset declaration. |
-| 72 | Declaration 2 | `declaration2` | String | The user must tick "agree" to this preset declaration. |
-| 73 | Declaration 3 | `declaration3` | String | The user must tick "agree" to this preset declaration. |
+| 71 | Declaration 1 | `declaration1` | String | I declare that the information I have given on this form is correct and complete to the best of my knowledge and belief. |
+| 72 | Declaration 2 | `declaration2` | String | The operator will notify their local council of any significant changes to the business activity, including closure, within 28 days of the change happening. |
+| 73 | Declaration 3 | `declaration3` | String | The operator understands they are legally responsible for the safety and authenticity of the food being produced or served at this establishment. |
 
 ## Field Definitions
 1.  [Food Business Registration](#1-food-business-registration)
@@ -217,55 +217,55 @@ Full field information can be found for each field below, but a short summary ta
 22. [Operator First Name](#22-operator-first-name)
 23. [Operator Last Name](#23-operator-last-name)
 24. [Operator Postcode](#24-operator-postocde)
-25. [Operator Address Line 1](#28-operator-address-line-1)
-26. [Operator Address Line 2](#29-operator-address-line-2)
-27. [Operator Address Line 3](#30-operator-address-line-3)
-28. [Operator Address Town](#31-operator-address-town)
-29. [Operator Address UPRN](#32-operator-address-uprn)
-30. [Operator Primary Telephone Number](#33-operator-primary-telephone-number)
-31. [Operator Secondary Telephone Number](#34-operator-secondary-telephone-number)
-32. [Operator Email Address](#35-operator-email-address)
-33. [Operator Contact Representative](#36-operatpr-contact-representative)
-34. [Operator Contact Role](#37-operator-contact-role)
-35. [Operator Contact Phone Number](#38-operator-contact-phone-number)
-36. [Operator Contact Email Address](#39-operator-contact-email-address)
-37. [Operator Partners](#40-operator-partners)
-38. [Operator Partner Name](#41-operator-partner-name)
-39. [Operator Partner Is primary Contact](#42-operator-partner-is-primary-contact)
-40. [Food Business Activities](#43-food-business-activities)
-41. [Customer Type](#44-customer-type)
-42. [Business Type](#45-business-type)
-43. [Business Type Search Term](#46-business-type-search-term)
-44. [Import Export Activities](#47-import-export-activities)
-45. [Water Supply](#48-water-supply)
-46. [Business Other Details](#49-business-other-details)
-47. [Opening Days Irregular](#50-opening-days-irregular)
-48. [Opening Day Monday](#51-opening-day-monday)
-49. [Opening Day Tuesday](#52-opening-day-tuesday)
-50. [Opening Day Wednesday](#53-opening-day-wednesday)
-51. [Opening Day Thursday](#54-opening-day-thursday)
-52. [Opening Day Friday](#55-opening-day-friday)
-53. [Opening Day Saturday](#56-opening-day-saturday)
-54. [Opening Day Sunday](#57-opening-day-sunday)
-55. [Opening Hours Monday](#58-opening-hours-monday)
-56. [Opening Hours Tuesday](#59-opening-hours-tuesday)
-57. [Opening Hours Wednesday](#60-opening-hours-wednesday)
-58. [Opening Hours Thursday](#61-opening-hours-thursday)
-59. [Opening Hours Friday](#62-opening-hours-friday)
-60. [Opening Hours Saturday](#63-opening-hours-saturday)
-61. [Opening Hours Sunday](#64-opening-hours-sunday)
-62. [Food Business Premises](#65-food-business-premises)
-63. [Establishment Address Line 1](#69-establishment-address-1)
-64. [Establishment Address Line 2](#70-establishment-address-2)
-65. [Establishment Address Line 3](#71-establishment-address-3)
-66. [Establishment Address Town](#72-establishment-address-town)
-67. [Establishment Address Postcode](#73-establishment-address-postcode)
-68. [Establishment Address UPRN](#74-establishment-address-uprn)
-69. [Establishment Type](#75-establishment-type)
-70. [Declaration](#76-declaration)
-71. [Declaration 1](#77-declaration-1)
-72. [Declaration 2](#78-declaration-2)
-73. [Declaration 3](#79-declaration-3)  
+25. [Operator Address Line 1](#25-operator-address-line-1)
+26. [Operator Address Line 2](#26-operator-address-line-2)
+27. [Operator Address Line 3](#27-operator-address-line-3)
+28. [Operator Address Town](#28-operator-address-town)
+29. [Operator Address UPRN](#29-operator-address-uprn)
+30. [Operator Primary Telephone Number](#30-operator-primary-telephone-number)
+31. [Operator Secondary Telephone Number](#31-operator-secondary-telephone-number)
+32. [Operator Email Address](#32-operator-email-address)
+33. [Operator Contact Representative](#33-operatpr-contact-representative)
+34. [Operator Contact Role](#34-operator-contact-role)
+35. [Operator Contact Phone Number](#35-operator-contact-phone-number)
+36. [Operator Contact Email Address](#36-operator-contact-email-address)
+37. [Operator Partners](#37-operator-partners)
+38. [Operator Partner Name](#38-operator-partner-name)
+39. [Operator Partner Is primary Contact](#39-operator-partner-is-primary-contact)
+40. [Food Business Activities](#40-food-business-activities)
+41. [Customer Type](#41-customer-type)
+42. [Business Type](#42-business-type)
+43. [Business Type Search Term](#43-business-type-search-term)
+44. [Import Export Activities](#44-import-export-activities)
+45. [Water Supply](#45-water-supply)
+46. [Business Other Details](#46-business-other-details)
+47. [Opening Days Irregular](#47-opening-days-irregular)
+48. [Opening Day Monday](#48-opening-day-monday)
+49. [Opening Day Tuesday](#49-opening-day-tuesday)
+50. [Opening Day Wednesday](#50-opening-day-wednesday)
+51. [Opening Day Thursday](#51-opening-day-thursday)
+52. [Opening Day Friday](#52-opening-day-friday)
+53. [Opening Day Saturday](#53-opening-day-saturday)
+54. [Opening Day Sunday](#54-opening-day-sunday)
+55. [Opening Hours Monday](#55-opening-hours-monday)
+56. [Opening Hours Tuesday](#56-opening-hours-tuesday)
+57. [Opening Hours Wednesday](#57-opening-hours-wednesday)
+58. [Opening Hours Thursday](#58-opening-hours-thursday)
+59. [Opening Hours Friday](#59-opening-hours-friday)
+60. [Opening Hours Saturday](#60-opening-hours-saturday)
+61. [Opening Hours Sunday](#61-opening-hours-sunday)
+62. [Food Business Premises](#62-food-business-premises)
+63. [Establishment Address Line 1](#63-establishment-address-1)
+64. [Establishment Address Line 2](#64-establishment-address-2)
+65. [Establishment Address Line 3](#65-establishment-address-3)
+66. [Establishment Address Town](#66-establishment-address-town)
+67. [Establishment Address Postcode](#67-establishment-address-postcode)
+68. [Establishment Address UPRN](#68-establishment-address-uprn)
+69. [Establishment Type](#69-establishment-type)
+70. [Declaration](#70-declaration)
+71. [Declaration 1](#71-declaration-1)
+72. [Declaration 2](#72-declaration-2)
+73. [Declaration 3](#73-declaration-3)  
 
 ## Details  
 
@@ -282,7 +282,7 @@ Full field information can be found for each field below, but a short summary ta
 
 ### 2. Food Business Registration Reference Number
 **Field name:** `fsa_rn`  
-**Data type and size:** String (20)  
+**Data type and size:** String (20,20)  
 **Description:** A unique identifier generated for each food business registration.  
 **Source:** Generated by calling the FSA-RN micorservice at `https://fsa-reference-numbers.epimorphics.net/generate/{councilCode}/{typeCode}` where the `councilCode` represents the local authority code in the [FSA register of competent authorities](https://data.food.gov.uk/codes/reference-number/_authority). `TypeCode` is `001` for production or `000` for the development and test service.  
 **Validation rules:** Must be present in a food business registration record.  
@@ -293,7 +293,7 @@ Full field information can be found for each field below, but a short summary ta
 
 ### 3. Local Authority
 **Field name:** `council`  
-**Data type and size:** String (50)  
+**Data type and size:** String   
 **Description:** The name of the Local Authority that the service associates with the registration.  
 **Source:** Generated as configuration data within the registration service.  
 **Validation rules:** Must be present in a food business registration record.  
@@ -304,7 +304,7 @@ Full field information can be found for each field below, but a short summary ta
 
 ### 4. Competent Authority ID
 **Field name:** `competent_authority_id`  
-**Data type and size:** String (4)  
+**Data type and size:** integer  
 **Description:** Competent authority identifier.  This is configuration data that originates from the [register of competent authorities](https://data.food.gov.uk/codes/reference-number/_authority) which includes Local Authorities and Port Health Authorities.  
 **Source:** Generated as configuration data within the registration service.  
 **Validation rules:** Must be present in a food business registration record.  
@@ -315,7 +315,7 @@ Full field information can be found for each field below, but a short summary ta
 
 ### 5. Local Council URL
 **Field name:** `local_council_url`  
-**Data type and size:** String (50)  
+**Data type and size:** String   
 **Description:** Local Authority URL.  This is configuration data identifying the URL name for the local authority.  
 **Source:** Generated as configuration data within the registration service.  
 **Validation rules:** Must be present in a food business registration record.  
@@ -338,7 +338,7 @@ Full field information can be found for each field below, but a short summary ta
 
 ### 7. Record Collected By LA At
 **Field name:** `collected_at`  
-**Data type and size:** ISO date time  
+**Data type and size:** string  
 **Description:** The date and time of collection of the registration.  
 **Source:** Generated within the registration service.  
 **Validation rules:** Will contain a value if the collected flag has been set (or reset).  
@@ -349,7 +349,7 @@ Full field information can be found for each field below, but a short summary ta
 
 ### 8. Record Created At
 **Field name:** `createdAt`  
-**Data type and size:** ISO date time  
+**Data type and size:** string  
 **Description:** Date time the registration record was created.  
 **Source:** Generated within the registration .  
 **Validation rules:** Must be set.  
@@ -360,7 +360,7 @@ Full field information can be found for each field below, but a short summary ta
 
 ### 9. Record Updated At
 **Field name:** `updatedAt`  
-**Data type and size:** ISO date time  
+**Data type and size:** string  
 **Description:** The date and time most recent update of record.  
 **Source:** Generated within the registration service.  
 **Validation rules:** Will only be set if record has been updated after creation.  
@@ -382,7 +382,7 @@ Full field information can be found for each field below, but a short summary ta
 
 ### 11. Establishment Trading Name
 **Field name:** `establishment_trading_name`  
-**Data type and size:** String (50)  
+**Data type and size:** String (255)  
 **Description:** The proposed trading name of the new food business. Collection allows comparison of RAFB and FHRS data.  
 **Source:** Data entered by the user.  
 **Validation rules:** Must be provided in this data set.  
@@ -393,7 +393,7 @@ Full field information can be found for each field below, but a short summary ta
 
 ### 12. Establishment Opening Date
 **Field name:** `establishment_opening_date`  
-**Data type and size:** ISO8061 date  
+**Data type and size:** String  
 **Description:** Opening date of the food business.  
 **Source:** Data entered by the user.  
 **Validation rules:** Opening date or estimated opening date must be provided.  
@@ -404,7 +404,7 @@ Full field information can be found for each field below, but a short summary ta
 
 ### 13. Establishment Primary Telephone Number
 **Field name:** `establishment_primary_number`  
-**Data type and size:** String (15)  
+**Data type and size:** String (5,20)  
 **Description:** Primary telephone number of the food business.  
 **Source:** Data entered by the user.  
 **Validation rules:** Valid phone number must be provided.  
@@ -415,7 +415,7 @@ Full field information can be found for each field below, but a short summary ta
 
 ### 14. Establishment Secondary Telephone Number
 **Field name:** `establishment_secondary_number`  
-**Data type and size:** String (15)  
+**Data type and size:** String (5,20)  
 **Description:** Secondary telephone number of the food business.  
 **Source:** Data entered by the user.  
 **Validation rules:** Optional, must be a valid phone number if provided.  
@@ -426,7 +426,7 @@ Full field information can be found for each field below, but a short summary ta
 
 ### 15. Establishment Email Address
 **Field name:** `establishment_email`  
-**Data type and size:** String (254)  
+**Data type and size:** String (255)  
 **Description:** Email address of the food business establishment.  
 **Source:** Data entered by the user.  
 **Validation rules:** Valid email address must be provided.  
@@ -462,7 +462,7 @@ Full field information can be found for each field below, but a short summary ta
 
 ### 18. Operator Company Name
 **Field name:** `operator_company_name`  
-**Data type and size:** String (50)  
+**Data type and size:** String (255)  
 **Description:** For limited companies only, the operating company name.  
 **Source:** Data entered by the user.  
 **Validation rules:** Must be present when operator type is limited company.  
@@ -473,7 +473,7 @@ Full field information can be found for each field below, but a short summary ta
 
 ### 19. Operator Companies House Reference Number
 **Field name:** `operator_company_house_number`  
-**Data type and size:** String (8)  
+**Data type and size:** String (8,8)  
 **Description:** For limited companies only, the operating company reference number from Companies House.  
 **Source:** Data entered by the user.  
 **Validation rules:** Must be present when operator type is limited company.  
@@ -495,7 +495,7 @@ Full field information can be found for each field below, but a short summary ta
 
 ### 21. Operator Charity Number
 **Field name:** `operator_charity_number`  
-**Data type and size:** String (8)  
+**Data type and size:** String (8,8)  
 **Description:** For charities only, the chairty registration number.  
 **Source:** Data entered by the user.  
 **Validation rules:** Must be present when operator type is charity.  
@@ -506,7 +506,7 @@ Full field information can be found for each field below, but a short summary ta
 
 ### 22. Operator First Name
 **Field name:** `operator_first_name`  
-**Data type and size:** String (70)  
+**Data type and size:** String (255)  
 **Description:** For sole traders and persons only, the first name of the sole trader or person.  
 **Source:** Data entered by the user.  
 **Validation rules:** Must be present when operator type is person or sole trader.  
@@ -517,7 +517,7 @@ Full field information can be found for each field below, but a short summary ta
 
 ### 23. Operator Last Name
 **Field name:** `operator_last_name`  
-**Data type and size:** String (70)  
+**Data type and size:** String (255)  
 **Description:** For sole traders and persons only, the last name of the sole trader or person.  
 **Source:** Data entered by the user.  
 **Validation rules:** Must be present when operator type is person or sole trader.  
@@ -528,7 +528,7 @@ Full field information can be found for each field below, but a short summary ta
 
 ### 24. Operator Postcode
 **Field name:** `operator_postcode`  
-**Data type and size:** String (8)  
+**Data type and size:** String  
 **Description:** Postcode of the operator address.  
 **Source:** Data entered by user.  
 **Validation rules:** Must be present.  
@@ -539,7 +539,7 @@ Full field information can be found for each field below, but a short summary ta
 
 ### 25. Operator Address Line 1
 **Field name:** `operator_address_line_1`  
-**Data type and size:** String (256)  
+**Data type and size:** String (255)  
 **Description:** An alternative presentation of the address that combines required PAF fields into an address label.  
 **Source:** Data returned by postcode lookup service.  
 **Validation rules:** Must be present.  
@@ -550,7 +550,7 @@ Full field information can be found for each field below, but a short summary ta
 
 ### 26. Operator Address Line 2
 **Field name:** `operator_address_line_2`  
-**Data type and size:** String (256)  
+**Data type and size:** String (255)  
 **Description:** An alternative presentation of the address that combines required PAF fields into an address label.  
 **Source:** Data returned by postcode lookup.  
 **Validation rules:** May be present.  
@@ -561,7 +561,7 @@ Full field information can be found for each field below, but a short summary ta
 
 ### 27. Operator Address Line 3
 **Field name:** `operator_address_line_3`  
-**Data type and size:** String (256)  
+**Data type and size:** String (255)  
 **Description:** An alternative presentation of the address that combines required PAF fields into an address label.  
 **Source:** Data returned by postcode lookup.  
 **Validation rules:** May be present.  
@@ -572,7 +572,7 @@ Full field information can be found for each field below, but a short summary ta
 
 ### 28. Operator Address Town
 **Field name:** `operator_town`  
-**Data type and size:** String (256)  
+**Data type and size:** String (255)  
 **Description:** The town of the operator's address.  
 **Source:** Data entered by the food business operator user.  
 **Validation rules:** Must be present.  
@@ -594,7 +594,7 @@ Full field information can be found for each field below, but a short summary ta
 
 ### 30. Operator Primary Telephone Number
 **Field name:** `operator_primary_number`  
-**Data type and size:** String (15)  
+**Data type and size:** String (5,20)  
 **Description:** Operator primary telephone number.  
 **Source:** Data entered by the user.  
 **Validation rules:** A string of permitted characters.  
@@ -605,7 +605,7 @@ Full field information can be found for each field below, but a short summary ta
 
 ### 31. Operator Secondary Telephone Number
 **Field name:** `operator_secondary_number`  
-**Data type and size:** String (15)  
+**Data type and size:** String (5,20)  
 **Description:** Operator secondary telephone number.  
 **Source:** Data entered by the user.  
 **Validation rules:** Optional, must be a string of permitted characters.  
@@ -616,7 +616,7 @@ Full field information can be found for each field below, but a short summary ta
 
 ### 32. Operator Email Address
 **Field name:** `operator_email`  
-**Data type and size:** String (254)  
+**Data type and size:** String (255)  
 **Description:** Email address of the food business operator.  
 **Source:** Data entered by the user.  
 **Validation rules:** Valid email address must be provided.  
@@ -627,7 +627,7 @@ Full field information can be found for each field below, but a short summary ta
 
 ### 33. Operator Contact Representative
 **Field name:** `contact_representative_name`  
-**Data type and size:** String (70)  
+**Data type and size:** String (255)  
 **Description:** The name of the person representing the food business operator.  
 **Source:** Data entered by the user.  
 **Validation rules:** If business type is `Limited Company` or `Charity` then a value must be present.  
@@ -638,7 +638,7 @@ Full field information can be found for each field below, but a short summary ta
 
 ### 34. Operator Contact Role
 **Field name:** `contact_representative_role`  
-**Data type and size:** String (256)  
+**Data type and size:** String (255)  
 **Description:** The role of the person representing the food business operator.  
 **Source:** Data entered by the user.  
 **Validation rules:** If business type is `Limited Company` or `Charity` then a value must be present.  
@@ -649,7 +649,7 @@ Full field information can be found for each field below, but a short summary ta
 
 ### 35. Operator Contact Phone Number
 **Field name:** `contact_representative_number`  
-**Data type and size:** String (15)  
+**Data type and size:** String (5,20)  
 **Description:** The contact phone number for the person representing the food business operator.  
 **Source:** Data entered by the user.  
 **Validation rules:** Must be present.  
@@ -660,7 +660,7 @@ Full field information can be found for each field below, but a short summary ta
 
 ### 36. Operator Contact Email Address
 **Field name:** `contact_representative_email`  
-**Data type and size:** String (254)  
+**Data type and size:** String (255)  
 **Description:** The email address for the person representing the food business operator.  
 **Source:** Data entered by the user.  
 **Validation rules:** Must be present.  
@@ -682,7 +682,7 @@ Full field information can be found for each field below, but a short summary ta
 
 ### 38. Operator Partner Name
 **Field name:** `partner_name`  
-**Data type and size:** String (56)  
+**Data type and size:** String (255)  
 **Description:** Partner name.  
 **Source:** Data entered by the user.  
 **Validation rules:** Must be present for a partnership.  
@@ -770,7 +770,7 @@ Full field information can be found for each field below, but a short summary ta
 
 ### 46. Business Other Details
 **Field name:** `business_other_details`  
-**Data type and size:** String (150)  
+**Data type and size:** String (1500)  
 **Description:** Additional information that the user may enter to accurately describe what the business does.  
 **Source:** Data entered by the user.  
 **Validation rules:** Optional information.  
@@ -960,7 +960,7 @@ Full field information can be found for each field below, but a short summary ta
 
 ### 63. Establishment Address Label Line 1
 **Field name:** `establishment_address_line_1`  
-**Data type and size:** String (256)  
+**Data type and size:** String (255)  
 **Description:** The establishment address label line 1 is an alternative presentation of the address that combines required PAF fields into an address label. The service can return any address in a specific number of lines, we request three.  
 **Source:** Data returned by postcode lookup.  
 **Validation rules:** Must be present.  
@@ -971,7 +971,7 @@ Full field information can be found for each field below, but a short summary ta
 
 ### 64. Establishment Address Label Line 2
 **Field name:** `establishment_address_line_2`  
-**Data type and size:** String (256)  
+**Data type and size:** String (255)  
 **Description:** The establishment address label line 2 is an alternative presentation of the address that combines required PAF fields into an address label. The service can return any address in a specific number of lines, we request three.  
 **Source:** Data returned by postcode lookup.  
 **Validation rules:** May be present.  
@@ -982,7 +982,7 @@ Full field information can be found for each field below, but a short summary ta
 
 ### 65. Establishment Address Label Line 3
 **Field name:** `establishment_address_line_3`  
-**Data type and size:** String (256)  
+**Data type and size:** String (255)  
 **Description:** The establishment address label line 3 is an alternative presentation of the address that combines required PAF fields into an address label. The service can return any address in a specific number of lines, we request three.  
 **Source:** Data returned by postcode lookup.  
 **Validation rules:** May be present.  
@@ -993,7 +993,7 @@ Full field information can be found for each field below, but a short summary ta
 
 ### 66. Establishment Address Town
 **Field name:** `establishment_town`  
-**Data type and size:** String (256)  
+**Data type and size:** String (255)  
 **Description:** The town of the food business address. Data retrieved from the address record supplied by API call to the lookup service or entered by the user.  
 **Source:** Data entered by the user.  
 **Validation rules:** Must be present.  
@@ -1004,7 +1004,7 @@ Full field information can be found for each field below, but a short summary ta
 
 ### 67. Establishment Address Postcode
 **Field name:** `establishment_postcode`  
-**Data type and size:** String (8)  
+**Data type and size:** String  
 **Description:** The postcode of the food business address.  
 **Source:** Data entered by the user.  
 **Validation rules:** Must be present.  
