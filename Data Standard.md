@@ -812,7 +812,7 @@ Full field information can be found for each field below, but a short summary ta
 
 ### 49. Business Other Details
 **Field name:** `business_other_details`  
-**Data type and size:** String (150)  
+**Data type and size:** String (1500)  
 **Description:** Additional information that the user may enter to accurately describe what the business does.  
 **Source:** Data entered by the user.  
 **Validation rules:** Optional information.  
