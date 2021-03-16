@@ -137,7 +137,7 @@ Full field information can be found for each field below, but a short summary ta
 | 17 | Establishment Operator Type | `operator_type` | String | Type of food business operator; sole trader, partnership, limited company, person, or charity. |
 | 18 | Operator Company Name | `operator_company_name` | String (255) | Required if operator_type is 'COMPANY'. |
 | 19 | Operator Companies House Reference Number | `operator_company_house_number` | String (8,8) | Uses [npm Validator](https://www.npmjs.com/package/validator) isAlphanumeric (GB) - Required if operator_type is 'COMPANY'. |
-| 20 | Operator Charity Name | `operator_charity_name` | String (50) | TRequired if operator_type is 'CHARITY'. |
+| 20 | Operator Charity Name | `operator_charity_name` | String (255) | TRequired if operator_type is 'CHARITY'. |
 | 21 | Operator Charity Number | `operator_charity_number` | String (8,8) | Uses [npm Validator](https://www.npmjs.com/package/validator) isAlphanumeric (GB), allows ''-'' -  Required if operator_type is 'CHARITY'. |
 | 22 | Operator First Name | `operator_first_name` | String (255) | Required if operator_type is 'SOLETRADER, 'PARTNERSHIP', or 'PERSON'. |
 | 23 | Operator Last Name | `operator_last_name` | String (255) | Required if operator_type is 'SOLETRADER, 'PARTNERSHIP', or 'PERSON'. |
