@@ -484,7 +484,7 @@ Full field information can be found for each field below, but a short summary ta
 
 ### 20. Operator Charity Name
 **Field name:** `operator_charity_name`  
-**Data type and size:** String (50)  
+**Data type and size:** String (255)  
 **Description:** For charities only, the operating charity name.  
 **Source:** Data entered by the user.  
 **Validation rules:** Must be present when operator type is charity.  
